@@ -77,6 +77,16 @@ main {
     border-bottom: 1px solid #cfc7bb;
 }
 
+.posts-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 45px;
+}
+
+.posts-title {
+    font-size: 1.2rem;
+}
+    
 .post {
     padding: 24px 0;
     border-bottom: 1px solid #ddd6cc;
@@ -154,20 +164,27 @@ footer {
 
     <h2 class="posts-title">Новые публикации</h2>
 
+    <div class="posts-grid">
+
     <section class="post">
-        <h2>Резервуар Сен-Мор-де-Фоссе</h2>
-        <div class="date">11 июня 2026</div>
+        <div class="date">9 июня 2025</div>
+        <h2>Парижские скамейки</h2>
+        <p>О местах, где город становится тише.</p>
     </section>
 
     <section class="post">
-        <h2>Дом на улице Jules Ferry</h2>
-        <div class="date">8 июня 2026</div>
+        <div class="date">7 июня 2025</div>
+        <h2>Туманный Лондон</h2>
+        <p>Заметки о свете, дожде и кирпиче.</p>
     </section>
 
     <section class="post">
-        <h2>Рельеф с платанами на avenue Daumesnil</h2>
-        <div class="date">5 июня 2026</div>
+        <div class="date">3 июня 2025</div>
+        <h2>О простом письме</h2>
+        <p>Несколько мыслей о тексте без спешки.</p>
     </section>
+
+</div>
 </main>
 
 <footer>
