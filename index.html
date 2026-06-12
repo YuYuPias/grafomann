@@ -1,72 +1,91 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ГрафоМанн</title>
+
 <style>
+* {
+    box-sizing: border-box;
+}
+
 body {
     margin: 0;
     background: #f7f4ef;
     color: #222;
-    font-family: Georgia, serif;
+    font-family: Georgia, "Times New Roman", serif;
 }
 
 header {
+    height: 120px;
+    padding: 35px 55px 25px 55px;
     display: flex;
     justify-content: space-between;
-    align-items: center;
-    padding: 22px 50px;
+    align-items: flex-start;
     background: #f7f4ef;
-    border-bottom: 1px solid #d9d4cc;
+    border-bottom: 1px solid #ddd6cc;
 }
 
 .logo {
-    font-size: 3.2rem;
+    font-size: 3.1rem;
+    line-height: 1;
+}
+
+nav {
+    padding-top: 10px;
 }
 
 nav a {
+    margin-left: 32px;
     text-decoration: none;
     color: #222;
-    margin-left: 30px;
     font-size: 1.15rem;
 }
 
 .texts-link {
     border-left: 1px solid #999;
-    padding-left: 30px;
+    padding-left: 32px;
 }
 
 .hero {
     width: 100%;
     height: 360px;
-    background-image: url('kiev-la-gare.jpg');
+    background-image: url("kiev-la-gare.jpg");
     background-size: cover;
-    background-position: 58% 55%;
+    background-position: 62% 52%;
     background-repeat: no-repeat;
 }
 
-.intro {
+main {
     max-width: 900px;
-    margin: 30px auto 10px auto;
-    padding: 0 40px;
+    margin: 0 auto;
+    padding: 36px 40px 70px 40px;
 }
 
-.intro p {
-    font-size: 1.4rem;
-    color: #7d6855;
-    margin: 0;
+.tagline {
+    font-size: 1.45rem;
+    color: #7b5e3c;
+    margin: 0 0 38px 0;
 }
 
-.posts {
-    max-width: 900px;
-    margin: 25px auto 60px auto;
-    padding: 0 40px;
+.posts-title {
+    font-size: 1.35rem;
+    font-weight: bold;
+    margin: 0 0 20px 0;
+    padding-bottom: 8px;
+    border-bottom: 1px solid #cfc7bb;
 }
 
 .post {
-    border-top: 1px solid #ddd;
-    padding: 25px 0;
+    padding: 24px 0;
+    border-bottom: 1px solid #ddd6cc;
 }
 
 .post h2 {
     margin: 0 0 8px 0;
+    font-size: 1.55rem;
     font-weight: normal;
-    font-size: 1.4rem;
 }
 
 .date {
@@ -75,9 +94,84 @@ nav a {
 }
 
 footer {
-    border-top: 1px solid #d9d4cc;
-    padding: 25px 50px;
+    border-top: 1px solid #ddd6cc;
+    padding: 25px 55px;
     display: flex;
     justify-content: space-between;
+    color: #555;
+}
+
+@media (max-width: 800px) {
+    header {
+        height: auto;
+        display: block;
+        padding: 28px 30px;
+    }
+
+    nav {
+        margin-top: 20px;
+        padding-top: 0;
+    }
+
+    nav a {
+        display: inline-block;
+        margin: 0 18px 10px 0;
+    }
+
+    .texts-link {
+        border-left: none;
+        padding-left: 0;
+    }
+
+    .hero {
+        height: 260px;
+        background-position: 60% 50%;
+    }
 }
 </style>
+</head>
+
+<body>
+
+<header>
+    <div class="logo">ГрафоМанн</div>
+
+    <nav>
+        <a href="#">Великобритания</a>
+        <a href="#">Франция</a>
+        <a href="#">Испания</a>
+        <a href="#">Италия</a>
+        <a href="#" class="texts-link">Тексты</a>
+    </nav>
+</header>
+
+<div class="hero"></div>
+
+<main>
+    <p class="tagline">Наблюдения, прогулки, тексты.</p>
+
+    <h2 class="posts-title">Новые публикации</h2>
+
+    <section class="post">
+        <h2>Резервуар Сен-Мор-де-Фоссе</h2>
+        <div class="date">11 июня 2026</div>
+    </section>
+
+    <section class="post">
+        <h2>Дом на улице Jules Ferry</h2>
+        <div class="date">8 июня 2026</div>
+    </section>
+
+    <section class="post">
+        <h2>Рельеф с платанами на avenue Daumesnil</h2>
+        <div class="date">5 июня 2026</div>
+    </section>
+</main>
+
+<footer>
+    <div>© ГрафоМанн</div>
+    <div>О проекте&nbsp;&nbsp;&nbsp; Контакты</div>
+</footer>
+
+</body>
+</html>
