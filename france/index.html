@@ -34,12 +34,13 @@ nav {
     font-size: 1.7rem;
 }
 
-.menu a.current {
-    color: #c98b5c;
-    cursor: default;
-    pointer-events: none;
+.menu a {
+    display: inline-block;
+    margin-left: 24px;
+    color: #666;
+    text-decoration: none;
 }
-
+        
 .menu a.current {
     color: #c98b5c;
 }
@@ -70,9 +71,10 @@ nav {
             border-top: 1px solid #ddd6cc;
         }
 
-        .post-item {
-            padding: 28px 0;
-            border-bottom: 1px solid #ddd6cc;
+        .post-list {
+            border-top: 1px solid #ddd6cc;
+            margin-left: 0;
+            padding-left: 0;
         }
 
         .date {
@@ -97,7 +99,7 @@ nav {
         }
 
         .hero {
-            width: calc(100% - 50px);
+            width: calc(100% - 40px);
             margin: 0 0 60px auto;
         }
 
