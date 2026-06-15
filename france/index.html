@@ -18,73 +18,58 @@
             max-width: 1000px;
             margin: 0 auto;
             padding: 40px 40px 60px 40px;
-}
-
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-bottom: 45px;
-    font-size: 0.9rem;
-}
-
-.logo {
-    color: #777;
-    text-decoration: none;
-    font-size: 1.7rem;
-}
-
-.menu a {
-    display: inline-block;
-    margin-left: 24px;
-    color: #666;
-    text-decoration: none;
-}
-        
-.menu a.current {
-    color: #c98b5c;
-    text-decoration: none;
-}
-
-.menu .current {
-    display: inline-block;
-    margin-left: 24px;
-    color: #c98b5c;
-}
-        
-.texts-link {
-    border-left: 1px solid #999;
-    padding-left: 32px;
-}
-        .bottom-nav {
-            text-align: center;
-            margin-top: 70px;
         }
 
-        .bottom-nav a {
-            color: #666;
-            text-decoration: none;
+        nav {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 45px;
             font-size: 0.9rem;
         }
-        
-        h1 {
-            font-size: 3rem;
-            font-weight: normal;
-            margin: 0 0 50px 0;
-            color: #444;
+
+        .logo {
+            color: #777;
+            text-decoration: none;
+            font-size: 1.7rem;
+        }
+
+        .menu a,
+        .menu .current {
+            display: inline-block;
+            margin-left: 24px;
+            color: #666;
+            text-decoration: none;
+        }
+
+        .menu .current {
+            color: #c98b5c;
+        }
+
+        .texts-link {
+            border-left: 1px solid #999;
+            padding-left: 32px;
+        }
+
+        .hero {
+            width: 92%;
+            margin: 0 0 60px auto;
+        }
+
+        .hero img {
+            width: 100%;
+            display: block;
+            opacity: 0.45;
         }
 
         .post-list {
+            width: 92%;
+            margin-left: 0;
             border-top: 1px solid #ddd6cc;
-            padding-left: 0;
-            transform: translateX(-60px);
-            width: calc(100% + 60px);
         }
-        
-        .date {
-            color: #888;
-            font-size: 0.8rem;
-            margin-bottom: 6px;
+
+        .post-item {
+            padding: 28px 0;
         }
 
         h2 {
@@ -102,17 +87,22 @@ nav {
             color: #666;
         }
 
-        .hero {
-            width: calc(100% - 40px);
-            margin: 0 0 60px auto;
+        .date {
+            color: #888;
+            font-size: 0.8rem;
+            margin-top: 6px;
         }
 
-        .hero img {
-            width: 100%;
-            display: block;
-            opacity: 0.45;
+        .bottom-nav {
+            text-align: center;
+            margin-top: 70px;
         }
-   
+
+        .bottom-nav a {
+            color: #666;
+            text-decoration: none;
+            font-size: 0.9rem;
+        }
     </style>
 </head>
 
@@ -120,51 +110,45 @@ nav {
 
 <div class="page">
 
-<nav>
-    <a href="../" class="logo">ГрафоМанн</a>
+    <nav>
+        <a href="../" class="logo">ГрафоМанн</a>
 
-    <div class="menu">
-        <a href="../uk/">Великобритания</a>
-        <span class="current">Франция</span>
-        <a href="../spain/">Испания</a>
-        <a href="../italy/">Италия</a>
-        <a href="../texts/" class="texts-link">Тексты</a>
+        <div class="menu">
+            <a href="../uk/">Великобритания</a>
+            <span class="current">Франция</span>
+            <a href="../spain/">Испания</a>
+            <a href="../italy/">Италия</a>
+            <a href="../texts/" class="texts-link">Тексты</a>
+        </div>
+    </nav>
+
+    <div class="hero">
+        <img src="france-cover.jpeg" alt="">
     </div>
-</nav>
 
-<div class="hero">
-    <img src="france-cover.jpeg" alt="">
-</div>
-    
-  <!--  <h1>Франция</h1> -->
+    <div class="post-list">
 
-<div class="post-list">
-        
+        <div class="post-item">
+            <h2>
+                <a href="porte-rue-steinkerque/">Дверь (Rue Steinkerque)</a>
+            </h2>
+            <div class="date">6 января 2026</div>
+        </div>
 
-<div class="post-item">
-    <h2>
-        <a href="porte-rue-steinkerque/">
-            Дверь (Rue Steinkerque)
-        </a>
-    </h2>
-    <div class="date">6 января 2026</div>
-</div>
-
-<div class="post-item">
-    <h2>
-        <a href="reservoir-saint-maur/">
-            Réservoir de Saint-Maur-des-Fossés
-        </a>
-    </h2>
-    <div class="date">13 июня 2026</div>
-</div>
+        <div class="post-item">
+            <h2>
+                <a href="reservoir-saint-maur/">Réservoir de Saint-Maur-des-Fossés</a>
+            </h2>
+            <div class="date">13 июня 2026</div>
+        </div>
 
     </div>
 
-<div class="bottom-nav">
-    <a href="#">↑ Наверх</a>
+    <div class="bottom-nav">
+        <a href="#">↑ Наверх</a>
+    </div>
+
 </div>
-    
-</div>
+
 </body>
 </html>
