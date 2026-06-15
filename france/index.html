@@ -31,14 +31,13 @@ nav {
 .logo {
     color: #777;
     text-decoration: none;
-    font-size: 1.2rem;
+    font-size: 1.7rem;
 }
 
-.menu a {
-    display: inline-block;
-    margin: 0 0 0 24px;
-    color: #666;
-    text-decoration: none;
+.menu a.current {
+    color: #c98b5c;
+    cursor: default;
+    pointer-events: none;
 }
 
 .menu a.current {
@@ -98,8 +97,8 @@ nav {
         }
 
         .hero {
-            max-width: 820px;
-            margin: 0 auto 60px auto;
+            width: calc(100% - 50px);
+            margin: 0 0 60px auto;
         }
 
         .hero img {
