@@ -1,1 +1,481 @@
-test
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Старинной Англии фарфор</title>
+
+<style>
+
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #222;
+    line-height: 1.8;
+}
+
+    
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+.date {
+    color: #888;
+    font-size: 14px;
+}
+
+h1 {
+    font-size: 3rem;
+    font-weight: normal;
+    margin-bottom: 50px;
+}
+
+p {
+    font-size: 1.15rem;
+    margin-bottom: 28px;
+}
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 38px 0;
+}
+
+.gallery a {
+    display: block;
+}
+
+.gallery img {
+    width: 100%;
+    height: 130px;
+    object-fit: cover;
+    display: block;
+}
+
+.single {
+    text-align: center;
+    margin: 40px 0;
+}
+
+.single img {
+    max-width: 50%;
+    height: auto;
+}
+    
+@media (max-width: 800px) {
+    .gallery {
+        grid-template-columns: 1fr;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+}
+
+.bottom-nav {
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.article-nav {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article-nav a:hover {
+    text-decoration: underline;
+}
+    
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.88);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox img.dragging {
+    cursor: grabbing;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    color: #e8dcc5;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    z-index: 10002;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+    color: #e8dcc5;
+    font-family: Arial, sans-serif;
+    font-size: 15px;
+    opacity: 0.85;
+}
+
+.lightbox-controls button {
+    border: none;
+    background: none;
+    color: #e8dcc5;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.lightbox-controls button:hover,
+.lightbox-close:hover {
+    opacity: 1;
+    color: #fff4dc;
+}
+    
+.lightbox img {
+    max-width: 88vw;
+    max-height: 82vh;
+    object-fit: contain;
+    transform-origin: center center;
+    transition: transform 0.15s ease;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    color: white;
+    font-family: Arial, sans-serif;
+    font-size: 16px;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 8px 12px;
+}
+
+.lightbox-controls button {
+    width: 42px;
+    height: 42px;
+    border: 1px solid white;
+    background: rgba(0, 0, 0, 0.35);
+    color: white;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.lightbox-controls {
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: rgba(232,220,197,0.75) !important;    
+    gap: 22px !important;
+}
+
+.lightbox-controls button {
+    border: none !important;
+    background: none !important;
+    color: #e8dcc5 !important;
+    font-size: 32px !important;
+    padding: 0 4px !important;
+}
+
+.lightbox-close {
+    color: #e8dcc5 !important;
+}
+
+
+.lightbox-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 1002;
+    transition: opacity 0.2s;
+}
+
+.lightbox-arrow:hover {
+    opacity: 0.7;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+    
+</style>
+</head>
+
+<body>
+
+<header class="article-nav">
+    <a href="../../">ГрафоМанн</a>
+    <a href="../">Великобритания</a>
+</header>
+    
+<div class="article">
+    
+
+<h1>Старинной Англии фарфор</h1>
+
+<div class="date">
+11 октября 1922
+</div>
+
+
+<p>
+Попав случайно в место, которое никогда прежде не было предметом особого интереса, тем более изучения, я с удивлением обнаружил насколько же все это  близко.. Великой Британии оказалось во мне гораздо больше, чем я мог предположить. Выходит я всегда носил это свое представление о ней, которое теперь бесконечно аукаются радостными узнаваниями. Откуда оно взялось? Ну Записки о Шерлоке Холмсе, ну Пак с Волшебных Холмов, ну, конечно же,  прерафаэлиты.. Оказывается, викторианская Англия была моей тайной ношей.
+</p>
+    
+<p>
+И вот теперь я хожу туда-сюда и когда распознаю в чем-то "мою Англию", то есть то, что давно живет в моем априорном представлении о ней, я  фотографирую. Просто из элементарной жадности. Фотографирую и складываю в кучку, которую для себя так и назвал: Старинной Англии фарфор.</p>
+
+ <div class="gallery">
+
+    <a href="schema-05.jpg" target="_blank">
+        <img src="schema-05.jpg">
+    </a>
+
+    <a href="schema-06.jpg" target="_blank">
+        <img src="schema-06.jpg">
+    </a>
+
+    <a href="schema-07.jpg" target="_blank">
+        <img src="schema-07.jpg">
+    </a>
+
+    <a href="schema-08.jpg" target="_blank">
+        <img src="schema-08.jpg">
+    </a>
+
+</div>   
+    
+
+<div class="gallery">
+
+    <a href="schema-09.jpg" target="_blank">
+        <img src="schema-09.jpg">
+    </a>
+
+    <a href="schema-10.jpg" target="_blank">
+        <img src="schema-10.jpg">
+    </a>
+
+    <a href="schema-11.jpg" target="_blank">
+        <img src="schema-11.jpg">
+    </a>
+
+    <a href="schema-12.jpg" target="_blank">
+        <img src="schema-12.jpg">
+    </a>
+
+</div>
+    
+
+<div class="bottom-nav">
+    <a href="#">↑ Наверх</a>
+</div>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+
+<div class="lightbox-controls">
+    <button id="zoomOut">−</button>
+    <button id="zoomIn">+</button>
+</div>
+
+    <img id="lightboxImage" src="" alt="">
+</div>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = document.getElementById('lightboxClose');
+const zoomIn = document.getElementById('zoomIn');
+const zoomOut = document.getElementById('zoomOut');
+
+const prevImage = document.getElementById('prevImage');
+const nextImage = document.getElementById('nextImage');
+
+const galleryLinks = Array.from(document.querySelectorAll('.gallery a'));
+
+let currentIndex = 0;
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function updateImageTransform() {
+    lightboxImage.style.transform =
+        `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+function resetView() {
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    updateImageTransform();
+}
+
+function showImage(index) {
+    currentIndex = index;
+
+    if (currentIndex < 0) {
+        currentIndex = galleryLinks.length - 1;
+    }
+
+    if (currentIndex >= galleryLinks.length) {
+        currentIndex = 0;
+    }
+
+    lightboxImage.src = galleryLinks[currentIndex].href;
+    resetView();
+    lightbox.classList.add('active');
+}
+
+galleryLinks.forEach((link, index) => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        showImage(index);
+    });
+});
+
+nextImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+});
+
+prevImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+});
+
+zoomIn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale < 4) {
+        scale += 0.5;
+        updateImageTransform();
+    }
+});
+
+zoomOut.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale > 1) {
+        scale -= 0.5;
+        if (scale === 1) {
+            posX = 0;
+            posY = 0;
+        }
+        updateImageTransform();
+    }
+});
+
+lightboxImage.addEventListener('mousedown', (event) => {
+    if (scale <= 1) return;
+    isDragging = true;
+    lightboxImage.classList.add('dragging');
+    startX = event.clientX - posX;
+    startY = event.clientY - posY;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    posX = event.clientX - startX;
+    posY = event.clientY - startY;
+    updateImageTransform();
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    lightboxImage.classList.remove('dragging');
+});
+
+closeButton.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        lightbox.classList.remove('active');
+    }
+
+    if (event.key === 'ArrowRight') {
+        showImage(currentIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+        showImage(currentIndex - 1);
+    }
+});
+</script>
+    
+</body>
+</html>
+
+
