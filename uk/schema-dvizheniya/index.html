@@ -234,12 +234,37 @@ const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const closeButton = document.getElementById('lightboxClose');
 
+const zoomIn = document.getElementById('zoomIn');
+const zoomOut = document.getElementById('zoomOut');
+const zoomLevel = document.getElementById('zoomLevel');
+
+let scale = 1;
+
 document.querySelectorAll('.gallery a').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
+
+        scale = 1;
         lightboxImage.src = this.href;
+        lightboxImage.style.transform = 'scale(1)';
+        zoomLevel.textContent = '100%';
+
         lightbox.classList.add('active');
     });
+});
+
+zoomIn.addEventListener('click', () => {
+    scale += 0.25;
+    lightboxImage.style.transform = `scale(${scale})`;
+    zoomLevel.textContent = Math.round(scale * 100) + '%';
+});
+
+zoomOut.addEventListener('click', () => {
+    if (scale > 0.5) {
+        scale -= 0.25;
+        lightboxImage.style.transform = `scale(${scale})`;
+        zoomLevel.textContent = Math.round(scale * 100) + '%';
+    }
 });
 
 closeButton.addEventListener('click', () => {
