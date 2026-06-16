@@ -114,28 +114,64 @@ p {
     background: rgba(0, 0, 0, 0.88);
     align-items: center;
     justify-content: center;
-}
-
-.lightbox img {
-    max-width: 92vw;
-    max-height: 92vh;
-    object-fit: contain;
+    overflow: hidden;
 }
 
 .lightbox.active {
     display: flex;
 }
 
-.lightbox-close {
-    position: fixed;
-    top: 24px;
-    right: 32px;
-    color: white;
-    font-size: 34px;
-    cursor: pointer;
-    font-family: Arial, sans-serif;
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    cursor: grab;
 }
 
+.lightbox img.dragging {
+    cursor: grabbing;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    color: rgba(255, 255, 255, 0.8);
+    font-size: 30px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    z-index: 10002;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 26px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 18px;
+    color: rgba(255, 255, 255, 0.82);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+}
+
+.lightbox-controls button {
+    border: none;
+    background: none;
+    color: rgba(255, 255, 255, 0.82);
+    font-size: 28px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 4px 8px;
+}
+
+.lightbox-controls button:hover,
+.lightbox-close:hover {
+    color: white;
+}
 .lightbox img {
     max-width: 88vw;
     max-height: 82vh;
@@ -243,40 +279,71 @@ p {
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const closeButton = document.getElementById('lightboxClose');
-
 const zoomIn = document.getElementById('zoomIn');
 const zoomOut = document.getElementById('zoomOut');
 const zoomLevel = document.getElementById('zoomLevel');
 
 let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function updateImageTransform() {
+    lightboxImage.style.transform =
+        `translate(${posX}px, ${posY}px) scale(${scale})`;
+    zoomLevel.textContent = Math.round(scale * 100) + '%';
+}
 
 document.querySelectorAll('.gallery a').forEach(link => {
     link.addEventListener('click', function(event) {
         event.preventDefault();
-
         scale = 1;
+        posX = 0;
+        posY = 0;
         lightboxImage.src = this.href;
-        lightboxImage.style.transform = 'scale(1)';
-        zoomLevel.textContent = '100%';
-
+        updateImageTransform();
         lightbox.classList.add('active');
     });
 });
 
 zoomIn.addEventListener('click', () => {
-    if (scale < 3) {
+    if (scale < 4) {
         scale += 0.5;
-        lightboxImage.style.transform = `scale(${scale})`;
-        zoomLevel.textContent = Math.round(scale * 100) + '%';
+        updateImageTransform();
     }
 });
 
 zoomOut.addEventListener('click', () => {
     if (scale > 1) {
         scale -= 0.5;
-        lightboxImage.style.transform = `scale(${scale})`;
-        zoomLevel.textContent = Math.round(scale * 100) + '%';
+        if (scale === 1) {
+            posX = 0;
+            posY = 0;
+        }
+        updateImageTransform();
     }
+});
+
+lightboxImage.addEventListener('mousedown', (event) => {
+    if (scale <= 1) return;
+    isDragging = true;
+    lightboxImage.classList.add('dragging');
+    startX = event.clientX - posX;
+    startY = event.clientY - posY;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    posX = event.clientX - startX;
+    posY = event.clientY - startY;
+    updateImageTransform();
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    lightboxImage.classList.remove('dragging');
 });
 
 closeButton.addEventListener('click', () => {
