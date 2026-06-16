@@ -213,7 +213,7 @@ p {
     background: none !important;
     border: none !important;
     box-shadow: none !important;
-    color: #e8dcc5 !important;
+    color: rgba(232,220,197,0.75) !important;    
     gap: 22px !important;
 }
 
@@ -292,7 +292,6 @@ p {
 
     <div class="lightbox-controls">
         <button id="zoomOut">−</button>
-        <span id="zoomLevel">100%</span>
         <button id="zoomIn">+</button>
     </div>
 
@@ -305,7 +304,6 @@ const lightboxImage = document.getElementById('lightboxImage');
 const closeButton = document.getElementById('lightboxClose');
 const zoomIn = document.getElementById('zoomIn');
 const zoomOut = document.getElementById('zoomOut');
-const zoomLevel = document.getElementById('zoomLevel');
 
 let scale = 1;
 let posX = 0;
@@ -316,8 +314,8 @@ let startY = 0;
 
 function updateImageTransform() {
     lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale(${scale})`;
-    zoomLevel.textContent = Math.round(scale * 100) + '%';
+        `translate(${posX}px, ${posY}px) scale($
+{scale})`;
 }
 
 document.querySelectorAll('.gallery a').forEach(link => {
