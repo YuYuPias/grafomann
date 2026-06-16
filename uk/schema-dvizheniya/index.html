@@ -314,8 +314,7 @@ let startY = 0;
 
 function updateImageTransform() {
     lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale($
-{scale})`;
+        `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
 document.querySelectorAll('.gallery a').forEach(link => {
@@ -330,14 +329,16 @@ document.querySelectorAll('.gallery a').forEach(link => {
     });
 });
 
-zoomIn.addEventListener('click', () => {
+zoomIn.addEventListener('click', (event) => {
+    event.stopPropagation();
     if (scale < 4) {
         scale += 0.5;
         updateImageTransform();
     }
 });
 
-zoomOut.addEventListener('click', () => {
+zoomOut.addEventListener('click', (event) => {
+    event.stopPropagation();
     if (scale > 1) {
         scale -= 0.5;
         if (scale === 1) {
