@@ -136,29 +136,39 @@ p {
     font-family: Arial, sans-serif;
 }
 
+.lightbox img {
+    max-width: 88vw;
+    max-height: 82vh;
+    object-fit: contain;
+    transform-origin: center center;
+    transition: transform 0.15s ease;
+}
+
 .lightbox-controls {
     position: fixed;
     bottom: 28px;
     left: 50%;
     transform: translateX(-50%);
+    z-index: 10001;
     display: flex;
     align-items: center;
     gap: 14px;
     color: white;
     font-family: Arial, sans-serif;
     font-size: 16px;
+    background: rgba(0, 0, 0, 0.45);
+    padding: 8px 12px;
 }
 
 .lightbox-controls button {
-    width: 38px;
-    height: 38px;
+    width: 42px;
+    height: 42px;
     border: 1px solid white;
-    background: transparent;
+    background: rgba(0, 0, 0, 0.35);
     color: white;
-    font-size: 22px;
+    font-size: 24px;
     cursor: pointer;
 }
-
     
 </style>
 </head>
@@ -254,14 +264,16 @@ document.querySelectorAll('.gallery a').forEach(link => {
 });
 
 zoomIn.addEventListener('click', () => {
-    scale += 0.25;
-    lightboxImage.style.transform = `scale(${scale})`;
-    zoomLevel.textContent = Math.round(scale * 100) + '%';
+    if (scale < 3) {
+        scale += 0.5;
+        lightboxImage.style.transform = `scale(${scale})`;
+        zoomLevel.textContent = Math.round(scale * 100) + '%';
+    }
 });
 
 zoomOut.addEventListener('click', () => {
-    if (scale > 0.5) {
-        scale -= 0.25;
+    if (scale > 1) {
+        scale -= 0.5;
         lightboxImage.style.transform = `scale(${scale})`;
         zoomLevel.textContent = Math.round(scale * 100) + '%';
     }
