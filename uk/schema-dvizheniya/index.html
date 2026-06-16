@@ -41,13 +41,19 @@ p {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 20px;
-    margin: 50px 0;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    margin: 38px 0;
+}
+
+.gallery a {
+    display: block;
 }
 
 .gallery img {
     width: 100%;
+    height: 130px;
+    object-fit: cover;
     display: block;
 }
 
