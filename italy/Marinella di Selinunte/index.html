@@ -6,70 +6,181 @@
 
 <style>
 body {
-    font-family: Georgia, serif;
-    max-width: 900px;
-    margin: 60px auto;
-    padding: 0 20px;
-    color: #444;
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #222;
     line-height: 1.8;
 }
 
+.article-nav {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article-nav a:hover {
+    text-decoration: underline;
+}
+
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
 h1 {
+    font-size: 3rem;
     font-weight: normal;
-    margin-bottom: 40px;
+    margin-bottom: 45px;
+    color: #555;
 }
 
 p {
-    margin-bottom: 30px;
+    max-width: 900px;
+    font-size: 1.15rem;
+    margin-bottom: 48px;
+    color: #555;
 }
 
-img {
+.single {
+    text-align: center;
+    margin: 45px 0;
+}
+
+.single img {
+    max-width: 760px;
     width: 100%;
-    margin: 40px 0;
+    height: auto;
+    display: inline-block;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    margin: 45px 0;
+}
+
+.gallery img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
     display: block;
 }
 
-.toplink {
+.gallery.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.bottom-nav {
     text-align: center;
-    margin: 80px 0;
+    margin: 80px 0 40px 0;
+}
+
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.bottom-nav a:hover {
+    text-decoration: underline;
+}
+
+@media (max-width: 800px) {
+    .article {
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery.two,
+    .gallery.three,
+    .gallery.four {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: auto;
+    }
 }
 </style>
 </head>
 
 <body>
 
+<header class="article-nav">
+    <a href="../../">ГрафоМанн</a>
+    <a href="../">Италия</a>
+</header>
+
+<div class="article">
+
 <h1>Рыбный аукцион в Marinella di Selinunte</h1>
 
 <p>
-Старая рыбацкая деревня на юге Сицилии тихо превращающаяся в модное место...
-Две с половиной тысячи лет назад тут шумел греческий мегаполис,
-оставивший нам в наследство несколько дорических руин, которые можно
-осмотреть не за очень дорого. Но тогда море дарило горожанам не только
-деликатесный seafood, но и гораздо менее приятных карфагенян, которым не
-сиделось дома. В итоге полис увял, как, впрочем, вслед за ним и сами
-карфагеняне. Неизменным остается лишь море и плотоядная любовь человека
-ко всему, что в нем обитает. Потому каждое утро прямо на берегу идет торг,
-собирающий как владельцев общепита, так и просто жителей, размышляющих
-о грядущем обеде.
+Старая рыбацкая деревня на юге Сицилии тихо превращающаяся в модное место... Две с половиной тысячи лет назад тут шумел греческий мегаполис, оставивший нам в наследство несколько дорических руин, которые можно осмотреть не за очень дорого. Но тогда море дарило горожанам не только деликатесный seafood, но и гораздо менее приятных карфагенян, которым не сиделось дома. В итоге полис увял, как, впрочем, вслед за ним и сами карфагеняне. Неизменным остается лишь море и плотоядная любовь человека ко всему, что в нем обитает. Потому каждое утро прямо на берегу идет торг, собирающий как владельцев общепита, так и просто жителей, размышляющих о грядущем обеде.
 </p>
 
-<img src="Marinella di Selinunte-01-1200.jpg" alt="">
-<img src="Marinella di Selinunte-02-1200.jpg" alt="">
-<img src="Marinella di Selinunte-03-1200.jpg" alt="">
-<img src="Marinella di Selinunte-04-800.jpg" alt="">
-<img src="Marinella di Selinunte-05-800.jpg" alt="">
-<img src="Marinella di Selinunte-06-800.jpg" alt="">
-<img src="Marinella di Selinunte-07-1200.jpg" alt="">
-<img src="Marinella di Selinunte-08-1200.jpg" alt="">
-<img src="Marinella di Selinunte-09-800.jpg" alt="">
-<img src="Marinella di Selinunte-10-800.jpg" alt="">
-<img src="Marinella di Selinunte-11-1200.jpg" alt="">
-<img src="Marinella di Selinunte-12-800.jpg" alt="">
-<img src="Marinella di Selinunte-13-800.jpg" alt="">
-<img src="Marinella di Selinunte-14-800.jpg" alt="">
+<div class="single">
+    <img src="Marinella di Selinunte-01-1200.jpg" alt="">
+</div>
 
-<div class="toplink">
-<a href="#">↑ Наверх</a>
+<div class="gallery two">
+    <img src="Marinella di Selinunte-02-1200.jpg" alt="">
+    <img src="Marinella di Selinunte-03-1200.jpg" alt="">
+</div>
+
+<div class="gallery three">
+    <img src="Marinella di Selinunte-04-800.jpg" alt="">
+    <img src="Marinella di Selinunte-05-800.jpg" alt="">
+    <img src="Marinella di Selinunte-06-800.jpg" alt="">
+</div>
+
+<div class="single">
+    <img src="Marinella di Selinunte-07-1200.jpg" alt="">
+</div>
+
+<div class="single">
+    <img src="Marinella di Selinunte-08-1200.jpg" alt="">
+</div>
+
+<div class="gallery three">
+    <img src="Marinella di Selinunte-09-800.jpg" alt="">
+    <img src="Marinella di Selinunte-10-800.jpg" alt="">
+    <img src="Marinella di Selinunte-12-800.jpg" alt="">
+</div>
+
+<div class="single">
+    <img src="Marinella di Selinunte-11-1200.jpg" alt="">
+</div>
+
+<div class="gallery two">
+    <img src="Marinella di Selinunte-13-800.jpg" alt="">
+    <img src="Marinella di Selinunte-14-800.jpg" alt="">
+</div>
+
+<div class="bottom-nav">
+    <a href="#">↑ Наверх</a>
+</div>
+
 </div>
 
 </body>
