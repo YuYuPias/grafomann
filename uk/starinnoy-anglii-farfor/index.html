@@ -294,6 +294,74 @@ p {
 .lightbox-next {
     right: 30px;
 }
+
+.lightbox {
+    display: none !important;
+    position: fixed !important;
+    z-index: 9999 !important;
+    inset: 0 !important;
+    background: rgba(0, 0, 0, 0.96) !important;
+    align-items: center !important;
+    justify-content: center !important;
+    overflow: hidden !important;
+}
+
+.lightbox.active {
+    display: flex !important;
+}
+
+.lightbox-close {
+    position: fixed !important;
+    top: 22px !important;
+    right: 28px !important;
+    color: #e8dcc5 !important;
+    font-size: 30px !important;
+    cursor: pointer !important;
+    z-index: 10002 !important;
+}
+
+.lightbox-controls {
+    position: fixed !important;
+    bottom: 28px !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 10001 !important;
+    display: flex !important;
+    align-items: center !important;
+    gap: 22px !important;
+    background: none !important;
+    border: none !important;
+    box-shadow: none !important;
+}
+
+.lightbox-controls button {
+    border: none !important;
+    background: none !important;
+    color: #e8dcc5 !important;
+    font-size: 32px !important;
+    line-height: 1 !important;
+    cursor: pointer !important;
+    padding: 0 4px !important;
+}
+
+.lightbox-arrow {
+    position: fixed !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    font-size: 48px !important;
+    color: #d9cdb8 !important;
+    cursor: pointer !important;
+    user-select: none !important;
+    z-index: 10002 !important;
+}
+
+.lightbox-prev {
+    left: 30px !important;
+}
+
+.lightbox-next {
+    right: 30px !important;
+}
     
 </style>
 </head>
