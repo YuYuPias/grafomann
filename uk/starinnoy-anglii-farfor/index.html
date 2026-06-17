@@ -81,6 +81,18 @@ p {
     object-fit: cover;
 }
 
+.gallery.diptych {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 620px;
+    margin: 45px auto;
+    gap: 10px;
+}
+
+.gallery.diptych img {
+    height: 220px;
+    object-fit: cover;
+}
+    
 .gallery.final {
     grid-template-columns: repeat(4, 1fr);
 }
@@ -91,9 +103,8 @@ p {
 }
 
 .single img {
-    max-width: 50%;
-    height: auto;
-}
+    max-width: 620px;
+    width: 100%;
     
 @media (max-width: 800px) {
     .gallery {
@@ -319,7 +330,7 @@ p {
 И вот теперь я хожу туда-сюда и когда распознаю в чем-то "мою Англию", то есть то, что давно живет в моем априорном представлении о ней, я  фотографирую. Просто из элементарной жадности. Фотографирую и складываю в кучку, которую для себя так и назвал: Старинной Англии фарфор.</p>
 </p>
 
-<div class="gallery">
+<div class="gallery exhibit">
     <a href="porcelain-02-800.jpg"><img src="porcelain-02-800.jpg"></a>
     <a href="porcelain-03-800.jpg"><img src="porcelain-03-800.jpg"></a>
     <a href="porcelain-04-1200.jpg"><img src="porcelain-04-1200.jpg"></a>
@@ -339,7 +350,7 @@ p {
     </a>
 </div>
 
-<div class="gallery">
+<div class="gallery exhibit">    
     <a href="porcelain-12-800.jpg"><img src="porcelain-12-800.jpg"></a>
     <a href="porcelain-13-1200.jpg"><img src="porcelain-13-1200.jpg"></a>
     <a href="porcelain-14-1200.jpg"><img src="porcelain-14-1200.jpg"></a>
@@ -355,7 +366,7 @@ p {
     </a>
 </div>
 
-<div class="gallery">
+<div class="gallery diptych">    
     <a href="porcelain-18-800.jpg"><img src="porcelain-18-800.jpg"></a>
     <a href="porcelain-19-800.jpg"><img src="porcelain-19-800.jpg"></a>
 </div>
