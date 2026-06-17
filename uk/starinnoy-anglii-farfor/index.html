@@ -349,8 +349,8 @@ const zoomOut = document.getElementById('zoomOut');
 const prevImage = document.getElementById('prevImage');
 const nextImage = document.getElementById('nextImage');
 
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a'));
-
+const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
+    
 let currentIndex = 0;
 let scale = 1;
 let posX = 0;
