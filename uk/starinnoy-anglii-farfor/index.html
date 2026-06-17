@@ -7,7 +7,6 @@
 <title>Старинной Англии фарфор</title>
 
 <style>
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
@@ -16,11 +15,27 @@ body {
     line-height: 1.8;
 }
 
-    
 .article {
     max-width: 1100px;
     margin: 0 auto;
     padding: 60px 40px;
+}
+
+.article-nav {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article-nav a:hover {
+    text-decoration: underline;
 }
 
 .date {
@@ -41,39 +56,34 @@ p {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin: 38px 0;
+    gap: 10px;
+    margin: 45px 0;
 }
 
-.gallery a {
+.gallery a,
+.single a {
     display: block;
 }
 
-.gallery img {
+.gallery img,
+.single img {
     width: 100%;
-    height: 130px;
-    object-fit: cover;
     display: block;
 }
 
 .gallery.feature {
     grid-template-columns: 1fr;
-    max-width: 760px;
+    max-width: 620px;
     margin: 50px auto;
 }
 
 .gallery.feature img {
-    width: 100%;
     height: auto;
-    max-height: none;
     object-fit: contain;
 }
 
 .gallery.exhibit {
     grid-template-columns: repeat(3, 1fr);
-    gap: 10px;
-    margin: 45px 0;
 }
 
 .gallery.exhibit img {
@@ -85,35 +95,21 @@ p {
     grid-template-columns: repeat(2, 1fr);
     max-width: 620px;
     margin: 45px auto;
-    gap: 10px;
 }
 
 .gallery.diptych img {
     height: 220px;
     object-fit: cover;
 }
-    
-.gallery.final {
-    grid-template-columns: repeat(4, 1fr);
-}
-    
+
 .single {
-    text-align: center;
-    margin: 40px 0;
+    max-width: 620px;
+    margin: 50px auto;
 }
 
 .single img {
-    max-width: 620px;
-    width: 100%;
-    
-@media (max-width: 800px) {
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
+    height: auto;
+    object-fit: contain;
 }
 
 .bottom-nav {
@@ -121,29 +117,13 @@ p {
     margin: 80px 0 40px 0;
 }
 
-.article-nav {
-    max-width: 1100px;
-    margin: 30px auto 0;
-    padding: 0 40px;
-}
-
-.article-nav a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.9rem;
-}
-
-.article-nav a:hover {
-    text-decoration: underline;
-}
-    
 .bottom-nav a {
     color: #666;
     text-decoration: none;
     font-size: 0.9rem;
 }
 
+/* Lightbox */
 
 .lightbox {
     display: none;
@@ -185,6 +165,25 @@ p {
     z-index: 10002;
 }
 
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10002;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
 .lightbox-controls {
     position: fixed;
     bottom: 28px;
@@ -194,10 +193,6 @@ p {
     display: flex;
     align-items: center;
     gap: 22px;
-    color: #e8dcc5;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    opacity: 0.85;
 }
 
 .lightbox-controls button {
@@ -211,159 +206,39 @@ p {
 }
 
 .lightbox-controls button:hover,
-.lightbox-close:hover {
-    opacity: 1;
+.lightbox-close:hover,
+.lightbox-arrow:hover {
     color: #fff4dc;
 }
-    
-.lightbox img {
-    max-width: 88vw;
-    max-height: 82vh;
-    object-fit: contain;
-    transform-origin: center center;
-    transition: transform 0.15s ease;
-}
 
-.lightbox-controls {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background: rgba(0, 0, 0, 0.45);
-    padding: 8px 12px;
-}
+/* Mobile */
 
-.lightbox-controls button {
-    width: 42px;
-    height: 42px;
-    border: 1px solid white;
-    background: rgba(0, 0, 0, 0.35);
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+@media (max-width: 800px) {
+    .article {
+        padding: 40px 22px;
+    }
 
-.lightbox-controls {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: rgba(232,220,197,0.75) !important;    
-    gap: 22px !important;
-}
+    h1 {
+        font-size: 2rem;
+    }
 
-.lightbox-controls button {
-    border: none !important;
-    background: none !important;
-    color: #e8dcc5 !important;
-    font-size: 32px !important;
-    padding: 0 4px !important;
-}
+    .gallery.exhibit,
+    .gallery.diptych {
+        grid-template-columns: 1fr;
+    }
 
-.lightbox-close {
-    color: #e8dcc5 !important;
-}
+    .gallery.exhibit img,
+    .gallery.diptych img {
+        height: auto;
+    }
 
-
-.lightbox-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    color: #d9cdb8;
-    cursor: pointer;
-    user-select: none;
-    z-index: 1002;
-    transition: opacity 0.2s;
+    .single,
+    .gallery.feature {
+        max-width: 100%;
+    }
 }
-
-.lightbox-arrow:hover {
-    opacity: 0.7;
-}
-
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
-
-.lightbox {
-    display: none !important;
-    position: fixed !important;
-    z-index: 9999 !important;
-    inset: 0 !important;
-    background: rgba(0, 0, 0, 0.96) !important;
-    align-items: center !important;
-    justify-content: center !important;
-    overflow: hidden !important;
-}
-
-.lightbox.active {
-    display: flex !important;
-}
-
-.lightbox-close {
-    position: fixed !important;
-    top: 22px !important;
-    right: 28px !important;
-    color: #e8dcc5 !important;
-    font-size: 30px !important;
-    cursor: pointer !important;
-    z-index: 10002 !important;
-}
-
-.lightbox-controls {
-    position: fixed !important;
-    bottom: 28px !important;
-    left: 50% !important;
-    transform: translateX(-50%) !important;
-    z-index: 10001 !important;
-    display: flex !important;
-    align-items: center !important;
-    gap: 22px !important;
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-}
-
-.lightbox-controls button {
-    border: none !important;
-    background: none !important;
-    color: #e8dcc5 !important;
-    font-size: 32px !important;
-    line-height: 1 !important;
-    cursor: pointer !important;
-    padding: 0 4px !important;
-}
-
-.lightbox-arrow {
-    position: fixed !important;
-    top: 50% !important;
-    transform: translateY(-50%) !important;
-    font-size: 48px !important;
-    color: #d9cdb8 !important;
-    cursor: pointer !important;
-    user-select: none !important;
-    z-index: 10002 !important;
-}
-
-.lightbox-prev {
-    left: 30px !important;
-}
-
-.lightbox-next {
-    right: 30px !important;
-}
-    
 </style>
+
 </head>
 
 <body>
@@ -395,7 +270,7 @@ p {
 </div>  
     
 <p>
-И вот теперь я хожу туда-сюда и когда распознаю в чем-то "мою Англию", то есть то, что давно живет в моем априорном представлении о ней, я  фотографирую. Просто из элементарной жадности. Фотографирую и складываю в кучку, которую для себя так и назвал: Старинной Англии фарфор.</p>
+И вот теперь я хожу туда-сюда и когда распознаю в чем-то "мою Англию", то есть то, что давно живет в моем априорном представлении о ней, я  фотографирую. Просто из элементарной жадности. Фотографирую и складываю в кучку, которую для себя так и назвал: Старинной Англии фарфор.
 </p>
 
 <div class="gallery exhibit">
