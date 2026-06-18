@@ -2,6 +2,8 @@
 <html lang="ru">
 <head>
 <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>Рыбный аукцион в Marinella di Selinunte</title>
 
 <style>
@@ -39,34 +41,21 @@ body {
 h1 {
     font-size: 3rem;
     font-weight: normal;
-    margin-bottom: 45px;
+    margin-bottom: 18px;
     color: #555;
+}
+
+.date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 32px;
 }
 
 p {
-    max-width: 900px;
+    max-width: 1000px;
     font-size: 1.15rem;
     margin: 0 0 34px 0;
     color: #555;
-}
-
-.single {
-    text-align: left;
-    margin: 34px 0 50px;
-}
-
-.single img {
-    max-width: 900px;
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.single img {
-    max-width: 900px;
-    width: 100%;
-    height: auto;
-    display: inline-block;
 }
 
 .gallery {
@@ -75,11 +64,26 @@ p {
     margin: 45px 0;
 }
 
-.gallery img {
-    width: 100%;
-    height: 220px;
-    object-fit: cover;
+.gallery a,
+.single a {
     display: block;
+}
+
+.gallery img,
+.single img {
+    width: 100%;
+    display: block;
+}
+
+.single {
+    text-align: center;
+    margin: 34px 0 50px;
+}
+
+.single img {
+    max-width: 1000px;
+    height: auto;
+    display: inline-block;
 }
 
 .gallery.two {
@@ -90,8 +94,9 @@ p {
     grid-template-columns: repeat(3, 1fr);
 }
 
-.gallery.four {
-    grid-template-columns: repeat(4, 1fr);
+.gallery img {
+    height: 220px;
+    object-fit: cover;
 }
 
 .bottom-nav {
@@ -105,8 +110,92 @@ p {
     font-size: 0.9rem;
 }
 
-.bottom-nav a:hover {
-    text-decoration: underline;
+/* Lightbox */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox img.dragging {
+    cursor: grabbing;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    color: #e8dcc5;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    z-index: 10002;
+}
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10002;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.lightbox-controls button {
+    border: none;
+    background: none;
+    color: #e8dcc5;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.lightbox-controls button:hover,
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+    color: #fff4dc;
 }
 
 @media (max-width: 800px) {
@@ -119,13 +208,16 @@ p {
     }
 
     .gallery.two,
-    .gallery.three,
-    .gallery.four {
+    .gallery.three {
         grid-template-columns: 1fr;
     }
 
     .gallery img {
         height: auto;
+    }
+
+    .single img {
+        max-width: 100%;
     }
 }
 </style>
@@ -140,10 +232,10 @@ p {
 
 <div class="article">
 
-<div class="post-item">
-            <h2>Рыбный аукцион в Marinella di Selinunte</h2>
-            <div class="date">24 июля 2024</div>
-</div>
+<h1>Рыбный аукцион в Marinella di Selinunte</h1>
+
+<div class="date">24 июля 2024</div>
+
 <p>
 Старая рыбацкая деревня на юге Сицилии тихо превращающаяся в модное место... Две с половиной тысячи лет назад тут шумел греческий мегаполис, оставивший нам в наследство несколько дорических руин, которые можно осмотреть не за очень дорого. Но тогда море дарило горожанам не только деликатесный seafood, но и гораздо менее приятных карфагенян, которым не сиделось дома. В итоге полис увял, как, впрочем, вслед за ним и сами карфагеняне. Неизменным остается лишь море и плотоядная любовь человека ко всему, что в нем обитает. Потому каждое утро прямо на берегу идет торг, собирающий как владельцев общепита, так и просто жителей, размышляющих о грядущем обеде.
 </p>
@@ -155,41 +247,43 @@ p {
 </div>
 
 <div class="gallery two">
-    <a href="Marinella di Selinunte-02-1200.jpg">
-        <img src="Marinella di Selinunte-02-1200.jpg" alt="">
+    <a href="Marinella di Selinunte-02-1200.jpg"><img src="Marinella di Selinunte-02-1200.jpg" alt=""></a>
+    <a href="Marinella di Selinunte-03-1200.jpg"><img src="Marinella di Selinunte-03-1200.jpg" alt=""></a>
+</div>
+
+<div class="gallery three">
+    <a href="Marinella di Selinunte-04-800.jpg"><img src="Marinella di Selinunte-04-800.jpg" alt=""></a>
+    <a href="Marinella di Selinunte-05-800.jpg"><img src="Marinella di Selinunte-05-800.jpg" alt=""></a>
+    <a href="Marinella di Selinunte-06-800.jpg"><img src="Marinella di Selinunte-06-800.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="Marinella di Selinunte-07-1200.jpg">
+        <img src="Marinella di Selinunte-07-1200.jpg" alt="">
     </a>
-    <a href="Marinella di Selinunte-03-1200.jpg">
-        <img src="Marinella di Selinunte-03-1200.jpg" alt="">
+</div>
+
+<div class="single">
+    <a href="Marinella di Selinunte-08-1200.jpg">
+        <img src="Marinella di Selinunte-08-1200.jpg" alt="">
     </a>
 </div>
 
 <div class="gallery three">
-    <img src="Marinella di Selinunte-04-800.jpg" alt="">
-    <img src="Marinella di Selinunte-05-800.jpg" alt="">
-    <img src="Marinella di Selinunte-06-800.jpg" alt="">
+    <a href="Marinella di Selinunte-09-800.jpg"><img src="Marinella di Selinunte-09-800.jpg" alt=""></a>
+    <a href="Marinella di Selinunte-10-800.jpg"><img src="Marinella di Selinunte-10-800.jpg" alt=""></a>
+    <a href="Marinella di Selinunte-12-800.jpg"><img src="Marinella di Selinunte-12-800.jpg" alt=""></a>
 </div>
 
 <div class="single">
-    <img src="Marinella di Selinunte-07-1200.jpg" alt="">
-</div>
-
-<div class="single">
-    <img src="Marinella di Selinunte-08-1200.jpg" alt="">
-</div>
-
-<div class="gallery three">
-    <img src="Marinella di Selinunte-09-800.jpg" alt="">
-    <img src="Marinella di Selinunte-10-800.jpg" alt="">
-    <img src="Marinella di Selinunte-12-800.jpg" alt="">
-</div>
-
-<div class="single">
-    <img src="Marinella di Selinunte-11-1200.jpg" alt="">
+    <a href="Marinella di Selinunte-11-1200.jpg">
+        <img src="Marinella di Selinunte-11-1200.jpg" alt="">
+    </a>
 </div>
 
 <div class="gallery two">
-    <img src="Marinella di Selinunte-13-800.jpg" alt="">
-    <img src="Marinella di Selinunte-14-800.jpg" alt="">
+    <a href="Marinella di Selinunte-13-800.jpg"><img src="Marinella di Selinunte-13-800.jpg" alt=""></a>
+    <a href="Marinella di Selinunte-14-800.jpg"><img src="Marinella di Selinunte-14-800.jpg" alt=""></a>
 </div>
 
 <div class="bottom-nav">
@@ -198,8 +292,21 @@ p {
 
 </div>
 
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
+
+    <img id="lightboxImage" src="" alt="">
+</div>
+
 <script>
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
 const closeButton = document.getElementById('lightboxClose');
@@ -207,6 +314,8 @@ const zoomIn = document.getElementById('zoomIn');
 const zoomOut = document.getElementById('zoomOut');
 const prevImage = document.getElementById('prevImage');
 const nextImage = document.getElementById('nextImage');
+
+const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
 
 let currentIndex = 0;
 let scale = 1;
@@ -328,6 +437,5 @@ document.addEventListener('keydown', (event) => {
 });
 </script>
 
-    
 </body>
 </html>
