@@ -306,7 +306,11 @@ const zoomIn = document.getElementById('zoomIn');
 const zoomOut = document.getElementById('zoomOut');
 const prevImage = document.getElementById('prevImage');
 const nextImage = document.getElementById('nextImage');
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
+
+const galleryLinks = Array.from(
+    document.querySelectorAll('a[href$=".jpg"]')
+);
+
 let currentIndex = 0;
 let scale = 1;
 let posX = 0;
@@ -316,8 +320,7 @@ let startX = 0;
 let startY = 0;
 
 function updateImageTransform() {
-    lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale(${scale})`;
+    lightboxImage.style.transform = `translate(${posX}px, ${posY}px) scale(${scale})`;
 }
 
 function resetView() {
@@ -328,12 +331,11 @@ function resetView() {
 }
 
 function showImage(index) {
+    if (index < 0) index = galleryLinks.length - 1;
+    if (index >= galleryLinks.length) index = 0;
+
     currentIndex = index;
-
-    if (currentIndex < 0) currentIndex = galleryLinks.length - 1;
-    if (currentIndex >= galleryLinks.length) currentIndex = 0;
-
-    lightboxImage.src = galleryLinks[currentIndex].href;
+    lightboxImage.src = galleryLinks[currentIndex].getAttribute('href');
     resetView();
     lightbox.classList.add('active');
 }
@@ -345,17 +347,17 @@ galleryLinks.forEach((link, index) => {
     });
 });
 
-nextImage.addEventListener('click', (event) => {
+nextImage.addEventListener('click', function(event) {
     event.stopPropagation();
     showImage(currentIndex + 1);
 });
 
-prevImage.addEventListener('click', (event) => {
+prevImage.addEventListener('click', function(event) {
     event.stopPropagation();
     showImage(currentIndex - 1);
 });
 
-zoomIn.addEventListener('click', (event) => {
+zoomIn.addEventListener('click', function(event) {
     event.stopPropagation();
     if (scale < 4) {
         scale += 0.5;
@@ -363,7 +365,7 @@ zoomIn.addEventListener('click', (event) => {
     }
 });
 
-zoomOut.addEventListener('click', (event) => {
+zoomOut.addEventListener('click', function(event) {
     event.stopPropagation();
     if (scale > 1) {
         scale -= 0.5;
@@ -375,7 +377,7 @@ zoomOut.addEventListener('click', (event) => {
     }
 });
 
-lightboxImage.addEventListener('mousedown', (event) => {
+lightboxImage.addEventListener('mousedown', function(event) {
     if (scale <= 1) return;
     isDragging = true;
     lightboxImage.classList.add('dragging');
@@ -383,29 +385,29 @@ lightboxImage.addEventListener('mousedown', (event) => {
     startY = event.clientY - posY;
 });
 
-document.addEventListener('mousemove', (event) => {
+document.addEventListener('mousemove', function(event) {
     if (!isDragging) return;
     posX = event.clientX - startX;
     posY = event.clientY - startY;
     updateImageTransform();
 });
 
-document.addEventListener('mouseup', () => {
+document.addEventListener('mouseup', function() {
     isDragging = false;
     lightboxImage.classList.remove('dragging');
 });
 
-closeButton.addEventListener('click', () => {
+closeButton.addEventListener('click', function() {
     lightbox.classList.remove('active');
 });
 
-lightbox.addEventListener('click', (event) => {
+lightbox.addEventListener('click', function(event) {
     if (event.target === lightbox) {
         lightbox.classList.remove('active');
     }
 });
 
-document.addEventListener('keydown', (event) => {
+document.addEventListener('keydown', function(event) {
     if (!lightbox.classList.contains('active')) return;
 
     if (event.key === 'Escape') lightbox.classList.remove('active');
