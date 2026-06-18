@@ -62,13 +62,16 @@ p {
 
 .gallery {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: 10px;
     margin: 45px 0;
 }
 
-.gallery a {
-    display: block;
+.gallery.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.three {
+    grid-template-columns: repeat(3, 1fr);
 }
 
 .gallery img {
@@ -78,6 +81,17 @@ p {
     display: block;
 }
 
+.single {
+    text-align: center;
+    margin: 45px 0;
+}
+
+.single img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
 .bottom-nav {
     text-align: center;
     margin: 80px 0 40px 0;
@@ -204,30 +218,67 @@ p {
 Текст появится позже.
 </p>
 
-<div class="gallery">
-    <a href="Selinunte-day-night-01-800.jpg"><img src="Selinunte-day-night-01-800.jpg" alt=""></a>
+<div class="gallery two">
+    <a href="Selinunte-day-night-01-1200.jpg"><img src="Selinunte-day-night-01-1200.jpg" alt=""></a>
     <a href="Selinunte-day-night-02-800.jpg"><img src="Selinunte-day-night-02-800.jpg" alt=""></a>
-    <a href="Selinunte-day-night-03-0-1200.jpg"><img src="Selinunte-day-night-03-0-1200.jpg" alt=""></a>
-    <a href="Selinunte-day-night-03-1-1200.jpg"><img src="Selinunte-day-night-03-1-1200.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="Selinunte-day-night-03-0-800.jpg"><img src="Selinunte-day-night-03-0-800.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="Selinunte-day-night-03-1-800.jpg"><img src="Selinunte-day-night-03-1-800.jpg" alt=""></a>
+</div>
+
+<div class="gallery two">
     <a href="Selinunte-day-night-04-1200.jpg"><img src="Selinunte-day-night-04-1200.jpg" alt=""></a>
     <a href="Selinunte-day-night-05-1200.jpg"><img src="Selinunte-day-night-05-1200.jpg" alt=""></a>
+</div>
+
+<div class="gallery two">
     <a href="Selinunte-day-night-06-1200.jpg"><img src="Selinunte-day-night-06-1200.jpg" alt=""></a>
     <a href="Selinunte-day-night-07-1200.jpg"><img src="Selinunte-day-night-07-1200.jpg" alt=""></a>
+</div>
+
+<div class="single">
     <a href="Selinunte-day-night-08-1200.jpg"><img src="Selinunte-day-night-08-1200.jpg" alt=""></a>
+</div>
+
+<div class="gallery two">
     <a href="Selinunte-day-night-09-1200.jpg"><img src="Selinunte-day-night-09-1200.jpg" alt=""></a>
     <a href="Selinunte-day-night-10-1200.jpg"><img src="Selinunte-day-night-10-1200.jpg" alt=""></a>
+</div>
+
+<div class="single">
     <a href="Selinunte-day-night-11-1200.jpg"><img src="Selinunte-day-night-11-1200.jpg" alt=""></a>
+</div>
+
+<div class="single">
     <a href="Selinunte-day-night-12-0-800.jpg"><img src="Selinunte-day-night-12-0-800.jpg" alt=""></a>
+</div>
+
+<div class="gallery two">
     <a href="Selinunte-day-night-12-1-800.jpg"><img src="Selinunte-day-night-12-1-800.jpg" alt=""></a>
     <a href="Selinunte-day-night-12-2-800.jpg"><img src="Selinunte-day-night-12-2-800.jpg" alt=""></a>
+</div>
+
+<div class="gallery two">
     <a href="Selinunte-day-night-13-1200.jpg"><img src="Selinunte-day-night-13-1200.jpg" alt=""></a>
     <a href="Selinunte-day-night-14-800.jpg"><img src="Selinunte-day-night-14-800.jpg" alt=""></a>
+</div>
+
+<div class="gallery three">
     <a href="Selinunte-day-night-15-800.jpg"><img src="Selinunte-day-night-15-800.jpg" alt=""></a>
     <a href="Selinunte-day-night-16-800.jpg"><img src="Selinunte-day-night-16-800.jpg" alt=""></a>
     <a href="Selinunte-day-night-17-1200.jpg"><img src="Selinunte-day-night-17-1200.jpg" alt=""></a>
+</div>
+
+<div class="single">
     <a href="Selinunte-day-night-18-1200.jpg"><img src="Selinunte-day-night-18-1200.jpg" alt=""></a>
 </div>
 
+    
 <div class="bottom-nav">
     <a href="#">↑ Наверх</a>
 </div>
