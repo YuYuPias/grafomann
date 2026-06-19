@@ -196,16 +196,19 @@ p {
     }
 
     .intro-pair {
+    max-width: 1000px;
+    margin: 40px auto;
     display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
-    margin: 40px 0;
+    align-items: start;
 }
 
-    .intro-pair img {
+.intro-pair img {
     width: 100%;
     height: auto;
     display: block;
+    object-fit: contain;
 }
     
     .gallery img {
