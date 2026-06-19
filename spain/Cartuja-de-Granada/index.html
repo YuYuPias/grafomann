@@ -81,6 +81,22 @@ p {
     display: block;
 }
 
+/* первая пара без обрезки */
+.gallery.intro-pair {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.gallery.intro-pair img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
 .single {
     text-align: center;
     margin: 45px 0;
@@ -191,25 +207,11 @@ p {
 
     .gallery.two,
     .gallery.three,
-    .gallery.four {
+    .gallery.four,
+    .gallery.intro-pair {
         grid-template-columns: 1fr;
     }
 
-    .gallery.intro-pair {
-    max-width: 1000px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    }
-
-    .gallery.intro-pair img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-    
     .gallery img {
         height: auto;
     }
