@@ -37,48 +37,62 @@ body {
 h1 {
     font-size: 2.2rem;
     font-weight: normal;
-    margin: 0 0 70px 0;
+    margin: 0 0 50px 0;
     color: #555;
 }
 
 p {
     font-size: 1.15rem;
-    margin: 0 0 22px 0;
+    margin: 0 0 14px 0;
     color: #555;
 }
 
+/* разделители больше не используются */
 .section-divider {
-    border: none;
-    border-top: 1px solid #cfc7bb;
-    margin: 60px 0 52px 0;
+    display: none;
 }
 
+/* звездочки */
 
 .poem-title {
-    max-width: 360px;
-    margin: 0 auto 28px auto;
+    width: fit-content;
+    margin: 40px auto 24px auto;
     text-align: center;
-    font-weight: bold;
     letter-spacing: 8px;
+    font-weight: normal;
+    font-size: 1.15rem;
 }
 
+/* стихотворения */
+
 .poem {
-    max-width: 360px;
-    margin: 0 auto 48px auto;
+    width: fit-content;
+    margin: 0 auto 42px auto;
     font-style: italic;
     line-height: 1.45;
     font-size: 1.15rem;
     color: #555;
 }
-}
+
+/* цитируемые строки перед анализом */
+
 .analysis-title {
-    font-weight: bold;
-    margin-top: 42px;
-    margin-bottom: 6px;
+    font-style: italic;
+    font-weight: normal;
+    font-size: 1.15rem;
     color: #222;
+    margin-top: 22px;
+    margin-bottom: 14px;
+}
+
+/* обычный текст анализа */
+
+.analysis-text {
+    margin-bottom: 22px;
 }
 
 @media (max-width: 800px) {
+
     .article-nav {
         padding: 0 24px;
         margin-top: 35px;
@@ -91,8 +105,13 @@ p {
     h1 {
         font-size: 1.8rem;
     }
+
+    .poem {
+        width: auto;
+    }
 }
 </style>
+
 </head>
 
 <body>
@@ -124,11 +143,9 @@ p {
 Я хочу начать с одного из самых загадочных его стихотворений.
 </p>
 
-<hr class="section-divider">
-
 <div class="poem-title">* * *</div>
 
-<div class="poem"></div>
+<div class="poem">
 
 Средь пустых деревень,<br>
 Среди мертвых крыш<br>
@@ -157,9 +174,11 @@ p {
 Хоть ладонью бей!
 </div>
 
-<p class="analysis-title">«Средь пустых деревень, / Среди мертвых крыш»</p>
-
-<p>
+<div class="analysis-title">
+«Гаснет день. / На озерах шумит камыш»
+</div>
+        
+<p class="analysis-text">
 Стихотворение открывает меланхоличный и почти хрестоматийный
 среднерусский пейзаж. Но уже в первых словах намечается сдвиг:
 деревни — пустые, крыши — мертвые. Пространство посткатастрофы —
@@ -167,9 +186,11 @@ p {
 присутствие исчезло, хотя следы еще остаются.
 </p>
 
-<p class="analysis-title">«Гаснет день. / На озерах шумит камыш»</p>
-
-<p>
+<div class="analysis-title">
+«Гаснет день. / На озерах шумит камыш»
+</div>
+        
+<p class="analysis-text">
 С наступлением сумерек визуальный план переходит в акустический:
 шум камыша. Фраза звучит очень естественно, почти как случайный штрих
 в пейзаже. Но есть и второй план: «шумел камыш» — образ из популярной
@@ -178,52 +199,58 @@ p {
 распадающиеся в хмельном шуме.
 </p>
 
-<p class="analysis-title">«И какая-то птица / Визжит во тьме»</p>
-
-<p>
+<div class="analysis-title">
+«И какая-то птица / Визжит во тьме»
+</div>
+        
+<p class="analysis-text">
 После шороха и невнятных далеких голосов вдруг раздается резкий звук.
 «Визжит» — слово истерическое. Оно буквально режет тишину.
 Но птица не названа. Это «какая-то» птица. В сумерках уже не различить
 конкретных существ — только звуки.
 </p>
 
-<p class="analysis-title">«Костяными устами / Хватая хлад»</p>
+<div class="analysis-title">
+«Костяными устами / Хватая хлад»
+</div>
 
-<p>
+<p class="analysis-text">
 Живое превращается в полумертвое. У птицы костяные уста.
 Она еще кричит, но уже как будто принадлежит миру скелета.
 И хватает она не добычу, а «хлад» — сам холод, пустоту.
 </p>
 
-<p>
+<p class="analysis-text">
 Фонетический рисунок очень жесткий: к-с-т, х-в-т, х-л-д.
 Согласные почти стучат зубами.
 </p>
 
-<p class="analysis-title">«И сомнамбула-рыба / Лежит на дне»</p>
+<div class="analysis-title">
+«И сомнамбула-рыба / Лежит на дне»
+</div>
 
-<p>
+<p class="analysis-text">
 Если птица — судорожное движение и крик, то рыба —
 неподвижность. «Сомнамбула». Это не мертвое существо,
 но и не до конца живое. Она погружена в сон, в анабиоз.
 </p>
 
-<p>
+<p class="analysis-text">
 Так появляется второй полюс: наверху — истерический вопль,
 внизу — сонная глухота.
 </p>
 
-<p class="analysis-title">«И не слышит / Безумных ее рулад»</p>
-
-<p>
+<div class="analysis-title">
+«И не слышит / Безумных ее рулад»
+</div>
+        
+<p class="analysis-text">
 Птица кричит, но рыба не слышит. Слово «рулады» обычно относится
 к музыке, к виртуозному пению. Но здесь оно соединено со словом
 «безумных». Потому это не песня, а нервный, раздражающий звук.
 </p>
 
 
-
-        
-    </main>
+</main>
 </body>
 </html>
