@@ -47,35 +47,34 @@ p {
     color: #555;
 }
 
-/* разделители больше не используются */
 .section-divider {
     display: none;
 }
 
-/* звездочки */
-
 .poem-title {
-    max-width: 360px;
-    margin: 40px auto 24px auto;
-    text-align: center;
-    letter-spacing: 8px;
-    font-weight: normal;
-    font-size: 1.15rem;
+    display: none;
 }
-
-/* стихотворения */
 
 .poem {
     max-width: 360px;
-    margin: 0 auto 42px auto;
+    margin: 36px auto 42px auto;
     font-style: italic;
     line-height: 1.45;
     font-size: 1.15rem;
     color: #555;
 }
 
+.poem-stars {
+    display: block;
+    text-align: center;
+    letter-spacing: 8px;
+    font-style: normal;
+    margin-bottom: 24px;
+}
 
-/* цитируемые строки перед анализом */
+.analysis-block {
+    margin-bottom: 28px;
+}
 
 .analysis-title {
     font-style: italic;
@@ -83,17 +82,18 @@ p {
     font-size: 1.15rem;
     line-height: 1.8;
     color: #555;
-    margin: 22px 0 0 0;
+    margin: 0;
 }
 
-/* обычный текст анализа */
+.analysis-title + p {
+    margin-top: 0;
+}
 
 .analysis-text {
-    margin-bottom: 22px;
+    margin-bottom: 14px;
 }
 
 @media (max-width: 800px) {
-
     .article-nav {
         padding: 0 24px;
         margin-top: 35px;
@@ -108,11 +108,10 @@ p {
     }
 
     .poem {
-        width: auto;
+        max-width: 360px;
     }
 }
 </style>
-
 </head>
 
 <body>
