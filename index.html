@@ -66,14 +66,15 @@ nav a {
     width: 100%;
     height: 560px;
     overflow: hidden;
+    position: relative;
 }
 
 .hero img {
     width: 100%;
-    height: 100%;
-    object-fit: cover;
-    object-position: 25% 50%;
+    height: auto;
     display: block;
+    position: relative;
+    top: -115px;
 }
 
 main {
@@ -151,12 +152,14 @@ footer {
     }
 
     .hero {
-        height: 260px;
-    }
+    height: 260px;
+}
 
     .hero img {
-        object-position: 25% 50%;
-    }
+    width: 100%;
+    height: auto;
+    top: -35px;
+}
 
     main {
         padding: 45px 28px;
