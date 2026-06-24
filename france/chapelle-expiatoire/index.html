@@ -1,2 +1,559 @@
 
-test
+
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Chapelle expiatoire. Искупительная часовня Людовика XVI</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #222;
+    line-height: 1.8;
+}
+
+.article-nav {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article-nav a:hover {
+    text-decoration: underline;
+}
+
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+h1 {
+    max-width: 1000px;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0 auto 25px auto;
+    color: #555;
+}
+
+.section-title {
+    max-width: 1000px;
+    margin: 70px auto 25px;
+    font-size: 1.45rem;
+    color: #444;
+}
+
+.date {
+    max-width: 1000px;
+    margin: 0 auto 32px auto;
+    color: #888;
+    font-size: 14px;
+}
+
+.date {
+    color: #888;
+    font-size: 14px;
+    margin-bottom: 32px;
+}
+
+p {
+    max-width: 1000px;
+    font-size: 1.15rem;
+    margin: 0 auto 34px auto;
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    margin: 45px 0;
+}
+
+.gallery a,
+.single a {
+    display: block;
+}
+
+.gallery img,
+.single img {
+    width: 100%;
+    display: block;
+}
+
+.single {
+    text-align: center;
+    margin: 34px 0 50px;
+}
+
+.single img {
+    max-width: 1000px;
+    height: auto;
+    display: inline-block;
+}
+
+.gallery.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery img {
+    height: 220px;
+    object-fit: cover;
+}
+
+.gallery.exhibit {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.exhibit img {
+    height: 190px;
+    object-fit: cover;
+}
+
+.gallery.intro-pair {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.gallery.intro-pair img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+
+.plan img {
+    width: 60%;
+}
+
+.bottom-nav {
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* Lightbox */
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox img.dragging {
+    cursor: grabbing;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    color: #e8dcc5;
+    font-size: 30px;
+    cursor: pointer;
+    font-family: Arial, sans-serif;
+    z-index: 10002;
+}
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10002;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    align-items: center;
+    gap: 22px;
+}
+
+.lightbox-controls button {
+    border: none;
+    background: none;
+    color: #e8dcc5;
+    font-size: 32px;
+    line-height: 1;
+    cursor: pointer;
+    padding: 0 4px;
+}
+
+.lightbox-controls button:hover,
+.lightbox-close:hover,
+.lightbox-arrow:hover {
+    color: #fff4dc;
+}
+
+@media (max-width: 800px) {
+    .article {
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery.two,
+    .gallery.three {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: auto;
+    }
+
+    .single img {
+        max-width: 100%;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="article-nav">
+    <a href="../../">ГрафоМанн</a>
+    <a href="../">Франция</a>
+</header>
+
+<div class="article">
+
+<h1>Chapelle expiatoire. Искупительная часовня Людовика XVI</h1>
+
+<div class="date">28 января 2026</div>
+
+<p>
+Место тихое, странное и очень «парижское», где политика, смерть и архитектура сцепились намертво.
+Часовня возведена на месте бывшего кладбища Мадлен, где в 1793 году были тайно захоронены казненные Людовик XVI и Мария-Антуанетта.
+После Реставрации Бурбонов их останки перенесли в Сен-Дени, но Людовик XVIII пожелал отметить это место архитектурой покаяния.
+Поэтому перед нами не приходская часовня, не «церковь для людей», а мемориал и политический жест: здесь совершено преступление и оно не забыто.
+</p>
+
+<div class="single">
+    <a href="chapelle-expiatoire-01.jpg"><img src="chapelle-expiatoire-01.jpg" alt=""></a>
+</div>
+
+
+
+<h2 class="section-title">
+Архитектура
+</h2>
+
+<p>
+Строгий неоклассицизм эпохи Реставрации с траурным уклоном и с жестким отбором выразительных средств: крепостной периметр, аркада по бокам — не прогулочная, а процессуальная: она задаёт медленное, похоронное движение. Купол скрыт и приглушен — он не торжествует и не доминирует. В интерьере почти полное отсутствие света и декоративной игры.
+</p>
+<p>
+Это не античность «в духе радости формы», а античность как закон и приговор.
+</p>
+
+<h2 class="section-title">
+Иконография
+</h2>
+
+<p>
+Тяжелые погребальные венки следуют по всему периметру — не лавр победы, а венок памяти и жертвы: неподвижный, окаменевший, лишённый триумфа.
+</p>
+<p>
+В него вписан мотив песочных часов с крыльями — знак истекающего времени, конечности жизни и необратимости истории. И тут же символика сна, грезы, забвения: маковые головки вплетенные в венки и гирлянды, обрамляющие кенотафы в аркадах.  
+</p>
+<p>
+Эти три мотива выражают суть: венок — фиксирует, часы — показывают необратимость, мак — отключает время как континуум.
+История идёт дальше, но здесь все остается погруженным в сон, из которого не просыпаются.
+</p>
+
+<h2 class="section-title">
+Пустота как форма умолчания
+</h2>
+
+<p>
+Христианская символика крайне сдержанна. Минимум образов, никакого экстаза, никакой мистики. Это не про воскресение — это память о смерти. И экстерьеры, и интерьеры построены вокруг отсутствия: нет алтарной пышности, нет нарратива, нет утешительного искусства.
+</p>
+<p>
+Пустота ощущается как моральный вакуум: посетитель оставлен наедине с историей, без подсказок, что именно нужно чувствовать.
+</p>
+
+<h2 class="section-title">
+Кенотафы швейцарских гвардейцев
+</h2>
+
+<p>
+Во дворе, по обе стороны аркады — кенотафы швейцарских гвардейцев, павших во время штурма дворца Тюильри. Их тела покоятся в других местах; здесь — не могилы, а знаки отсутствия.
+Часовня хранит память не только о казненных монархах, но и о тех, кто погиб, оставаясь верным присяге. 
+</p>
+<p>
+Разрушение старого порядка представлено цепью смертей, а не абстрактным событием.
+</p>
+
+<h2 class="section-title">
+Точка холода
+</h2>
+
+<p>
+Это архитектура вины, а не примирения.
+Революция здесь не названа прямо, но каждая деталь говорит сама за себя:
+</p>
+<p>
+каждый камень — «это было неправильно»,<br>
+каждый венок — «мы помним»,<br>
+каждый замкнутый объем — «эта рана застыла».<br>
+</p>
+
+Памятник исторической травме, погруженный в вечный сон, возведенный властью, которая боялась повторения.
+ </p>
+<p>
+
+
+
+<div class="gallery intro-pair">
+      <a href="chapelle-expiatoire-02.jpg"><img src="chapelle-expiatoire-02.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-03.jpg"><img src="chapelle-expiatoire-03.jpg" alt=""></a>
+</div>
+
+<div class="gallery exhibit">
+  <a href="chapelle-expiatoire-04.jpg"><img src="chapelle-expiatoire-04.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-05.jpg"><img src="chapelle-expiatoire-05.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-06.jpg"><img src="chapelle-expiatoire-06.jpg" alt=""></a>
+
+
+  <a href="chapelle-expiatoire-07.jpg"><img src="chapelle-expiatoire-07.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-08.jpg"><img src="chapelle-expiatoire-08.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-09.jpg"><img src="chapelle-expiatoire-09.jpg" alt=""></a>
+
+  <a href="chapelle-expiatoire-10.jpg"><img src="chapelle-expiatoire-10.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-11.jpg"><img src="chapelle-expiatoire-11.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-12.jpg"><img src="chapelle-expiatoire-12.jpg" alt=""></a>
+
+</div>
+
+
+<div class="gallery intro-pair">
+	<a href="chapelle-expiatoire-13.jpg"><img src="chapelle-expiatoire-13.jpg" alt=""></a>
+	<a href="chapelle-expiatoire-14.jpg"><img src="chapelle-expiatoire-14.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="chapelle-expiatoire-15.jpg"><img src="chapelle-expiatoire-15.jpg" alt=""></a>
+</div>
+
+
+<div class="plan">
+    <a href="chapelle-expiatoire-16.jpg"><img src="chapelle-expiatoire-16.jpg" alt=""></a>
+</div>
+
+
+
+
+<div class="bottom-nav">
+    <a href="#">↑ Наверх</a>
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
+
+    <img id="lightboxImage" src="" alt="">
+</div>
+
+<script>
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = document.getElementById('lightboxClose');
+const zoomIn = document.getElementById('zoomIn');
+const zoomOut = document.getElementById('zoomOut');
+const prevImage = document.getElementById('prevImage');
+const nextImage = document.getElementById('nextImage');
+
+const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
+
+let currentIndex = 0;
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function updateImageTransform() {
+    lightboxImage.style.transform =
+        `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+function resetView() {
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    updateImageTransform();
+}
+
+function showImage(index) {
+    currentIndex = index;
+
+    if (currentIndex < 0) {
+        currentIndex = galleryLinks.length - 1;
+    }
+
+    if (currentIndex >= galleryLinks.length) {
+        currentIndex = 0;
+    }
+
+    lightboxImage.src = galleryLinks[currentIndex].href;
+    resetView();
+    lightbox.classList.add('active');
+}
+
+galleryLinks.forEach((link, index) => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        showImage(index);
+    });
+});
+
+nextImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+});
+
+prevImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+});
+
+zoomIn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale < 4) {
+        scale += 0.5;
+        updateImageTransform();
+    }
+});
+
+zoomOut.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale > 1) {
+        scale -= 0.5;
+        if (scale === 1) {
+            posX = 0;
+            posY = 0;
+        }
+        updateImageTransform();
+    }
+});
+
+lightboxImage.addEventListener('mousedown', (event) => {
+    if (scale <= 1) return;
+    isDragging = true;
+    lightboxImage.classList.add('dragging');
+    startX = event.clientX - posX;
+    startY = event.clientY - posY;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    posX = event.clientX - startX;
+    posY = event.clientY - startY;
+    updateImageTransform();
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    lightboxImage.classList.remove('dragging');
+});
+
+closeButton.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        lightbox.classList.remove('active');
+    }
+
+    if (event.key === 'ArrowRight') {
+        showImage(currentIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+        showImage(currentIndex - 1);
+    }
+});
+</script>
+
+</body>
+</html>
+
