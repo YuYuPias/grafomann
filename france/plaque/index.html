@@ -52,6 +52,17 @@ p {
     display: block;
 }
 
+.gallery.diptych {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 800px;
+    margin: 45px auto;
+}
+
+.gallery.diptych img {
+    height: 220px;
+    object-fit: cover;
+}
+   
 .single {
     text-align: center;
     margin: 40px 0;
@@ -147,9 +158,9 @@ ARCHITECTE D.P.L.G.<br>
 </p>
 
   
-<div class="gallery intro-pair">
-   <a href="plaque_01.jpg" target="_blank"><img src="plaque_01.jpg"></a>
-  <a href="plaque_01.jpg" target="_blank"><img src="plaque_01.jpg"></a>
+<div class="gallery diptych">   
+    <a href="plaque_03.jpg" target="_blank"><img src="plaque_03.jpg"></a>
+    <a href="plaque_02.jpg" target="_blank"><img src="plaque_02.jpg"></a>
 </div>
 
     <div class="bottom-nav">
