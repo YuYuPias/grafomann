@@ -1,1 +1,474 @@
-test
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Château de Champs-sur-Marne</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #222;
+    line-height: 1.8;
+}
+
+.article-nav {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+h1 {
+    max-width: 1000px;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0 auto 25px auto;
+    color: #555;
+}
+
+.date {
+    max-width: 1000px;
+    margin: 0 auto 32px auto;
+    color: #888;
+    font-size: 14px;
+}
+
+p {
+    max-width: 1000px;
+    font-size: 1.15rem;
+    margin: 0 auto 22px auto;
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    margin: 45px 0;
+}
+
+.gallery.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+/* первая пара без обрезки */
+.gallery.intro-pair {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+.gallery.intro-pair img {
+    width: 100%;
+    height: auto;
+    object-fit: contain;
+    display: block;
+}
+
+.single {
+    text-align: center;
+    margin: 45px 0;
+}
+
+.single img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.plan img {
+    width: 70%;
+}
+
+.vase img {
+    width: 75%;
+}
+    
+.bottom-nav {
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox img.dragging {
+    cursor: grabbing;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    color: #e8dcc5;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10002;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    gap: 22px;
+}
+
+.lightbox-controls button {
+    border: none;
+    background: none;
+    color: #e8dcc5;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .article {
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery.two,
+    .gallery.three,
+    .gallery.four,
+    .gallery.intro-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="article-nav">
+    <a href="../../">ГрафоМанн</a>
+    <a href="../">Франция</a>
+</header>
+
+<div class="article">
+
+<h1>Château de Champs-sur-Marne</h1>
+<div class="date">15 сентября 2025</div>
+
+<p>
+  Ранний образец французского загородного дома, где утомленный государственный муж мог отрешиться и отдохнуть от рутины придворной службы. То есть, по-нашему - это дача. Домик за свою историю сменил не менее двух десятков владельцев, пока не очутился в руках генерала Де Голля, принимавшего здесь руководителей недавно освободившихся от колониального гнета государств франкофонной Африки (представляю себе эту картину))
+</p>
+
+
+<div class="gallery intro-pair">    
+    <a href="chateau-marne-02.jpg"><img src="chateau-marne-02.jpg" alt=""></a>
+    <a href="chateau-marne-03.jpg"><img src="chateau-marne-03.jpg" alt=""></a>
+</div>
+
+<p>
+  Но нас сейчас интересует не дом, а сад - великолепный образец паркового искусства эпохи барокко, в сценарии которого воплощена идея торжества света, красоты и гармонии. То есть, сад этот - вдохновенный гимн Аполлону и его альтер-эго на земле Королю-Солнцу.
+</p>
+    
+<div class="single vase">    
+    <a href="chateau-marne-01.jpg"><img src="chateau-marne-01.jpg" alt=""></a>
+</div>
+    
+<p>
+Сценарий разворачивается постепенно, линейно - по ходу движения зрителя. 
+</p>
+<p>
+  Первое, что мы видим, входя в аллею, это одиноко стоящую вазу на высоком постаменте с солнечным ликом, венком подсолнухов и ветвями лавра. Тем самым нас как бы предупреждают: вы вступаете в пространство света, гармонии и энергии Аполлона. Ваза — как титульный лист спектакля, предваряющий действие.
+</p>
+
+<p>
+  Далее, за домом, мы обнаруживаем пару сфинксов по обе стороны лестницы,  ведущей к началу Большого променада. Сфинксы - символ вечности, тайного знания и неподвижности. Они - хранители сакрального пути. Однако на их спинах сидят резвые путти - воплощение игры, спонтанности и жизненной силы. Такое сочетание вечного и мимолётного создает напряжение, обещая, что путь будет торжественным, но не лишенным сюрпризов.
+</p>
+
+<p>
+  И да, в середине променада дорогу преграждает фонтан Сциллы, воплощающей опасность и хаос неконтролируемых морских сил. Это - испытание и преграда, которую должно преодолеть Солнце (и сам зритель, идущий по аллее). Таким образом, бассейн Сциллы — срединный акт пьесы. Если ваза — пролог, сфинксы — порог, то Сцилла — кульминационное препятствие, после которого только триумф.
+</p>
+
+<p>
+  Солнечная колесница Аполлона в конце аллеи знаменует победу света над тьмой и порядка над хаосом. Две мощные фигуры тритонов с трудом удерживают лошадей. Композиция изломана и крайне напряжена: всё стремится вперёд и вверх, словно в начале восхождения светила на небосвод. Завершая ансамбль, скульптура подчеркивает солнечную природу королевской власти. Это отголосок «солнечного короля» и мифологическая легитимация его правления.
+</p>
+    
+
+<div class="single">
+    <a href="chateau-marne-07.jpg"><img src="chateau-marne-07.jpg" alt=""></a>
+</div>
+    
+
+<div class="gallery two">
+    <a href="chateau-marne-04-0.jpg"><img src="chateau-marne-04-0.jpg" alt=""></a>
+    <a href="chateau-marne-12.jpg"><img src="chateau-marne-12.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="chateau-marne-11.jpg"><img src="chateau-marne-11.jpg" alt=""></a>
+</div>
+
+<div class="gallery intro-pair">
+    <a href="chateau-marne-06.jpg"><img src="chateau-marne-06.jpg" alt=""></a>
+    <a href="chateau-marne-08.jpg"><img src="chateau-marne-08.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="chateau-marne-16.jpg"><img src="chateau-marne-16.jpg" alt=""></a>
+</div>
+
+<div class="gallery four">
+    <a href="chateau-marne-14.jpg"><img src="chateau-marne-14.jpg" alt=""></a>
+    <a href="chateau-marne-05.jpg"><img src="chateau-marne-05.jpg" alt=""></a>
+    <a href="chateau-marne-13-1.jpg"><img src="chateau-marne-13-1.jpg" alt=""></a>
+    <a href="chateau-marne-10.jpg"><img src="chateau-marne-10.jpg" alt=""></a>
+</div>
+    
+<div class="gallery intro-pair">    
+    <a href="chateau-marne-15.jpg"><img src="chateau-marne-15.jpg" alt=""></a>
+    <a href="chateau-marne-17.jpg"><img src="chateau-marne-17.jpg" alt=""></a>
+</div>
+
+<div class="single">
+    <a href="chateau-marne-18.jpg"><img src="chateau-marne-18.jpg" alt=""></a>
+</div>
+
+ <div class="single plan">
+    <a href="chateau-marne-19.jpg"><img src="chateau-marne-19.jpg" alt="">
+    </a>
+</div>
+    
+    
+<div class="bottom-nav">
+    <a href="#">↑ Наверх</a>
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
+</div>
+
+<script>
+const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = document.getElementById('lightboxClose');
+const zoomIn = document.getElementById('zoomIn');
+const zoomOut = document.getElementById('zoomOut');
+const prevImage = document.getElementById('prevImage');
+const nextImage = document.getElementById('nextImage');
+
+let currentIndex = 0;
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function updateImageTransform() {
+    lightboxImage.style.transform =
+        `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+function resetView() {
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    updateImageTransform();
+}
+
+function showImage(index) {
+    currentIndex = index;
+
+    if (currentIndex < 0) {
+        currentIndex = galleryLinks.length - 1;
+    }
+
+    if (currentIndex >= galleryLinks.length) {
+        currentIndex = 0;
+    }
+
+    lightboxImage.src = galleryLinks[currentIndex].href;
+    resetView();
+    lightbox.classList.add('active');
+}
+
+galleryLinks.forEach((link, index) => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        showImage(index);
+    });
+});
+
+nextImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+});
+
+prevImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+});
+
+zoomIn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale < 4) {
+        scale += 0.5;
+        updateImageTransform();
+    }
+});
+
+zoomOut.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale > 1) {
+        scale -= 0.5;
+        if (scale === 1) {
+            posX = 0;
+            posY = 0;
+        }
+        updateImageTransform();
+    }
+});
+
+lightboxImage.addEventListener('mousedown', (event) => {
+    if (scale <= 1) return;
+    isDragging = true;
+    lightboxImage.classList.add('dragging');
+    startX = event.clientX - posX;
+    startY = event.clientY - posY;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    posX = event.clientX - startX;
+    posY = event.clientY - startY;
+    updateImageTransform();
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    lightboxImage.classList.remove('dragging');
+});
+
+closeButton.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        lightbox.classList.remove('active');
+    }
+
+    if (event.key === 'ArrowRight') {
+        showImage(currentIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+        showImage(currentIndex - 1);
+    }
+});
+</script>
+
+</body>
+</html>
+
