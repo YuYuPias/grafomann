@@ -7,82 +7,12 @@
 <title>Villa Savoye</title>
 
 <style>
-
 body {
     margin: 0;
     font-family: Arial, sans-serif;
     background: #f7f3ed;
     color: #222;
-    line-height: 1.8;
-}
-
-    
-.article {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-.date {
-    color: #888;
-    font-size: 14px;
-}
-
-h1 {
-    font-size: 3rem;
-    font-weight: normal;
-    margin-bottom: 50px;
-}
-
-p {
-    font-size: 1.15rem;
-    margin-bottom: 28px;
-}
-
-.gallery {
-    display: grid;
-    grid-template-columns: repeat(4, 1fr);
-    gap: 8px;
-    margin: 38px 0;
-}
-
-.gallery a {
-    display: block;
-}
-
-.gallery img {
-    width: 100%;
-    height: 130px;
-    object-fit: cover;
-    display: block;
-}
-
-.single {
-    text-align: center;
-    margin: 45px 0;
-}
-
-.single img {
-    max-width: 1000px;
-    width: 100%;
-    height: auto;
-    display: inline-block;
-}
-
-    
-@media (max-width: 800px) {
-    .gallery {
-        grid-template-columns: 1fr;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-}
-
-.bottom-nav {
-    text-align: center;
-    margin: 80px 0 40px 0;
+    line-height: 1.65;
 }
 
 .article-nav {
@@ -98,23 +28,96 @@ p {
     font-size: 0.9rem;
 }
 
-.article-nav a:hover {
-    text-decoration: underline;
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
 }
-    
+
+h1 {
+    max-width: 850px;
+    margin: 0 auto 55px auto;
+    font-size: 3rem;
+    font-weight: normal;
+    color: #555;
+}
+
+.date {
+    max-width: 850px;
+    margin: 0 auto 45px auto;
+    color: #888;
+    font-size: 14px;
+}
+
+p {
+    max-width: 850px;
+    margin: 0 auto 28px auto;
+    font-size: 1.12rem;
+    line-height: 1.65;
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    margin: 45px auto 50px auto;
+    max-width: 1000px;
+}
+
+.gallery.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery a,
+.single a {
+    display: block;
+}
+
+.single {
+    max-width: 880px;
+    margin: 50px auto 70px auto;
+}
+
+.single.final {
+    margin-top: 95px;
+}
+
+.single img {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.bottom-nav {
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
 .bottom-nav a {
     color: #666;
     text-decoration: none;
     font-size: 0.9rem;
 }
 
+/* Lightbox */
 
 .lightbox {
     display: none;
     position: fixed;
     z-index: 9999;
     inset: 0;
-    background: rgba(0, 0, 0, 0.88);
+    background: rgba(0, 0, 0, 0.96);
     align-items: center;
     justify-content: center;
     overflow: hidden;
@@ -145,8 +148,26 @@ p {
     color: #e8dcc5;
     font-size: 30px;
     cursor: pointer;
-    font-family: Arial, sans-serif;
     z-index: 10002;
+}
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10002;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
 }
 
 .lightbox-controls {
@@ -158,10 +179,6 @@ p {
     display: flex;
     align-items: center;
     gap: 22px;
-    color: #e8dcc5;
-    font-family: Arial, sans-serif;
-    font-size: 15px;
-    opacity: 0.85;
 }
 
 .lightbox-controls button {
@@ -169,96 +186,43 @@ p {
     background: none;
     color: #e8dcc5;
     font-size: 32px;
-    line-height: 1;
     cursor: pointer;
-    padding: 0 4px;
 }
 
 .lightbox-controls button:hover,
-.lightbox-close:hover {
-    opacity: 1;
+.lightbox-close:hover,
+.lightbox-arrow:hover {
     color: #fff4dc;
 }
-    
-.lightbox img {
-    max-width: 88vw;
-    max-height: 82vh;
-    object-fit: contain;
-    transform-origin: center center;
-    transition: transform 0.15s ease;
-}
 
-.lightbox-controls {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    display: flex;
-    align-items: center;
-    gap: 14px;
-    color: white;
-    font-family: Arial, sans-serif;
-    font-size: 16px;
-    background: rgba(0, 0, 0, 0.45);
-    padding: 8px 12px;
-}
+@media (max-width: 800px) {
+    .article {
+        padding: 45px 22px;
+    }
 
-.lightbox-controls button {
-    width: 42px;
-    height: 42px;
-    border: 1px solid white;
-    background: rgba(0, 0, 0, 0.35);
-    color: white;
-    font-size: 24px;
-    cursor: pointer;
-}
+    h1 {
+        font-size: 2rem;
+        max-width: 100%;
+    }
 
-.lightbox-controls {
-    background: none !important;
-    border: none !important;
-    box-shadow: none !important;
-    color: rgba(232,220,197,0.75) !important;    
-    gap: 22px !important;
-}
+    .date,
+    p {
+        max-width: 100%;
+    }
 
-.lightbox-controls button {
-    border: none !important;
-    background: none !important;
-    color: #e8dcc5 !important;
-    font-size: 32px !important;
-    padding: 0 4px !important;
-}
+    .gallery.four,
+    .gallery.three {
+        grid-template-columns: 1fr;
+    }
 
-.lightbox-close {
-    color: #e8dcc5 !important;
-}
+    .gallery img {
+        height: auto;
+    }
 
-
-.lightbox-arrow {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    color: #d9cdb8;
-    cursor: pointer;
-    user-select: none;
-    z-index: 1002;
-    transition: opacity 0.2s;
+    .single {
+        max-width: 100%;
+    }
 }
-
-.lightbox-arrow:hover {
-    opacity: 0.7;
-}
-
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
-    
 </style>
 </head>
 
@@ -268,9 +232,8 @@ p {
     <a href="../../">ГрафоМанн</a>
     <a href="../">Франция</a>
 </header>
-    
+
 <div class="article">
-    
 
 <h1>Villa Savoye</h1>
 
@@ -278,103 +241,85 @@ p {
 26 августа 2025
 </div>
 
-
 <div class="single">
-    <a href="villa-savoye-01.jpg" target="_blank"><img src="villa-savoye-01.jpg"></a>
+    <a href="villa-savoye-01.jpg"><img src="villa-savoye-01.jpg" alt=""></a>
 </div>
 
-    
 <p>
-    Первое впечатление — удивление: так вот ты какая!.. Какая маленькая! На фотографиях она кажется монументальным храмом модернизма, а в жизни — лёгким домиком на тонких ножках. Я обошёл её кругом и понял: здесь всё рассчитано под человека. Высота, шаг, взгляд — всё совпадает с телом, с движением, с дыханием. Это не абстрактная геометрия, а архитектура, которая слышит тебя.
+Первое впечатление — удивление: так вот ты какая!.. Какая маленькая! На фотографиях она кажется монументальным храмом модернизма, а в жизни — лёгким домиком на тонких ножках.
 </p>
 
-<div class="gallery">
+<div class="gallery four">
+    <a href="villa-savoye-02.jpg"><img src="villa-savoye-02.jpg" alt=""></a>
+    <a href="villa-savoye-03.jpg"><img src="villa-savoye-03.jpg" alt=""></a>
+    <a href="villa-savoye-04.jpg"><img src="villa-savoye-04.jpg" alt=""></a>
+    <a href="villa-savoye-05.jpg"><img src="villa-savoye-05.jpg" alt=""></a>
 
-    <a href="villa-savoye-02.jpg" target="_blank"><img src="villa-savoye-02.jpg"></a>
-    <a href="villa-savoye-03.jpg" target="_blank"><img src="villa-savoye-03.jpg"></a>
-    <a href="villa-savoye-04.jpg" target="_blank"><img src="villa-savoye-04.jpg"></a>
-    <a href="villa-savoye-05.jpg" target="_blank"><img src="villa-savoye-05.jpg"></a>
+    <a href="villa-savoye-06.jpg"><img src="villa-savoye-06.jpg" alt=""></a>
+    <a href="villa-savoye-07.jpg"><img src="villa-savoye-07.jpg" alt=""></a>
+    <a href="villa-savoye-08.jpg"><img src="villa-savoye-08.jpg" alt=""></a>
+    <a href="villa-savoye-09.jpg"><img src="villa-savoye-09.jpg" alt=""></a>
 </div>
 
-<div class="gallery">
+<p>
+Сквозь белые колонны виден сад. Свет проходит между ними, выстраивая сцены — утро, полдень, вечер. Каждая точка зрения не случайна, каждый ракурс — часть партитуры.
+</p>
 
-    <a href="villa-savoye-07.jpg" target="_blank"><img src="villa-savoye-07.jpg"></a>
-    <a href="villa-savoye-06.jpg" target="_blank"><img src="villa-savoye-06.jpg"></a>
-    <a href="villa-savoye-08.jpg" target="_blank"><img src="villa-savoye-08.jpg"></a>
-    <a href="villa-savoye-09.jpg" target="_blank"><img src="villa-savoye-09.jpg"></a>
+<p>
+Но ритм, но игра теней, но рефлексы! И тут, наконец, приходит понимание: перед тобой не холодный формалистический эксперимент, а античный театр света.
+</p>
+
+<div class="gallery four">
+    <a href="villa-savoye-10.jpg"><img src="villa-savoye-10.jpg" alt=""></a>
+    <a href="villa-savoye-11.jpg"><img src="villa-savoye-11.jpg" alt=""></a>
+    <a href="villa-savoye-12.jpg"><img src="villa-savoye-12.jpg" alt=""></a>
+    <a href="villa-savoye-13.jpg"><img src="villa-savoye-13.jpg" alt=""></a>
+
+    <a href="villa-savoye-14.jpg"><img src="villa-savoye-14.jpg" alt=""></a>
+    <a href="villa-savoye-15.jpg"><img src="villa-savoye-15.jpg" alt=""></a>
+    <a href="villa-savoye-16.jpg"><img src="villa-savoye-16.jpg" alt=""></a>
+    <a href="villa-savoye-17.jpg"><img src="villa-savoye-17.jpg" alt=""></a>
 </div>
 
-    <p>
-     Сквозь белые колонны виден сад. Свет проходит между ними, выстраивая сцены — утро, полдень, вечер. Каждая точка зрения не случайна, каждый ракурс — часть партитуры. По ощущению — колоннада римской виллы, а на деле — просто белые столбики…
-    </p>
-    
-     <p>
-    Но ритм, но игра теней, но рефлексы! И тут, наконец, приходит понимание: перед тобой не холодный формалистический эксперимент, а античный театр света. Ле Корбюзье построил не просто дом, а современный Парфенон из бетона и воздуха.
-    </p>
-   
+<p>
+Он называл своё творение «машиной для жилья». Но машина вышла капризная: зимой холодно, летом жарко, крыша текла — жить в ней оказалось невозможно.
+</p>
 
-<div class="gallery">
+<p>
+Вилла Савой — дом, где никто не живёт, но все хотят побывать.
+</p>
 
-    <a href="villa-savoye-10.jpg" target="_blank"><img src="villa-savoye-10.jpg"></a>
-    <a href="villa-savoye-11.jpg" target="_blank"><img src="villa-savoye-11.jpg"></a>
-    <a href="villa-savoye-12.jpg" target="_blank"><img src="villa-savoye-12.jpg"></a>
-    <a href="villa-savoye-13.jpg" target="_blank"><img src="villa-savoye-13.jpg"></a>
+<div class="gallery four">
+    <a href="villa-savoye-18.jpg"><img src="villa-savoye-18.jpg" alt=""></a>
+    <a href="villa-savoye-19.jpg"><img src="villa-savoye-19.jpg" alt=""></a>
+    <a href="villa-savoye-20.jpg"><img src="villa-savoye-20.jpg" alt=""></a>
+    <a href="villa-savoye-21.jpg"><img src="villa-savoye-21.jpg" alt=""></a>
+
+    <a href="villa-savoye-22.jpg"><img src="villa-savoye-22.jpg" alt=""></a>
+    <a href="villa-savoye-23.jpg"><img src="villa-savoye-23.jpg" alt=""></a>
+    <a href="villa-savoye-24.jpg"><img src="villa-savoye-24.jpg" alt=""></a>
+    <a href="villa-savoye-25.jpg"><img src="villa-savoye-25.jpg" alt=""></a>
 </div>
 
-<div class="gallery">
-
-    <a href="villa-savoye-14.jpg" target="_blank"><img src="villa-savoye-14.jpg"></a>
-    <a href="villa-savoye-15.jpg" target="_blank"><img src="villa-savoye-15.jpg"></a>
-    <a href="villa-savoye-16.jpg" target="_blank"><img src="villa-savoye-16.jpg"></a>
-    <a href="villa-savoye-17.jpg" target="_blank"><img src="villa-savoye-17.jpg"></a>
+<div class="single final">
+    <a href="villa-savoye-34.jpg"><img src="villa-savoye-34.jpg" alt=""></a>
 </div>
-
-     <p>
-    Он называл свое творение «машиной для жилья». Но машина вышла капризная: зимой холодно, летом жарко, крыша текла — жить в ней оказалось невозможно. Семья Савой уехала, а благодарное человечество осталось. Уже почти век мы приезжаем сюда — смотреть, трогать, подниматься по пандусу, чтобы снова и снова ощутить дерзость замысла и высоту полёта.
-    </p>
-    
-     <p>
-    Вилла Савой — дом, где никто не живёт, но все хотят побывать.   
-    </p>
-    
-
-    <div class="gallery">
-
-    <a href="villa-savoye-18.jpg" target="_blank"><img src="villa-savoye-18.jpg"></a>
-    <a href="villa-savoye-19.jpg" target="_blank"><img src="villa-savoye-19.jpg"></a>
-    <a href="villa-savoye-20.jpg" target="_blank"><img src="villa-savoye-20.jpg"></a>
-    <a href="villa-savoye-21.jpg" target="_blank"><img src="villa-savoye-21.jpg"></a>
-</div>
-
-<div class="gallery">
-
-    <a href="villa-savoye-22.jpg" target="_blank"><img src="villa-savoye-22.jpg"></a>
-    <a href="villa-savoye-23.jpg" target="_blank"><img src="villa-savoye-23.jpg"></a>
-    <a href="villa-savoye-24.jpg" target="_blank"><img src="villa-savoye-24.jpg"></a>
-    <a href="villa-savoye-25.jpg" target="_blank"><img src="villa-savoye-25.jpg"></a>
-</div>
-
-
-    <div class="single">
-    <a href="villa-savoye-34.jpg" target="_blank"><img src="villa-savoye-34.jpg"></a>
-    </div>
-    
-    
 
 <div class="bottom-nav">
     <a href="#">↑ Наверх</a>
 </div>
 
+</div>
+
 <div class="lightbox" id="lightbox">
     <div class="lightbox-close" id="lightboxClose">×</div>
-
     <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
     <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
 
-<div class="lightbox-controls">
-    <button id="zoomOut">−</button>
-    <button id="zoomIn">+</button>
-</div>
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
 
     <img id="lightboxImage" src="" alt="">
 </div>
@@ -385,11 +330,12 @@ const lightboxImage = document.getElementById('lightboxImage');
 const closeButton = document.getElementById('lightboxClose');
 const zoomIn = document.getElementById('zoomIn');
 const zoomOut = document.getElementById('zoomOut');
-
 const prevImage = document.getElementById('prevImage');
 const nextImage = document.getElementById('nextImage');
 
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a'));
+const galleryLinks = Array.from(
+    document.querySelectorAll('.gallery a, .single a')
+);
 
 let currentIndex = 0;
 let scale = 1;
@@ -466,6 +412,7 @@ zoomOut.addEventListener('click', (event) => {
 
 lightboxImage.addEventListener('mousedown', (event) => {
     if (scale <= 1) return;
+
     isDragging = true;
     lightboxImage.classList.add('dragging');
     startX = event.clientX - posX;
@@ -474,6 +421,7 @@ lightboxImage.addEventListener('mousedown', (event) => {
 
 document.addEventListener('mousemove', (event) => {
     if (!isDragging) return;
+
     posX = event.clientX - startX;
     posY = event.clientY - startY;
     updateImageTransform();
@@ -510,8 +458,6 @@ document.addEventListener('keydown', (event) => {
     }
 });
 </script>
-    
+
 </body>
 </html>
-
-
