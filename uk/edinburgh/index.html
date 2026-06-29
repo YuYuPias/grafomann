@@ -1,1 +1,520 @@
-test
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Edinburgh (Northern Athens)</title>
+
+<style>
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    background: #f7f3ed;
+    color: #222;
+    line-height: 1.8;
+}
+
+.article-nav {
+    max-width: 1100px;
+    margin: 30px auto 0;
+    padding: 0 40px;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 60px 40px;
+}
+
+h1 {
+    max-width: 1000px;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0 auto 25px auto;
+    color: #555;
+}
+
+.date {
+    max-width: 1000px;
+    margin: 0 auto 32px auto;
+    color: #888;
+    font-size: 14px;
+}
+
+p {
+    max-width: 1000px;
+    font-size: 1.15rem;
+    margin: 0 auto 22px auto;
+    color: #555;
+}
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    margin: 45px 0;
+}
+
+.gallery.two {
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.gallery.three {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.four {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery img {
+    width: 100%;
+    height: 260px;
+    object-fit: cover;
+    display: block;
+}
+
+/* первая пара без обрезки */
+.gallery.intro-pair {
+    max-width: 1000px;
+    margin: 40px auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 12px;
+}
+
+
+.single {
+    text-align: center;
+    margin: 45px 0;
+}
+
+.single img {
+    max-width: 1000px;
+    width: 100%;
+    height: auto;
+    display: inline-block;
+}
+
+.gallery.mixed-pair {
+    max-width: 1000px;
+    margin: 45px auto 50px auto;
+    display: grid;
+    grid-template-columns: 0.72fr 1.28fr;
+    gap: 10px;
+    align-items: stretch;
+}
+
+.gallery.mixed-pair a {
+    display: block;
+}
+
+.gallery.mixed-pair img {
+    width: 100%;
+    height: 430px;
+    object-fit: cover;
+    display: block;
+}
+
+.gallery.mixed-pair .vertical img {
+    object-position: center center;
+}
+
+.gallery.mixed-pair .horizontal img {
+    object-position: center center;
+}
+
+@media (max-width: 800px) {
+    .gallery.mixed-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery.mixed-pair img {
+        height: auto;
+    }
+}
+
+.gallery.exhibit {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.exhibit img {
+    height: 190px;
+    object-fit: cover;
+}
+
+  
+.bottom-nav {
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.lightbox {
+    display: none;
+    position: fixed;
+    z-index: 9999;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.96);
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.lightbox.active {
+    display: flex;
+}
+
+.lightbox img {
+    max-width: 90vw;
+    max-height: 88vh;
+    object-fit: contain;
+    transform-origin: center center;
+    cursor: grab;
+    user-select: none;
+    -webkit-user-drag: none;
+}
+
+.lightbox img.dragging {
+    cursor: grabbing;
+}
+
+.lightbox-close {
+    position: fixed;
+    top: 22px;
+    right: 28px;
+    color: #e8dcc5;
+    font-size: 30px;
+    cursor: pointer;
+    z-index: 10002;
+}
+
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    font-size: 48px;
+    color: #d9cdb8;
+    cursor: pointer;
+    user-select: none;
+    z-index: 10002;
+}
+
+.lightbox-prev {
+    left: 30px;
+}
+
+.lightbox-next {
+    right: 30px;
+}
+
+.lightbox-controls {
+    position: fixed;
+    bottom: 28px;
+    left: 50%;
+    transform: translateX(-50%);
+    z-index: 10001;
+    display: flex;
+    gap: 22px;
+}
+
+.lightbox-controls button {
+    border: none;
+    background: none;
+    color: #e8dcc5;
+    font-size: 32px;
+    cursor: pointer;
+}
+
+@media (max-width: 800px) {
+    .article {
+        padding: 40px 22px;
+    }
+
+    h1 {
+        font-size: 2rem;
+    }
+
+    .gallery.two,
+    .gallery.three,
+    .gallery.four,
+    .gallery.intro-pair {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery img {
+        height: auto;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="article-nav">
+    <a href="../../">ГрафоМанн</a>
+    <a href="../">Великобритания</a>
+</header>
+
+<div class="article">
+
+<h1>Edinburgh (Northern Athens)</h1>
+<div class="date">3 апреля 2025</div>
+
+<p>
+<i>Собираясь покинуть Англию навсегда, я не мог его не посетить. Всего-то четыре часа езды тремя поездами из Clitheroe - и ты на месте.. И в каком!</i>
+</p>
+
+<div class="gallery intro-pair">
+      <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+      <a href="edinburgh-02.jpg"><img src="edinburgh-02.jpg"></a>
+</div>
+  
+<p>    
+Если размножить картинку с Ласточкиным гнездом, и порезвившись в графическом редакторе, все как следует перемешать - получится что-то похожее.. Сюрреалистический город, знающий толк в foolish architecture..
+</p>
+
+<p>
+Когда поезд выныривает из тоннеля перед вокзалом Waverley, то с обеих сторон нависают странноватые здания и нужно задирать голову, чтобы их рассмотреть, так как линия железной дороги проложена по дну оврага.
+</p>
+
+<p>
+А дальше - больше. Выйдя на Princes street, видишь слева большую черную готическую стелу с белым мраморным мужчиной, расположившемся внутри, а справа поодаль - холм с дорической колоннадой, напоминающей храм Посейдона на мысе Сунион. 
+</p
+
+<p>
+Своеобразный город.. И если его старая часть походит на йеменский Шибам, то новая - плод амбициозных фантазий на тему античности. А расположены они совсем рядом - через овраг, где, как я уже сказал, проходит железная дорога, - своеобразный шмуцтитул между Ветхим и Новым Заветом.. 
+</p
+
+<p>
+Бродя бессистемно (а системно тут даже локалсы не бродят), все время натыкаешься то на маленькие садики (jardin clos), таящиеся в глубине кварталов, то на древние полумертвые кладбища с некогда знаменитыми постояльцами.. 
+</p
+
+<p>
+А, вот еще что! Над городом царит и парит средневековая крепость, оседлавшая самый высокий холм и потому видимая отовсюду. Ежедневно, ровно в час дня она производит пушечный залп, оповещая всех присутствующих, включая корабли на рейде, что наступил час дня. Этой традиции может четыреста, а может пятьсот лет, и приятно, что она до сих пор существует. Звук похож на хлопок шампанского, и я бы ни за что не догадался что это, если б не прочитал раньше в путеводителе. 
+</p
+
+<p>
+Что ещё? Кресенты! Роскошные таунхаусы двумя полумесяцами обрамляющие площади в Вест-энде. В сравнении с ними обычные таунхаусы выглядят собачьими будками. Здесь они все трехэтажные с высотой потолков три, а то и все четыре метра.. А окна! Огромные эркерные окна, за которыми вы не увидите обычный китчевый скарб родом из YMCA. В окнах здесь живут орхидеи, томно мерцающие на фоне темных интерьеров, сеты для виски с хрустальными графинами, отсвечивающие тусклым золотом парчовые ткани, небрежно наброшенные на спинки кресел.. Чувствуется, здесь понимают толк в вещах, а каждая такая квартира - дворец, упакованный в кондоминиум. 
+</p
+
+<p>
+Но вернёмся на площадь с двумя полумесяцами. Ее большую часть занимает овальный сквер с ухоженными газонами, экзотическими растениями, цветниками и прихотливо извивающимися дорожками. Но сквер огорожен и калитки все на запоре: этот парадиз - только для обитателей креденса. 
+</p
+
+<p>
+Пройдя несколько дальше и спустившись под мост, можно обнаружить узкую речку, на которой, тем не менее, лет триста назад дружно крутили колесами несколько десятков водяных мельниц. Это - Dean Village, место крайне неблагополучное в недалеком прошлом и крайне престижное сегодня. Регенерация с реставрацией придали ему неизбывные черты кукольного городка, где диснеевские герои были бы самым уместным народонаселением.. 
+</p
+
+<p>
+А ещё - обсерватория. Построенная в виде античного храма на холме Кэлтон, она воплощает драму выживания бескорыстной науки в условиях меркантильного мира. Ей всегда не хватало денег. Триста лет переходя из рук в руки, она оказалась наконец в распоряжении Центра современного искусства "Коллектив", торгующего сувенирами в бывшем святилище науки. Слепой телескоп, беспомощно уставившийся в небо, добавляет впечатления. 
+</p
+
+<p>
+Тут же рядом - Национальный монумент Шотландии, он же "Позор Эдинбурга", он же "Эдинбургская блажь". Я говорю про дорическую колоннаду, напоминающую руины храма Посейдона, которая так удивила меня своей экстраординарностью на выходе из вокзала Ваверлей. Это памятник шотландским воинам, погибшим в наполеоновских войнах. Проект Северного Парфенона, начинавшийся с большой помпой, так и остался недовершенным. Просто кончились деньги. 
+</p
+
+<p>
+Так и стоят они друг против друга - Обсерватория и Монумент - потерявшие свои первоначальные смыслы, но ставшие туристическими достопримечательностями..
+</p
+
+<p>
+А, ещё, чуть не забыл сказать! С Calton Hill открывается чудесный вид на город и далекое Северное море. Море! Я всегда хотел увидеть его - море, открытое сразу двум океанам. И вот в последний день в Эдинбурге я отправился в Portobello - популярный курорт шотландского среднего класса.. Было пасмурно и малолюдно на двухкилометровом променаде. Казалось, здесь вообще не бывает пляжных сезонов. Я подошёл к самой кромке воды и увидел, как черно-бурые волны лижут крупнозернистый песок. Орали чайки и все вокруг было очень депрессивно. - "Таким и должно быть Северное море, - подумал я, - суровым и нелюдимым". 
+</p
+
+<p>
+И тут произошло метеорологические чудо: небо расчистилось в пятнадцать минут и выглянуло солнце. Вода стала ослепительно лазурной. На променаде появились люди - с собаками и колясками. Я сидел на лавочке у самой воды, завороженно наблюдая этот великолепный спектакль. И никуда не хотел уходить..
+</p
+
+ 
+  
+
+<div class="gallery exhibit">
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+</div>
+
+  
+
+<div class="single">
+    <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
+</div>
+
+
+
+    
+    
+<div class="bottom-nav">
+    <a href="#">↑ Наверх</a>
+</div>
+
+</div>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <img id="lightboxImage" src="" alt="">
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
+</div>
+
+<script>
+const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
+const lightbox = document.getElementById('lightbox');
+const lightboxImage = document.getElementById('lightboxImage');
+const closeButton = document.getElementById('lightboxClose');
+const zoomIn = document.getElementById('zoomIn');
+const zoomOut = document.getElementById('zoomOut');
+const prevImage = document.getElementById('prevImage');
+const nextImage = document.getElementById('nextImage');
+
+let currentIndex = 0;
+let scale = 1;
+let posX = 0;
+let posY = 0;
+let isDragging = false;
+let startX = 0;
+let startY = 0;
+
+function updateImageTransform() {
+    lightboxImage.style.transform =
+        `translate(${posX}px, ${posY}px) scale(${scale})`;
+}
+
+function resetView() {
+    scale = 1;
+    posX = 0;
+    posY = 0;
+    updateImageTransform();
+}
+
+function showImage(index) {
+    currentIndex = index;
+
+    if (currentIndex < 0) {
+        currentIndex = galleryLinks.length - 1;
+    }
+
+    if (currentIndex >= galleryLinks.length) {
+        currentIndex = 0;
+    }
+
+    lightboxImage.src = galleryLinks[currentIndex].href;
+    resetView();
+    lightbox.classList.add('active');
+}
+
+galleryLinks.forEach((link, index) => {
+    link.addEventListener('click', function(event) {
+        event.preventDefault();
+        showImage(index);
+    });
+});
+
+nextImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex + 1);
+});
+
+prevImage.addEventListener('click', (event) => {
+    event.stopPropagation();
+    showImage(currentIndex - 1);
+});
+
+zoomIn.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale < 4) {
+        scale += 0.5;
+        updateImageTransform();
+    }
+});
+
+zoomOut.addEventListener('click', (event) => {
+    event.stopPropagation();
+    if (scale > 1) {
+        scale -= 0.5;
+        if (scale === 1) {
+            posX = 0;
+            posY = 0;
+        }
+        updateImageTransform();
+    }
+});
+
+lightboxImage.addEventListener('mousedown', (event) => {
+    if (scale <= 1) return;
+    isDragging = true;
+    lightboxImage.classList.add('dragging');
+    startX = event.clientX - posX;
+    startY = event.clientY - posY;
+});
+
+document.addEventListener('mousemove', (event) => {
+    if (!isDragging) return;
+    posX = event.clientX - startX;
+    posY = event.clientY - startY;
+    updateImageTransform();
+});
+
+document.addEventListener('mouseup', () => {
+    isDragging = false;
+    lightboxImage.classList.remove('dragging');
+});
+
+closeButton.addEventListener('click', () => {
+    lightbox.classList.remove('active');
+});
+
+lightbox.addEventListener('click', (event) => {
+    if (event.target === lightbox) {
+        lightbox.classList.remove('active');
+    }
+});
+
+document.addEventListener('keydown', (event) => {
+    if (!lightbox.classList.contains('active')) return;
+
+    if (event.key === 'Escape') {
+        lightbox.classList.remove('active');
+    }
+
+    if (event.key === 'ArrowRight') {
+        showImage(currentIndex + 1);
+    }
+
+    if (event.key === 'ArrowLeft') {
+        showImage(currentIndex - 1);
+    }
+});
+</script>
+
+</body>
+</html>
+
+
+
+
