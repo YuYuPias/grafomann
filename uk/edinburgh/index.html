@@ -16,9 +16,9 @@ body {
 }
 
 .article-nav {
-    max-width: 1100px;
+    max-width: 900px;
     margin: 30px auto 0;
-    padding: 0 40px;
+    padding: 0 20px;
 }
 
 .article-nav a {
@@ -28,35 +28,37 @@ body {
     font-size: 0.9rem;
 }
 
-CSS
-
 .post {
     max-width: 900px;
     margin: 0 auto;
-    padding: 0 20px;
+    padding: 55px 20px 40px;
 }
 
 .post h1 {
-    text-align: left;
-    margin: 60px 0 35px;
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 34px 0;
+    color: #555;
 }
 
 .post .date {
-    text-align: left;
-    margin-bottom: 40px;
+    margin: 0 0 36px 0;
     color: #888;
+    font-size: 14px;
 }
 
 .post p {
-    text-align: left;
-    margin: 0 0 28px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 20px 0;
+    color: #555;
 }
 
 .gallery {
     display: grid;
     gap: 10px;
-    max-width: 1000px;
-    margin: 42px auto;
+    margin: 42px 0;
 }
 
 .gallery a,
@@ -85,12 +87,10 @@ CSS
 }
 
 .gallery.intro-pair {
-    max-width: 1000px;
-    margin: 40px auto 36px auto;
-    display: grid;
     grid-template-columns: 1fr 1fr;
     gap: 12px;
     align-items: start;
+    margin: 40px 0 36px 0;
 }
 
 .gallery.intro-pair img {
@@ -102,7 +102,7 @@ CSS
 
 .single {
     max-width: 900px;
-    margin: 55px auto;
+    margin: 55px 0;
 }
 
 .single img {
@@ -115,7 +115,7 @@ CSS
     grid-template-columns: 0.72fr 1.28fr;
     gap: 10px;
     align-items: stretch;
-    margin: 50px auto 60px auto;
+    margin: 50px 0 60px 0;
 }
 
 .gallery.mixed-pair img {
@@ -211,18 +211,16 @@ CSS
 }
 
 @media (max-width: 800px) {
-    .article {
+    .article-nav {
+        padding: 0 22px;
+    }
+
+    .post {
         padding: 40px 22px;
     }
 
-    h1 {
+    .post h1 {
         font-size: 2rem;
-    }
-
-    h1,
-    .date,
-    p {
-        max-width: 100%;
     }
 
     .gallery.two,
@@ -307,7 +305,6 @@ CSS
     <a href="edinburgh-12.jpg" class="horizontal"><img src="edinburgh-12.jpg"></a>
 </div>
 
-
 <div class="gallery exhibit">
     <a href="edinburgh-14.jpg"><img src="edinburgh-14.jpg"></a>
     <a href="edinburgh-15.jpg"><img src="edinburgh-15.jpg"></a>
@@ -320,12 +317,10 @@ CSS
     <a href="edinburgh-19.jpg"><img src="edinburgh-19.jpg"></a>
 </div>
 
-
 <div class="single">
     <a href="edinburgh-23.jpg"><img src="edinburgh-23.jpg"></a>
 </div>
 
-    
 <div class="gallery exhibit">
     <a href="edinburgh-25.jpg"><img src="edinburgh-25.jpg"></a>
     <a href="edinburgh-29.jpg"><img src="edinburgh-29.jpg"></a>
@@ -335,13 +330,10 @@ CSS
     <a href="edinburgh-32.jpg"><img src="edinburgh-32.jpg"></a>
 </div>
 
-
 <div class="gallery intro-pair">    
     <a href="edinburgh-33.jpg"><img src="edinburgh-33.jpg"></a>
     <a href="edinburgh-34.jpg"><img src="edinburgh-34.jpg"></a>
-
 </div>
-
 
 <div class="gallery exhibit">
     <a href="edinburgh-35.jpg"><img src="edinburgh-35.jpg"></a>
@@ -353,13 +345,11 @@ CSS
     <a href="edinburgh-41.jpg"><img src="edinburgh-41.jpg"></a>
     <a href="edinburgh-42.jpg"><img src="edinburgh-42.jpg"></a>
     <a href="edinburgh-43.jpg"><img src="edinburgh-43.jpg"></a>
-
 </div>
 
 <div class="single">
     <a href="edinburgh-44.jpg"><img src="edinburgh-44.jpg"></a>
 </div>
-
 
 <div class="gallery exhibit">
     <a href="edinburgh-45.jpg"><img src="edinburgh-45.jpg"></a>
@@ -374,12 +364,6 @@ CSS
     <a href="edinburgh-51.jpg"><img src="edinburgh-51.jpg"></a>
 </div>
 
-
-<br>
-<br>
-<br>    
-
-    
 <div class="bottom-nav">
     <a href="#">↑ Наверх</a>
 </div>
