@@ -34,27 +34,26 @@ body {
     padding: 60px 40px;
 }
 
-h1 {
-    max-width: 850px;
-    margin: 0 auto 55px auto;
-    font-size: 3rem;
-    font-weight: normal;
-    color: #555;
+.post {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 0 20px;
 }
 
-.date {
-    max-width: 850px;
-    margin: 0 auto 45px auto;
+.post h1 {
+    text-align: left;
+    margin: 60px 0 35px;
+}
+
+.post .date {
+    text-align: left;
+    margin-bottom: 40px;
     color: #888;
-    font-size: 14px;
 }
 
-p {
-    max-width: 950px;
-    margin: 0 auto 28px auto;
-    font-size: 1.12rem;
-    line-height: 1.65;
-    color: #555;
+.post p {
+    text-align: left;
+    margin: 0 0 28px;
 }
 
 .gallery {
@@ -245,7 +244,7 @@ p {
     <a href="../">Великобритания</a>
 </header>
 
-<div class="article">
+<div class="post">
 
 <h1>Город и Природа (Clitheroe)</h1>
 
@@ -320,7 +319,7 @@ Clitheroe лежит в долине реки Ribble. Говоря "долина
 
     <img id="lightboxImage" src="" alt="">
 </div>
-
+</div>    
 <script>
 const lightbox = document.getElementById('lightbox');
 const lightboxImage = document.getElementById('lightboxImage');
