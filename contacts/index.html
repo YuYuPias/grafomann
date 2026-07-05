@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Контакты — ГрафоМанн</title>
+
+<style>
+body {
+    margin: 0;
+    background: #f7f4ef;
+    color: #222;
+    font-family: Helvetica, Arial, sans-serif;
+}
+
+.header {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 70px 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
+.site-title {
+    font-size: 2rem;
+    color: #666;
+    text-decoration: none;
+}
+
+.nav a {
+    margin-left: 28px;
+    color: #666;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.nav a.active {
+    color: #c7772a;
+}
+
+.content {
+    max-width: 720px;
+    margin: 130px auto 0;
+    padding: 0 40px 80px;
+}
+
+h1 {
+    font-size: 2.4rem;
+    font-weight: normal;
+    margin: 0 0 55px;
+}
+
+p {
+    font-size: 1.15rem;
+    line-height: 1.75;
+    margin: 0 0 28px;
+}
+
+a {
+    color: #666;
+    text-decoration: none;
+}
+
+a:hover {
+    color: #c7772a;
+}
+
+@media (max-width: 700px) {
+    .header {
+        padding: 45px 24px 0;
+        display: block;
+    }
+
+    .nav {
+        margin-top: 24px;
+    }
+
+    .nav a {
+        margin-left: 0;
+        margin-right: 22px;
+    }
+
+    .content {
+        margin-top: 80px;
+        padding: 0 24px 60px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<header class="header">
+    <a class="site-title" href="../">ГрафоМанн</a>
+
+    <nav class="nav">
+        <a href="../about/">О проекте</a>
+        <a href="../contacts/" class="active">Контакты</a>
+    </nav>
+</header>
+
+<main class="content">
+    <h1>Контакты</h1>
+
+    <p>
+        <a href="https://www.facebook.com/yury.piaskovsky/" target="_blank">
+            Facebook
+        </a>
+    </p>
+</main>
+
+</body>
+</html>
