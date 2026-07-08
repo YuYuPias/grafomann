@@ -1,0 +1,99 @@
+/* =========================================
+   GRAFOMANN — ARTICLES
+   Структура и типографика статей
+========================================= */
+
+/* ARTICLE NAV */
+
+.article-nav {
+    max-width: 1020px;
+    height: auto;
+    margin: 30px 0 0 210px;
+    padding: 0 40px;
+    display: block;
+    background: transparent;
+    border-bottom: none;
+}
+
+.article-nav a {
+    color: #666;
+    text-decoration: none;
+    margin-right: 20px;
+    font-size: 0.9rem;
+}
+
+.article-nav a:hover {
+    text-decoration: underline;
+}
+
+/* ARTICLE LAYOUT */
+
+.article {
+    max-width: 1100px;
+    margin: 0 0 0 210px;
+    padding: 60px 40px;
+}
+
+/* TYPOGRAPHY */
+
+.article h1 {
+    max-width: 920px;
+    font-size: 3rem;
+    font-weight: normal;
+    margin: 0 0 25px 0;
+    color: #555;
+}
+
+.article p {
+    max-width: 920px;
+    font-size: 1.15rem;
+    line-height: 1.45;
+    margin: 0 0 16px 0;
+    color: #555;
+}
+
+.section-title {
+    max-width: 920px;
+    margin: 40px 0 18px;
+    font-size: 1.45rem;
+    font-weight: normal;
+    color: #444;
+}
+
+.date {
+    max-width: 920px;
+    margin: 0 0 32px 0;
+    color: #888;
+    font-size: 14px;
+}
+
+/* BOTTOM NAV */
+
+.bottom-nav {
+    text-align: center;
+    margin: 80px 0 40px 0;
+}
+
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+    .article-nav {
+        margin: 20px 0 0 0;
+        padding: 0 22px;
+    }
+
+    .article {
+        margin: 0;
+        padding: 40px 22px;
+    }
+
+    .article h1 {
+        font-size: 2rem;
+    }
+}

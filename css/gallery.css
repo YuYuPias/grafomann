@@ -1,0 +1,171 @@
+/* =========================================
+   GRAFOMANN — GALLERY SYSTEM
+   Визуальный словарь сайта
+========================================= */
+
+/*
+Фотографии на ГрафоМанне не иллюстрируют текст.
+Они являются его абзацами.
+
+Поэтому композиция не должна разрушаться
+ни на большом экране, ни на телефоне.
+
+CSS описывает форму.
+Роль фотографии определяется ее местом в рассказе.
+
+Основные классы:
+
+.gallery single         — одна фотография
+.gallery diptych        — две фотографии
+.gallery triptych       — три фотографии
+.gallery quartet        — четыре фотографии
+.gallery contact-sheet  — серия кадров, контактный лист
+
+Дополнительные классы:
+
+.contain — показать изображение целиком
+.cover   — заполнить кадр с обрезкой
+
+.hh — горизонталь + горизонталь
+.vv — вертикаль + вертикаль
+.hv — горизонталь + вертикаль
+.vh — вертикаль + горизонталь
+*/
+
+/* =========================================
+   ОСНОВА
+========================================= */
+
+.gallery {
+    display: grid;
+    gap: 10px;
+    margin: 55px 0;
+    max-width: 1000px;
+}
+
+.gallery a {
+    display: block;
+}
+
+.gallery img {
+    width: 100%;
+    display: block;
+}
+
+/* =========================================
+   SINGLE
+========================================= */
+
+.gallery.single {
+    display: block;
+    margin: 55px 0;
+}
+
+.gallery.single img {
+    width: 100%;
+    height: auto;
+}
+
+/* =========================================
+   DIPTYCH
+========================================= */
+
+.gallery.diptych {
+    margin: 40px auto;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 12px;
+}
+
+.gallery.diptych img {
+    width: 100%;
+}
+
+/* обычный диптих: изображения целиком */
+.gallery.diptych.contain img,
+.gallery.diptych.hh img,
+.gallery.diptych.vv img {
+    height: auto;
+    object-fit: contain;
+}
+
+/* смешанные диптихи */
+.gallery.diptych.hv {
+    grid-template-columns: 1.6fr 1fr;
+}
+
+.gallery.diptych.vh {
+    grid-template-columns: 1fr 1.6fr;
+}
+
+.gallery.diptych.hv img,
+.gallery.diptych.vh img {
+    height: 360px;
+    object-fit: cover;
+}
+
+/* =========================================
+   TRIPTYCH
+========================================= */
+
+.gallery.triptych {
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.triptych img {
+    height: 220px;
+    object-fit: cover;
+}
+
+
+/* =========================================
+   QUARTET
+========================================= */
+
+.gallery.quartet {
+    grid-template-columns: repeat(4, 1fr);
+}
+
+.gallery.quartet img {
+    height: 170px;
+    object-fit: cover;
+}
+
+/* =========================================
+   CONTACT SHEET
+========================================= */
+
+.gallery.contact-sheet {
+    margin: 45px auto;
+    grid-template-columns: repeat(3, 1fr);
+}
+
+.gallery.contact-sheet img {
+    height: 190px;
+    object-fit: cover;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+    .gallery {
+        gap: 8px;
+        margin: 34px 0;
+    }
+
+    .gallery.single,
+    .gallery.diptych,
+    .gallery.contact-sheet {
+        max-width: 100%;
+    }
+
+    .gallery.quartet {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .gallery.diptych.hv img,
+    .gallery.diptych.vh img {
+        height: auto;
+    }
+}
