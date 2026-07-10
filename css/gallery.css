@@ -58,7 +58,8 @@ CSS описывает форму.
 
 .gallery.single {
     display: block;
-    margin: 55px 0;
+    max-width: 900px;
+    margin: 55px auto;
 }
 
 .gallery.single img {
@@ -144,6 +145,10 @@ CSS описывает форму.
     object-fit: cover;
 }
 
+.post.wide .gallery.single {
+    max-width: 1000px;
+}
+
 /* =========================================
    MOBILE
 ========================================= */
@@ -160,15 +165,38 @@ CSS описывает форму.
         max-width: 100%;
     }
 
-    .gallery.quartet {
-        grid-template-columns: repeat(2, 1fr);
+    /* обычные диптихи остаются парами */
+
+    .gallery.diptych.hv,
+    .gallery.diptych.vh {
+        grid-template-columns: 1fr;
     }
 
     .gallery.diptych.hv img,
     .gallery.diptych.vh img {
         height: auto;
     }
+
+    .gallery.contact-sheet {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .gallery.contact-sheet img {
+        height: 120px;
+        object-fit: cover;
+    }
+
+    .gallery.quartet {
+        grid-template-columns: repeat(2, 1fr);
+    }
 }
+
+/* CONTACT SHEET
+   Контактный лист сохраняет структуру 3×N
+   даже на мобильных устройствах.
+   Это не обычная галерея, а единый визуальный блок.
+*/
+
 
 /* =========================================
    WIDTH MODIFIERS

@@ -80,6 +80,50 @@
     font-size: 0.9rem;
 }
 
+.post {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 55px 20px 40px;
+}
+
+.post h1 {
+    max-width: 900px;
+    font-size: 3rem;
+    font-weight: normal;
+    line-height: 1.2;
+    margin: 0 0 34px;
+    color: #555;
+    text-align: left;
+}
+
+.post .date {
+    max-width: 900px;
+    margin: 0 0 36px;
+    color: #888;
+    font-size: 14px;
+    text-align: left;
+}
+
+.post p {
+    max-width: 900px;
+    font-size: 1.05rem;
+    line-height: 1.65;
+    margin: 0 0 20px;
+    color: #555;
+    text-align: left;
+}
+
+@media (max-width: 800px) {
+    .post {
+        padding: 40px 22px;
+    }
+
+    .post h1 {
+        font-size: 2rem;
+    }
+}
+
+
 /* MOBILE */
 
 @media (max-width: 800px) {
@@ -96,4 +140,16 @@
     .article h1 {
         font-size: 2rem;
     }
+}
+
+/* Широкий вариант статьи */
+
+.post.wide {
+    max-width: 1000px;
+}
+
+.post.wide h1,
+.post.wide .date,
+.post.wide p {
+    max-width: 1000px;
 }

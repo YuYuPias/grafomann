@@ -6,245 +6,10 @@
 
 <title>Edinburgh (Northern Athens)</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ed;
-    color: #222;
-    line-height: 1.8;
-}
-
-.article-nav {
-    max-width: 900px;
-    margin: 30px auto 0;
-    padding: 0 20px;
-}
-
-.article-nav a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.9rem;
-}
-
-.post {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 55px 20px 40px;
-}
-
-.post h1 {
-    max-width: 900px;
-    font-size: 3rem;
-    font-weight: normal;
-    line-height: 1.2;
-    margin: 0 0 34px 0;
-    color: #555;
-    text-align: left;
-}
-
-.post .date {
-    max-width: 900px;
-    margin: 0 0 36px 0;
-    color: #888;
-    font-size: 14px;
-    text-align: left;
-}
-
-.post p {
-    max-width: 900px;
-    font-size: 1.05rem;
-    line-height: 1.65;
-    margin: 0 0 20px 0;
-    color: #555;
-    text-align: left;
-}
-
-.gallery {
-    display: grid;
-    gap: 10px;
-    margin: 42px 0;
-}
-
-.gallery a,
-.single a {
-    display: block;
-}
-
-.gallery.two {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery.three,
-.gallery.exhibit {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery.four {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery.intro-pair {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    align-items: start;
-    margin: 40px 0 36px 0;
-}
-
-.gallery.intro-pair img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-.single {
-    max-width: 900px;
-    margin: 55px 0;
-}
-
-.single img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.gallery.mixed-pair {
-    grid-template-columns: 0.72fr 1.28fr;
-    gap: 10px;
-    align-items: stretch;
-    margin: 50px 0 60px 0;
-}
-
-.gallery.mixed-pair img {
-    height: 430px;
-    object-fit: cover;
-}
-
-.bottom-nav {
-    text-align: center;
-    margin: 80px 0 40px 0;
-}
-
-.bottom-nav a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.96);
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 90vw;
-    max-height: 88vh;
-    object-fit: contain;
-    transform-origin: center center;
-    cursor: grab;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.lightbox img.dragging {
-    cursor: grabbing;
-}
-
-.lightbox-close {
-    position: fixed;
-    top: 22px;
-    right: 28px;
-    color: #e8dcc5;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 10002;
-}
-
-.lightbox-arrow {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    color: #d9cdb8;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10002;
-}
-
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
-
-.lightbox-controls {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    display: flex;
-    gap: 22px;
-}
-
-.lightbox-controls button {
-    border: none;
-    background: none;
-    color: #e8dcc5;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-@media (max-width: 800px) {
-    .article-nav {
-        padding: 0 22px;
-    }
-
-    .post {
-        padding: 40px 22px;
-    }
-
-    .post h1 {
-        font-size: 2rem;
-    }
-
-    .gallery.two,
-    .gallery.three,
-    .gallery.four,
-    .gallery.exhibit,
-    .gallery.intro-pair,
-    .gallery.mixed-pair {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img,
-    .gallery.intro-pair img,
-    .gallery.mixed-pair img {
-        height: auto;
-    }
-}
-</style>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/gallery.css">
+<link rel="stylesheet" href="../../css/lightbox.css">
 </head>
 
 <body>
@@ -261,7 +26,7 @@ body {
 
 <p><i>Собираясь покинуть Англию навсегда, я не мог его не посетить. Всего-то четыре часа езды тремя поездами из Clitheroe — и ты на месте... И в каком!</i></p>
 
-<div class="gallery intro-pair">
+<div class="gallery diptych contain">
     <a href="edinburgh-01.jpg"><img src="edinburgh-01.jpg"></a>
     <a href="edinburgh-02.jpg"><img src="edinburgh-02.jpg"></a>
 </div>
@@ -294,7 +59,7 @@ body {
 
 <p>И тут произошло метеорологическое чудо: небо расчистилось в пятнадцать минут и выглянуло солнце. Вода стала ослепительно лазурной. На променаде появились люди — с собаками и колясками. Я сидел на лавочке у самой воды, завороженно наблюдая этот великолепный спектакль. И никуда не хотел уходить...</p>
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="edinburgh-03.jpg"><img src="edinburgh-03.jpg"></a>
     <a href="edinburgh-04.jpg"><img src="edinburgh-04.jpg"></a>
     <a href="edinburgh-05.jpg"><img src="edinburgh-05.jpg"></a>
@@ -306,12 +71,12 @@ body {
     <a href="edinburgh-11.jpg"><img src="edinburgh-11.jpg"></a>
 </div>
 
-<div class="gallery mixed-pair">
+<div class="gallery diptych vh">
     <a href="edinburgh-13.jpg" class="vertical"><img src="edinburgh-13.jpg"></a>
     <a href="edinburgh-12.jpg" class="horizontal"><img src="edinburgh-12.jpg"></a>
 </div>
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="edinburgh-14.jpg"><img src="edinburgh-14.jpg"></a>
     <a href="edinburgh-15.jpg"><img src="edinburgh-15.jpg"></a>
     <a href="edinburgh-16.jpg"><img src="edinburgh-16.jpg"></a>
@@ -323,11 +88,11 @@ body {
     <a href="edinburgh-19.jpg"><img src="edinburgh-19.jpg"></a>
 </div>
 
-<div class="single">
+<div class="gallery single">
     <a href="edinburgh-23.jpg"><img src="edinburgh-23.jpg"></a>
 </div>
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="edinburgh-25.jpg"><img src="edinburgh-25.jpg"></a>
     <a href="edinburgh-29.jpg"><img src="edinburgh-29.jpg"></a>
     <a href="edinburgh-28.jpg"><img src="edinburgh-28.jpg"></a>
@@ -336,12 +101,12 @@ body {
     <a href="edinburgh-32.jpg"><img src="edinburgh-32.jpg"></a>
 </div>
 
-<div class="gallery intro-pair">    
+<div class="gallery diptych contain">    
     <a href="edinburgh-33.jpg"><img src="edinburgh-33.jpg"></a>
     <a href="edinburgh-34.jpg"><img src="edinburgh-34.jpg"></a>
 </div>
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="edinburgh-35.jpg"><img src="edinburgh-35.jpg"></a>
     <a href="edinburgh-36.jpg"><img src="edinburgh-36.jpg"></a>
     <a href="edinburgh-37.jpg"><img src="edinburgh-37.jpg"></a>
@@ -353,11 +118,11 @@ body {
     <a href="edinburgh-43.jpg"><img src="edinburgh-43.jpg"></a>
 </div>
 
-<div class="single">
+<div class="gallery single">
     <a href="edinburgh-44.jpg"><img src="edinburgh-44.jpg"></a>
 </div>
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="edinburgh-45.jpg"><img src="edinburgh-45.jpg"></a>
     <a href="edinburgh-46.jpg"><img src="edinburgh-46.jpg"></a>
     <a href="edinburgh-47.jpg"><img src="edinburgh-47.jpg"></a>
@@ -366,7 +131,7 @@ body {
     <a href="edinburgh-50.jpg"><img src="edinburgh-50.jpg"></a>
 </div>
 
-<div class="single">
+<div class="gallery single">
     <a href="edinburgh-51.jpg"><img src="edinburgh-51.jpg"></a>
 </div>
 
@@ -387,122 +152,7 @@ body {
     </div>
 </div>
 
-<script>
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-const closeButton = document.getElementById('lightboxClose');
-const zoomIn = document.getElementById('zoomIn');
-const zoomOut = document.getElementById('zoomOut');
-const prevImage = document.getElementById('prevImage');
-const nextImage = document.getElementById('nextImage');
-
-let currentIndex = 0;
-let scale = 1;
-let posX = 0;
-let posY = 0;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
-
-function updateImageTransform() {
-    lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function resetView() {
-    scale = 1;
-    posX = 0;
-    posY = 0;
-    updateImageTransform();
-}
-
-function showImage(index) {
-    currentIndex = index;
-
-    if (currentIndex < 0) currentIndex = galleryLinks.length - 1;
-    if (currentIndex >= galleryLinks.length) currentIndex = 0;
-
-    lightboxImage.src = galleryLinks[currentIndex].href;
-    resetView();
-    lightbox.classList.add('active');
-}
-
-galleryLinks.forEach((link, index) => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        showImage(index);
-    });
-});
-
-nextImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex + 1);
-});
-
-prevImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex - 1);
-});
-
-zoomIn.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale < 4) {
-        scale += 0.5;
-        updateImageTransform();
-    }
-});
-
-zoomOut.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale > 1) {
-        scale -= 0.5;
-        if (scale === 1) {
-            posX = 0;
-            posY = 0;
-        }
-        updateImageTransform();
-    }
-});
-
-lightboxImage.addEventListener('mousedown', (event) => {
-    if (scale <= 1) return;
-    isDragging = true;
-    lightboxImage.classList.add('dragging');
-    startX = event.clientX - posX;
-    startY = event.clientY - posY;
-});
-
-document.addEventListener('mousemove', (event) => {
-    if (!isDragging) return;
-    posX = event.clientX - startX;
-    posY = event.clientY - startY;
-    updateImageTransform();
-});
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    lightboxImage.classList.remove('dragging');
-});
-
-closeButton.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-});
-
-lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (!lightbox.classList.contains('active')) return;
-
-    if (event.key === 'Escape') lightbox.classList.remove('active');
-    if (event.key === 'ArrowRight') showImage(currentIndex + 1);
-    if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
-});
-</script>
+<script src="../../js/lightbox.js"></script>
 
 </body>
 </html>

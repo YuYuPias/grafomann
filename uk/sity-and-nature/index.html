@@ -1,251 +1,15 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Город и Природа (Clitheroe)</title>
 
-<title>Город и Природа (Clitheroe)</title>
-
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ed;
-    color: #222;
-    line-height: 1.65;
-}
-
-.article-nav {
-    max-width: 1100px;
-    margin: 30px auto 0;
-    padding: 0 40px;
-}
-
-.article-nav a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.9rem;
-}
-
-.article {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-.post {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
-
-.post h1 {
-    text-align: left;
-    margin: 60px 0 35px;
-}
-
-.post .date {
-    text-align: left;
-    margin-bottom: 40px;
-    color: #888;
-}
-
-.post p {
-    text-align: left;
-    margin: 0 0 28px;
-}
-
-.single-image {
-    margin: 40px 0;
-}
-
-.single-image img {
-    display: block;
-    width: 100%;
-    height: auto;
-}    
-.gallery {
-    display: grid;
-    gap: 10px;
-    margin: 45px auto 50px auto;
-    max-width: 1000px;
-}
-
-.gallery.four {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery.three {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery img {
-    width: 100%;
-    height: 170px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery a,
-.single a {
-    display: block;
-}
-
-
-.single {
-    text-align: center;
-    margin: 45px 0;
-}
-
-.single img {
-    max-width: 1000px;
-    width: 90%;
-    align: center;
-    height: auto;
-    display: inline-block;
-}
-
-.single-end {
-    text-align: center;
-    margin: 45px 0;
-}
-
-.single-end img {
-    width: 100%;
-    max-width: 760px;  
-    height: auto;
-    display: inline-block;
-}
-    
-    
-.bottom-nav {
-    text-align: center;
-    margin: 80px 0 40px 0;
-}
-
-.bottom-nav a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-/* Lightbox */
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.96);
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 90vw;
-    max-height: 88vh;
-    object-fit: contain;
-    transform-origin: center center;
-    cursor: grab;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.lightbox img.dragging {
-    cursor: grabbing;
-}
-
-.lightbox-close {
-    position: fixed;
-    top: 22px;
-    right: 28px;
-    color: #e8dcc5;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 10002;
-}
-
-.lightbox-arrow {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    color: #d9cdb8;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10002;
-}
-
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
-
-.lightbox-controls {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    display: flex;
-    align-items: center;
-    gap: 22px;
-}
-
-.lightbox-controls button {
-    border: none;
-    background: none;
-    color: #e8dcc5;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-.lightbox-controls button:hover,
-.lightbox-close:hover,
-.lightbox-arrow:hover {
-    color: #fff4dc;
-}
-
-@media (max-width: 800px) {
-    .article {
-        padding: 45px 22px;
-    }
-
-    h1 {
-        font-size: 2rem;
-        max-width: 100%;
-    }
-
-    .date,
-    p {
-        max-width: 100%;
-    }
-
-    .gallery.four,
-    .gallery.three {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: auto;
-    }
-
-    .single {
-        max-width: 100%;
-    }
-}
-</style>
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/articles.css">
+    <link rel="stylesheet" href="../../css/gallery.css">
+    <link rel="stylesheet" href="../../css/lightbox.css">
 </head>
-
 <body>
 
 <header class="article-nav">
@@ -255,215 +19,65 @@ body {
 
 <div class="post">
 
-<h1>Город и Природа (Clitheroe)</h1>
+    <h1>Город и Природа (Clitheroe)</h1>
+    <div class="date">24 марта 2023</div>
 
-<div class="date">
-24 марта 2023
-</div>
+    <p>
+        Граница между городом и природой - очень древняя культурная оппозиция, возникшая примерно тогда, когда, подающие первые признаки интеллекта, наши пращуры выбрались из пещеры и обустроили инфраструктуру в ближайших окрестностях.
+    </p>
 
+    <div class="gallery single">
+        <a href="sity-and-nature-01.jpg"><img src="sity-and-nature-01.jpg" alt=""></a>
+    </div>
 
-<p>
-Граница между городом и природой - очень древняя культурная оппозиция, возникшая примерно тогда, когда, подающие первые признаки интеллекта, наши пращуры выбрались из пещеры и обустроили инфраструктуру в ближайших окрестностях.
-</p>
+    <p>
+        Зримым маркером, разделяющим два мира, стала крепостная стена, с которой можно было относительно безопасно взирать со "своего" на "чужое". Между тем, "чужое" оказалось весьма привлекательным, поскольку таило в себе вещи, отсутствующие в обыденном "своем"..
+    </p>
 
-<div class="single-image">
-    <a href="sity-and-nature-01.jpg"><img src="sity-and-nature-01.jpg" alt=""></a>
-</div>
-    
-<p>
-Зримым маркером, разделяющим два мира, стала крепостная стена, с которой можно было относительно безопасно взирать со "своего" на "чужое". Между тем, "чужое" оказалось весьма привлекательным, поскольку таило в себе вещи, отсутствующие в обыденном "своем"..
-</p>
+    <p>
+        Как житель мегаполиса, я всегда устремлял взгляд за горизонт, но взгляд отражался от бетонных многоэтажек и промышленных субурбий. Но то мегаполис.. В маленьких городках по-прежнему можно видеть край, и это (как по мне) наполняет жизнь интригой и энергией.
+    </p>
 
-<p>
-Как житель мегаполиса, я всегда устремлял взгляд за горизонт, но взгляд отражался от бетонных многоэтажек и промышленных субурбий. Но то мегаполис.. В маленьких городках по-прежнему можно видеть край, и это (как по мне) наполняет жизнь интригой и энергией.
-</p>
+    <p>
+        Clitheroe лежит в долине реки Ribble. Говоря "долина", мы обычно представляем себе нечто протяженное. Но в данном случае, я бы говорил о дне сковородки, бортики которой образуют окрестные холмы. Потому, по какой улице вы бы не шли, вы непременно видите то, что находится за. То есть, город простреливается взглядами насквозь, и эти взгляды жителей уходят вглубь Природы не отражаясь.
+    </p>
 
-<p>
-Clitheroe лежит в долине реки Ribble. Говоря "долина", мы обычно представляем себе нечто протяженное. Но в данном случае, я бы говорил о дне сковородки, бортики которой образуют окрестные холмы. Потому, по какой улице вы бы не шли, вы непременно видите то, что находится за. То есть, город простреливается взглядами насквозь, и эти взгляды жителей уходят вглубь Природы не отражаясь.
-</p>
+    <div class="gallery contact-sheet">
+        <a href="sity-and-nature-02.jpg"><img src="sity-and-nature-02.jpg" alt=""></a>
+        <a href="sity-and-nature-03.jpg"><img src="sity-and-nature-03.jpg" alt=""></a>
+        <a href="sity-and-nature-04.jpg"><img src="sity-and-nature-04.jpg" alt=""></a>
+        <a href="sity-and-nature-05.jpg"><img src="sity-and-nature-05.jpg" alt=""></a>
+        <a href="sity-and-nature-06.jpg"><img src="sity-and-nature-06.jpg" alt=""></a>
+        <a href="sity-and-nature-07.jpg"><img src="sity-and-nature-07.jpg" alt=""></a>
+        <a href="sity-and-nature-08.jpg"><img src="sity-and-nature-08.jpg" alt=""></a>
+        <a href="sity-and-nature-09.jpg"><img src="sity-and-nature-09.jpg" alt=""></a>
+        <a href="sity-and-nature-10.jpg"><img src="sity-and-nature-10.jpg" alt=""></a>
+        <a href="sity-and-nature-11.jpg"><img src="sity-and-nature-11.jpg" alt=""></a>
+        <a href="sity-and-nature-12.jpg"><img src="sity-and-nature-12.jpg" alt=""></a>
+        <a href="sity-and-nature-13.jpg"><img src="sity-and-nature-13.jpg" alt=""></a>
+    </div>
 
+    <div class="gallery single medium">
+        <a href="sity-and-nature-14.jpg"><img src="sity-and-nature-14.jpg" alt=""></a>
+    </div>
 
-
-<div class="gallery three">
-    <a href="sity-and-nature-02.jpg"><img src="sity-and-nature-02.jpg" alt=""></a>
-    <a href="sity-and-nature-03.jpg"><img src="sity-and-nature-03.jpg" alt=""></a>
-    <a href="sity-and-nature-04.jpg"><img src="sity-and-nature-04.jpg" alt=""></a>
-    <a href="sity-and-nature-05.jpg"><img src="sity-and-nature-05.jpg" alt=""></a>
-<!--</div>
-
- <div class="gallery four"> -->
-    <a href="sity-and-nature-06.jpg"><img src="sity-and-nature-06.jpg" alt=""></a>
-    <a href="sity-and-nature-07.jpg"><img src="sity-and-nature-07.jpg" alt=""></a>
-    <a href="sity-and-nature-08.jpg"><img src="sity-and-nature-08.jpg" alt=""></a>
-    <a href="sity-and-nature-09.jpg"><img src="sity-and-nature-09.jpg" alt=""></a>
-<!--</div>
-   
-<div class="gallery four">-->
-    <a href="sity-and-nature-10.jpg"><img src="sity-and-nature-10.jpg" alt=""></a>
-    <a href="sity-and-nature-11.jpg"><img src="sity-and-nature-11.jpg" alt=""></a>
-    <a href="sity-and-nature-12.jpg"><img src="sity-and-nature-12.jpg" alt=""></a>
-    <a href="sity-and-nature-13.jpg"><img src="sity-and-nature-13.jpg" alt=""></a>
-</div>
-
-  
-<div class="single-end">
-    <a href="sity-and-nature-14.jpg"><img src="sity-and-nature-14.jpg" alt=""></a>
-</div>
-
-<div class="bottom-nav">
-    <a href="#">↑ Наверх</a>
-</div>
+    <div class="bottom-nav">
+        <a href="#">↑ Наверх</a>
+    </div>
 
 </div>
 
 <div class="lightbox" id="lightbox">
     <div class="lightbox-close" id="lightboxClose">×</div>
     <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <img id="lightboxImage" src="" alt="">
     <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
-
     <div class="lightbox-controls">
         <button id="zoomOut">−</button>
         <button id="zoomIn">+</button>
     </div>
-
-    <img id="lightboxImage" src="" alt="">
 </div>
-</div>    
-<script>
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-const closeButton = document.getElementById('lightboxClose');
-const zoomIn = document.getElementById('zoomIn');
-const zoomOut = document.getElementById('zoomOut');
-const prevImage = document.getElementById('prevImage');
-const nextImage = document.getElementById('nextImage');
 
-const galleryLinks = Array.from(
-    document.querySelectorAll('.gallery a, .single a')
-);
-
-let currentIndex = 0;
-let scale = 1;
-let posX = 0;
-let posY = 0;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
-
-function updateImageTransform() {
-    lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function resetView() {
-    scale = 1;
-    posX = 0;
-    posY = 0;
-    updateImageTransform();
-}
-
-function showImage(index) {
-    currentIndex = index;
-
-    if (currentIndex < 0) {
-        currentIndex = galleryLinks.length - 1;
-    }
-
-    if (currentIndex >= galleryLinks.length) {
-        currentIndex = 0;
-    }
-
-    lightboxImage.src = galleryLinks[currentIndex].href;
-    resetView();
-    lightbox.classList.add('active');
-}
-
-galleryLinks.forEach((link, index) => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        showImage(index);
-    });
-});
-
-nextImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex + 1);
-});
-
-prevImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex - 1);
-});
-
-zoomIn.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale < 4) {
-        scale += 0.5;
-        updateImageTransform();
-    }
-});
-
-zoomOut.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale > 1) {
-        scale -= 0.5;
-        if (scale === 1) {
-            posX = 0;
-            posY = 0;
-        }
-        updateImageTransform();
-    }
-});
-
-lightboxImage.addEventListener('mousedown', (event) => {
-    if (scale <= 1) return;
-
-    isDragging = true;
-    lightboxImage.classList.add('dragging');
-    startX = event.clientX - posX;
-    startY = event.clientY - posY;
-});
-
-document.addEventListener('mousemove', (event) => {
-    if (!isDragging) return;
-
-    posX = event.clientX - startX;
-    posY = event.clientY - startY;
-    updateImageTransform();
-});
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    lightboxImage.classList.remove('dragging');
-});
-
-closeButton.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-});
-
-lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (!lightbox.classList.contains('active')) return;
-
-    if (event.key === 'Escape') {
-        lightbox.classList.remove('active');
-    }
-
-    if (event.key === 'ArrowRight') {
-        showImage(currentIndex + 1);
-    }
-
-    if (event.key === 'ArrowLeft') {
-        showImage(currentIndex - 1);
-    }
-});
-</script>
-
+<script src="../../js/lightbox.js"></script>
 </body>
 </html>
-

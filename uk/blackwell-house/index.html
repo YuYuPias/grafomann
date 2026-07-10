@@ -4,247 +4,12 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Blackwell house (Northern Athens)</title>
+<title>Blackwell house (Lake District)</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ed;
-    color: #222;
-    line-height: 1.8;
-}
-
-.article-nav {
-    max-width: 900px;
-    margin: 30px auto 0;
-    padding: 0 20px;
-}
-
-.article-nav a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.9rem;
-}
-
-.post {
-    max-width: 900px;
-    margin: 0 auto;
-    padding: 55px 20px 40px;
-}
-
-.post h1 {
-    max-width: 900px;
-    font-size: 3rem;
-    font-weight: normal;
-    line-height: 1.2;
-    margin: 0 0 34px 0;
-    color: #555;
-    text-align: left;
-}
-
-.post .date {
-    max-width: 900px;
-    margin: 0 0 36px 0;
-    color: #888;
-    font-size: 14px;
-    text-align: left;
-}
-
-.post p {
-    max-width: 900px;
-    font-size: 1.05rem;
-    line-height: 1.65;
-    margin: 0 0 20px 0;
-    color: #555;
-    text-align: left;
-}
-
-.gallery {
-    display: grid;
-    gap: 10px;
-    margin: 42px 0;
-}
-
-.gallery a,
-.single a {
-    display: block;
-}
-
-.gallery.two {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery.three,
-.gallery.exhibit {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery.four {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery img {
-    width: 100%;
-    height: 190px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery.intro-pair {
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-    align-items: start;
-    margin: 40px 0 36px 0;
-}
-
-.gallery.intro-pair img {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    display: block;
-}
-
-.single {
-    max-width: 900px;
-    margin: 55px 0;
-}
-
-.single img {
-    width: 100%;
-    height: auto;
-    display: block;
-}
-
-.gallery.mixed-pair {
-    grid-template-columns: 0.72fr 1.28fr;
-    gap: 10px;
-    align-items: stretch;
-    margin: 50px 0 60px 0;
-}
-
-.gallery.mixed-pair img {
-    height: 430px;
-    object-fit: cover;
-}
-
-.bottom-nav {
-    text-align: center;
-    margin: 80px 0 40px 0;
-}
-
-.bottom-nav a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.96);
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 90vw;
-    max-height: 88vh;
-    object-fit: contain;
-    transform-origin: center center;
-    cursor: grab;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.lightbox img.dragging {
-    cursor: grabbing;
-}
-
-.lightbox-close {
-    position: fixed;
-    top: 22px;
-    right: 28px;
-    color: #e8dcc5;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 10002;
-}
-
-.lightbox-arrow {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    color: #d9cdb8;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10002;
-}
-
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
-
-.lightbox-controls {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    display: flex;
-    gap: 22px;
-}
-
-.lightbox-controls button {
-    border: none;
-    background: none;
-    color: #e8dcc5;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-@media (max-width: 800px) {
-    .article-nav {
-        padding: 0 22px;
-    }
-
-    .post {
-        padding: 40px 22px;
-    }
-
-    .post h1 {
-        font-size: 2rem;
-    }
-
-    .gallery.two,
-    .gallery.three,
-    .gallery.four,
-    .gallery.exhibit,
-    .gallery.intro-pair,
-    .gallery.mixed-pair {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img,
-    .gallery.intro-pair img,
-    .gallery.mixed-pair img {
-        height: auto;
-    }
-}
-</style>
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/gallery.css">
+<link rel="stylesheet" href="../../css/lightbox.css">
 </head>
 
 <body>
@@ -262,7 +27,7 @@ body {
 <p>Англия первой пережила встречу с холодом обезличенных вещей, порожденных конвейером. Буквально через несколько десятилетий после промышленной революции начинает ощущаться усталость от тиражируемой продукции и возникает ностальгия по рукотворному — по теплу ремесленного труда, по времени, когда предмет еще хранил связь со своим создателем.
 </p>
 
-<div class="gallery mixed-pair">
+<div class="gallery diptych vh">
     <a href="blackwell-house-01.jpg"><img src="blackwell-house-01.jpg"></a>
     <a href="blackwell-house-02.jpg"><img src="blackwell-house-02.jpg"></a>
 </div>
@@ -276,7 +41,7 @@ body {
 
 
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="blackwell-house-03.jpg"><img src="blackwell-house-03.jpg"></a>
     <a href="blackwell-house-04.jpg"><img src="blackwell-house-04.jpg"></a>
     <a href="blackwell-house-05.jpg"><img src="blackwell-house-05.jpg"></a>
@@ -288,13 +53,13 @@ body {
     <a href="blackwell-house-11.jpg"><img src="blackwell-house-11.jpg"></a>
 </div>
 
-<div class="gallery intro-pair">    
+<div class="gallery diptych contain">    
     <a href="blackwell-house-12.jpg"><img src="blackwell-house-12.jpg"></a>
     <a href="blackwell-house-13.jpg"><img src="blackwell-house-13.jpg"></a>
 </div>
 
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="blackwell-house-14.jpg"><img src="blackwell-house-14.jpg"></a>
     <a href="blackwell-house-15.jpg"><img src="blackwell-house-15.jpg"></a>
     <a href="blackwell-house-18.jpg"><img src="blackwell-house-18.jpg"></a>
@@ -306,14 +71,14 @@ body {
     <a href="blackwell-house-19.jpg"><img src="blackwell-house-19.jpg"></a>
 </div>
 
-<div class="single">
+<div class="gallery single">
     <a href="blackwell-house-23.jpg"><img src="blackwell-house-23.jpg"></a>
 </div>
 
 
 
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="blackwell-house-24.jpg"><img src="blackwell-house-24.jpg"></a>
     <a href="blackwell-house-25.jpg"><img src="blackwell-house-25.jpg"></a>
     <a href="blackwell-house-26.jpg"><img src="blackwell-house-26.jpg"></a>
@@ -325,12 +90,12 @@ body {
     <a href="blackwell-house-32.jpg"><img src="blackwell-house-32.jpg"></a>
 </div>
 
-<!--<div class="gallery intro-pair">    
+<!--<div class="gallery diptych contain">    
     <a href="blackwell-house-34.jpg"><img src="blackwell-house-34.jpg"></a>
     <a href="blackwell-house-33.jpg"><img src="blackwell-house-33.jpg"></a>
 </div>-->
 
-<div class="single">
+<div class="gallery single">
     <a href="blackwell-house-35.jpg"><img src="blackwell-house-35.jpg"></a>
 </div>
 
@@ -338,7 +103,7 @@ body {
 
 
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="blackwell-house-36.jpg"><img src="blackwell-house-36.jpg"></a>
     <a href="blackwell-house-37.jpg"><img src="blackwell-house-37.jpg"></a>
     <a href="blackwell-house-38.jpg"><img src="blackwell-house-38.jpg"></a>
@@ -350,12 +115,12 @@ body {
     <a href="blackwell-house-44.jpg"><img src="blackwell-house-44.jpg"></a>
 </div>
 
-<div class="single">
+<div class="gallery single">
     <a href="blackwell-house-45.jpg"><img src="blackwell-house-45.jpg"></a>
 </div>
 
 
-<div class="gallery exhibit">
+<div class="gallery contact-sheet">
     <a href="blackwell-house-46.jpg"><img src="blackwell-house-46.jpg"></a>
     <a href="blackwell-house-47.jpg"><img src="blackwell-house-47.jpg"></a>
     <a href="blackwell-house-48.jpg"><img src="blackwell-house-48.jpg"></a>
@@ -372,133 +137,7 @@ body {
 
 </div>
 
-<div class="lightbox" id="lightbox">
-    <div class="lightbox-close" id="lightboxClose">×</div>
-    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
-    <img id="lightboxImage" src="" alt="">
-    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
-    <div class="lightbox-controls">
-        <button id="zoomOut">−</button>
-        <button id="zoomIn">+</button>
-    </div>
-</div>
-
-<script>
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-const closeButton = document.getElementById('lightboxClose');
-const zoomIn = document.getElementById('zoomIn');
-const zoomOut = document.getElementById('zoomOut');
-const prevImage = document.getElementById('prevImage');
-const nextImage = document.getElementById('nextImage');
-
-let currentIndex = 0;
-let scale = 1;
-let posX = 0;
-let posY = 0;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
-
-function updateImageTransform() {
-    lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function resetView() {
-    scale = 1;
-    posX = 0;
-    posY = 0;
-    updateImageTransform();
-}
-
-function showImage(index) {
-    currentIndex = index;
-
-    if (currentIndex < 0) currentIndex = galleryLinks.length - 1;
-    if (currentIndex >= galleryLinks.length) currentIndex = 0;
-
-    lightboxImage.src = galleryLinks[currentIndex].href;
-    resetView();
-    lightbox.classList.add('active');
-}
-
-galleryLinks.forEach((link, index) => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        showImage(index);
-    });
-});
-
-nextImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex + 1);
-});
-
-prevImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex - 1);
-});
-
-zoomIn.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale < 4) {
-        scale += 0.5;
-        updateImageTransform();
-    }
-});
-
-zoomOut.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale > 1) {
-        scale -= 0.5;
-        if (scale === 1) {
-            posX = 0;
-            posY = 0;
-        }
-        updateImageTransform();
-    }
-});
-
-lightboxImage.addEventListener('mousedown', (event) => {
-    if (scale <= 1) return;
-    isDragging = true;
-    lightboxImage.classList.add('dragging');
-    startX = event.clientX - posX;
-    startY = event.clientY - posY;
-});
-
-document.addEventListener('mousemove', (event) => {
-    if (!isDragging) return;
-    posX = event.clientX - startX;
-    posY = event.clientY - startY;
-    updateImageTransform();
-});
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    lightboxImage.classList.remove('dragging');
-});
-
-closeButton.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-});
-
-lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (!lightbox.classList.contains('active')) return;
-
-    if (event.key === 'Escape') lightbox.classList.remove('active');
-    if (event.key === 'ArrowRight') showImage(currentIndex + 1);
-    if (event.key === 'ArrowLeft') showImage(currentIndex - 1);
-});
-</script>
+<script src="../../js/lightbox.js"></script>
 
 </body>
 </html>
