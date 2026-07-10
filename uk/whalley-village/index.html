@@ -6,259 +6,11 @@
 
 <title>Whalley</title>
 
-<style>
-body {
-    margin: 0;
-    font-family: Arial, sans-serif;
-    background: #f7f3ed;
-    color: #222;
-    line-height: 1.8;
-}
+<link rel="stylesheet" href="../../css/main.css">
+<link rel="stylesheet" href="../../css/articles.css">
+<link rel="stylesheet" href="../../css/gallery.css">
+<link rel="stylesheet" href="../../css/lightbox.css">
 
-.article-nav {
-    max-width: 1100px;
-    margin: 30px auto 0;
-    padding: 0 40px;
-}
-
-.article-nav a {
-    color: #666;
-    text-decoration: none;
-    margin-right: 20px;
-    font-size: 0.9rem;
-}
-
-.article {
-    max-width: 1100px;
-    margin: 0 auto;
-    padding: 60px 40px;
-}
-
-h1 {
-    max-width: 1000px;
-    font-size: 3rem;
-    font-weight: normal;
-    margin: 0 auto 25px auto;
-    color: #555;
-}
-
-.date {
-    max-width: 1000px;
-    margin: 0 auto 32px auto;
-    color: #888;
-    font-size: 14px;
-}
-
-p {
-    max-width: 1000px;
-    font-size: 1.15rem;
-    margin: 0 auto 22px auto;
-    color: #555;
-}
-
-.gallery {
-    display: grid;
-    gap: 10px;
-    margin: 45px 0;
-}
-
-.gallery.two {
-    grid-template-columns: repeat(2, 1fr);
-}
-
-.gallery.three {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery.four {
-    grid-template-columns: repeat(4, 1fr);
-}
-
-.gallery img {
-    width: 100%;
-    height: 260px;
-    object-fit: cover;
-    display: block;
-}
-
-/* первая пара без обрезки */
-.gallery.intro-pair {
-    max-width: 1000px;
-    margin: 40px auto;
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 12px;
-}
-
-
-.single {
-    text-align: center;
-    margin: 45px 0;
-}
-
-.single img {
-    max-width: 1000px;
-    width: 100%;
-    height: auto;
-    display: inline-block;
-}
-
-.gallery.mixed-pair {
-    max-width: 1000px;
-    margin: 45px auto 50px auto;
-    display: grid;
-    grid-template-columns: 0.72fr 1.28fr;
-    gap: 10px;
-    align-items: stretch;
-}
-
-.gallery.mixed-pair a {
-    display: block;
-}
-
-.gallery.mixed-pair img {
-    width: 100%;
-    height: 430px;
-    object-fit: cover;
-    display: block;
-}
-
-.gallery.mixed-pair .vertical img {
-    object-position: center center;
-}
-
-.gallery.mixed-pair .horizontal img {
-    object-position: center center;
-}
-
-@media (max-width: 800px) {
-    .gallery.mixed-pair {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery.mixed-pair img {
-        height: auto;
-    }
-}
-
-.gallery.exhibit {
-    grid-template-columns: repeat(3, 1fr);
-}
-
-.gallery.exhibit img {
-    height: 190px;
-    object-fit: cover;
-}
-
-  
-.bottom-nav {
-    text-align: center;
-    margin: 80px 0 40px 0;
-}
-
-.bottom-nav a {
-    color: #666;
-    text-decoration: none;
-    font-size: 0.9rem;
-}
-
-.lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
-    background: rgba(0, 0, 0, 0.96);
-    align-items: center;
-    justify-content: center;
-    overflow: hidden;
-}
-
-.lightbox.active {
-    display: flex;
-}
-
-.lightbox img {
-    max-width: 90vw;
-    max-height: 88vh;
-    object-fit: contain;
-    transform-origin: center center;
-    cursor: grab;
-    user-select: none;
-    -webkit-user-drag: none;
-}
-
-.lightbox img.dragging {
-    cursor: grabbing;
-}
-
-.lightbox-close {
-    position: fixed;
-    top: 22px;
-    right: 28px;
-    color: #e8dcc5;
-    font-size: 30px;
-    cursor: pointer;
-    z-index: 10002;
-}
-
-.lightbox-arrow {
-    position: fixed;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 48px;
-    color: #d9cdb8;
-    cursor: pointer;
-    user-select: none;
-    z-index: 10002;
-}
-
-.lightbox-prev {
-    left: 30px;
-}
-
-.lightbox-next {
-    right: 30px;
-}
-
-.lightbox-controls {
-    position: fixed;
-    bottom: 28px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10001;
-    display: flex;
-    gap: 22px;
-}
-
-.lightbox-controls button {
-    border: none;
-    background: none;
-    color: #e8dcc5;
-    font-size: 32px;
-    cursor: pointer;
-}
-
-@media (max-width: 800px) {
-    .article {
-        padding: 40px 22px;
-    }
-
-    h1 {
-        font-size: 2rem;
-    }
-
-    .gallery.two,
-    .gallery.three,
-    .gallery.four,
-    .gallery.intro-pair {
-        grid-template-columns: 1fr;
-    }
-
-    .gallery img {
-        height: auto;
-    }
-}
-</style>
 </head>
 
 <body>
@@ -277,12 +29,12 @@ p {
 Небольшая деревня в пяти-шести милях от Clitheroe, ведущая родословную от Бронзового века. 
 </p>
 
-<div class="gallery mixed-pair">
-    <a href="whalley-village-01.jpg" class="vertical">
+<div class="gallery diptych vh">
+    <a href="whalley-village-01.jpg">
         <img src="whalley-village-01.jpg" alt="">
     </a>
 
-    <a href="whalley-village-02.jpg" class="horizontal">
+    <a href="whalley-village-02.jpg">
         <img src="whalley-village-02.jpg" alt="">
     </a>
 </div>
@@ -296,53 +48,46 @@ p {
 <p>  
 Так невзначай мы подобрались к социальной составляющей места, то есть к обитателям этих лишенных явных примет времени обиталищ.
 </p>
- <p>    
+<p>    
 Сегодня Whalley относится к категории "luxury place", а это значит, что жизнь здесь ко многому обязывает. - Дом должен быть приличным, а сад - ухоженным и с правильными растениями. То же касается марки автомобиля: она должна быть соответствующей. Ну и так далее, и так далее, и так далее..<br>
 Шутники (а в Англии их немало) говорят, что Whalley - это люди "wanna be".
- </p>   
+</p>   
   
+<div class="gallery contact-sheet">
+    <a href="whalley-village-03.jpg"><img src="whalley-village-03.jpg" alt=""></a>
+    <a href="whalley-village-04.jpg"><img src="whalley-village-04.jpg" alt=""></a>
+    <a href="whalley-village-05.jpg"><img src="whalley-village-05.jpg" alt=""></a>
 
-<div class="gallery exhibit">
-    <a href="whalley-village-03.jpg"><img src="whalley-village-03.jpg"></a>
-    <a href="whalley-village-04.jpg"><img src="whalley-village-04.jpg"></a>
-    <a href="whalley-village-05.jpg"><img src="whalley-village-05.jpg"></a>
+    <a href="whalley-village-06.jpg"><img src="whalley-village-06.jpg" alt=""></a>
+    <a href="whalley-village-07.jpg"><img src="whalley-village-07.jpg" alt=""></a>
+    <a href="whalley-village-08.jpg"><img src="whalley-village-08.jpg" alt=""></a>
 
-    <a href="whalley-village-06.jpg"><img src="whalley-village-06.jpg"></a>
-    <a href="whalley-village-07.jpg"><img src="whalley-village-07.jpg"></a>
-    <a href="whalley-village-08.jpg"><img src="whalley-village-08.jpg"></a>
-
-    <a href="whalley-village-09.jpg"><img src="whalley-village-09.jpg"></a>
-    <a href="whalley-village-10.jpg"><img src="whalley-village-10.jpg"></a>
-    <a href="whalley-village-11.jpg"><img src="whalley-village-11.jpg"></a>
+    <a href="whalley-village-09.jpg"><img src="whalley-village-09.jpg" alt=""></a>
+    <a href="whalley-village-10.jpg"><img src="whalley-village-10.jpg" alt=""></a>
+    <a href="whalley-village-11.jpg"><img src="whalley-village-11.jpg" alt=""></a>
 </div>
 
-  
-
-<div class="single">
+<div class="gallery single">
     <a href="whalley-village-00.jpg"><img src="whalley-village-00.jpg" alt=""></a>
 </div>
 
+<div class="gallery contact-sheet">
+    <a href="whalley-village-12.jpg"><img src="whalley-village-12.jpg" alt=""></a>
+    <a href="whalley-village-13.jpg"><img src="whalley-village-13.jpg" alt=""></a>
+    <a href="whalley-village-14.jpg"><img src="whalley-village-14.jpg" alt=""></a>
 
-<div class="gallery exhibit">
-    <a href="whalley-village-12.jpg"><img src="whalley-village-12.jpg"></a>
-    <a href="whalley-village-13.jpg"><img src="whalley-village-13.jpg"></a>
-    <a href="whalley-village-14.jpg"><img src="whalley-village-14.jpg"></a>
+    <a href="whalley-village-15.jpg"><img src="whalley-village-15.jpg" alt=""></a>
+    <a href="whalley-village-16.jpg"><img src="whalley-village-16.jpg" alt=""></a>
+    <a href="whalley-village-17.jpg"><img src="whalley-village-17.jpg" alt=""></a>
 
-    <a href="whalley-village-15.jpg"><img src="whalley-village-15.jpg"></a>
-    <a href="whalley-village-16.jpg"><img src="whalley-village-16.jpg"></a>
-    <a href="whalley-village-17.jpg"><img src="whalley-village-17.jpg"></a>
-
-    <a href="whalley-village-18.jpg"><img src="whalley-village-18.jpg"></a>
-    <a href="whalley-village-19.jpg"><img src="whalley-village-19.jpg"></a>
-    <a href="whalley-village-20.jpg"><img src="whalley-village-20.jpg"></a>
+    <a href="whalley-village-18.jpg"><img src="whalley-village-18.jpg" alt=""></a>
+    <a href="whalley-village-19.jpg"><img src="whalley-village-19.jpg" alt=""></a>
+    <a href="whalley-village-20.jpg"><img src="whalley-village-20.jpg" alt=""></a>
 </div>
 
-  
-
-<div class="single">
+<div class="gallery single">
     <a href="whalley-village-21.jpg"><img src="whalley-village-21.jpg" alt=""></a>
 </div>
-    
     
 <div class="bottom-nav">
     <a href="#">↑ Наверх</a>
@@ -352,147 +97,19 @@ p {
 
 <div class="lightbox" id="lightbox">
     <div class="lightbox-close" id="lightboxClose">×</div>
+
     <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
-    <img id="lightboxImage" src="" alt="">
     <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+
     <div class="lightbox-controls">
         <button id="zoomOut">−</button>
         <button id="zoomIn">+</button>
     </div>
+
+    <img id="lightboxImage" src="" alt="">
 </div>
 
-<script>
-const galleryLinks = Array.from(document.querySelectorAll('.gallery a, .single a'));
-const lightbox = document.getElementById('lightbox');
-const lightboxImage = document.getElementById('lightboxImage');
-const closeButton = document.getElementById('lightboxClose');
-const zoomIn = document.getElementById('zoomIn');
-const zoomOut = document.getElementById('zoomOut');
-const prevImage = document.getElementById('prevImage');
-const nextImage = document.getElementById('nextImage');
-
-let currentIndex = 0;
-let scale = 1;
-let posX = 0;
-let posY = 0;
-let isDragging = false;
-let startX = 0;
-let startY = 0;
-
-function updateImageTransform() {
-    lightboxImage.style.transform =
-        `translate(${posX}px, ${posY}px) scale(${scale})`;
-}
-
-function resetView() {
-    scale = 1;
-    posX = 0;
-    posY = 0;
-    updateImageTransform();
-}
-
-function showImage(index) {
-    currentIndex = index;
-
-    if (currentIndex < 0) {
-        currentIndex = galleryLinks.length - 1;
-    }
-
-    if (currentIndex >= galleryLinks.length) {
-        currentIndex = 0;
-    }
-
-    lightboxImage.src = galleryLinks[currentIndex].href;
-    resetView();
-    lightbox.classList.add('active');
-}
-
-galleryLinks.forEach((link, index) => {
-    link.addEventListener('click', function(event) {
-        event.preventDefault();
-        showImage(index);
-    });
-});
-
-nextImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex + 1);
-});
-
-prevImage.addEventListener('click', (event) => {
-    event.stopPropagation();
-    showImage(currentIndex - 1);
-});
-
-zoomIn.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale < 4) {
-        scale += 0.5;
-        updateImageTransform();
-    }
-});
-
-zoomOut.addEventListener('click', (event) => {
-    event.stopPropagation();
-    if (scale > 1) {
-        scale -= 0.5;
-        if (scale === 1) {
-            posX = 0;
-            posY = 0;
-        }
-        updateImageTransform();
-    }
-});
-
-lightboxImage.addEventListener('mousedown', (event) => {
-    if (scale <= 1) return;
-    isDragging = true;
-    lightboxImage.classList.add('dragging');
-    startX = event.clientX - posX;
-    startY = event.clientY - posY;
-});
-
-document.addEventListener('mousemove', (event) => {
-    if (!isDragging) return;
-    posX = event.clientX - startX;
-    posY = event.clientY - startY;
-    updateImageTransform();
-});
-
-document.addEventListener('mouseup', () => {
-    isDragging = false;
-    lightboxImage.classList.remove('dragging');
-});
-
-closeButton.addEventListener('click', () => {
-    lightbox.classList.remove('active');
-});
-
-lightbox.addEventListener('click', (event) => {
-    if (event.target === lightbox) {
-        lightbox.classList.remove('active');
-    }
-});
-
-document.addEventListener('keydown', (event) => {
-    if (!lightbox.classList.contains('active')) return;
-
-    if (event.key === 'Escape') {
-        lightbox.classList.remove('active');
-    }
-
-    if (event.key === 'ArrowRight') {
-        showImage(currentIndex + 1);
-    }
-
-    if (event.key === 'ArrowLeft') {
-        showImage(currentIndex - 1);
-    }
-});
-</script>
+<script src="../../js/lightbox.js"></script>
 
 </body>
 </html>
-
-
-

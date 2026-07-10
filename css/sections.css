@@ -1,0 +1,162 @@
+/* =========================================
+   GRAFOMANN — SECTIONS
+   Страницы разделов
+========================================= */
+
+.section-page {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px 40px 60px;
+}
+
+.section-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 45px;
+    font-size: 0.9rem;
+}
+
+.section-logo {
+    color: #666;
+    text-decoration: none;
+    font-size: 1.7rem;
+    position: relative;
+    left: -40px;
+}
+
+.section-menu a,
+.section-menu .current {
+    display: inline-block;
+    margin-left: 24px;
+    color: #666;
+    text-decoration: none;
+}
+
+.section-menu .current {
+    color: #c98b5c;
+}
+
+.section-menu .texts-link {
+    border-left: 1px solid #999;
+    padding-left: 32px;
+}
+
+.section-hero {
+    width: 92%;
+    margin: 0 0 52px auto;
+    position: relative;
+    left: -80px;
+}
+
+.section-hero img {
+    width: 100%;
+    display: block;
+    opacity: 0.45;
+}
+
+.post-list {
+    width: 92%;
+    margin-left: 0;
+}
+
+.post-item {
+    padding: 22px 0;
+    border-bottom: 1px solid #ddd6cc;
+}
+
+.post-item h2 {
+    margin: 0;
+    font-size: 1.15rem;
+    font-weight: normal;
+    line-height: 1.35;
+}
+
+.post-item h2 a {
+    color: #333;
+    text-decoration: none;
+}
+
+.post-item h2 a:hover {
+    color: #666;
+}
+
+.post-item .date {
+    color: #888;
+    font-size: 0.8rem;
+    margin-top: 6px;
+}
+
+.bottom-nav {
+    text-align: center;
+    margin-top: 70px;
+}
+
+.bottom-nav a {
+    color: #666;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+/* MOBILE */
+
+@media (max-width: 800px) {
+    .section-page {
+        max-width: none;
+        padding: 34px 32px 55px;
+    }
+
+    .section-nav {
+        display: block;
+        margin-bottom: 40px;
+    }
+
+    .section-logo {
+        display: block;
+        position: static;
+        font-size: 2rem;
+        margin-bottom: 28px;
+    }
+
+    .section-menu {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px 24px;
+    font-size: 1rem;
+    line-height: 1.4;
+}
+
+    .section-menu a,
+    .section-menu .current {
+        margin-left: 0;
+    }
+
+    .section-menu .texts-link {
+        border-left: 1px solid #999;
+        padding-left: 18px;
+    }
+
+    .section-hero {
+        width: 100%;
+        margin: 0 0 52px;
+        position: static;
+    }
+
+    .post-list {
+        width: 100%;
+    }
+
+    .post-item {
+        padding: 26px 0;
+    }
+
+    .post-item h2 {
+        font-size: 1.35rem;
+        line-height: 1.35;
+    }
+
+    .post-item .date {
+        font-size: 0.9rem;
+        margin-top: 8px;
+    }
+}
