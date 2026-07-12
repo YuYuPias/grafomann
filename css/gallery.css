@@ -11,36 +11,49 @@
 ни на большом экране, ни на телефоне.
 
 CSS описывает форму.
-Роль фотографии определяется ее местом в рассказе.
+Роль фотографии определяется её местом в рассказе.
 
 Основные классы:
 
-.gallery single         — одна фотография
-.gallery diptych        — две фотографии
-.gallery triptych       — три фотографии
-.gallery quartet        — четыре фотографии
-.gallery contact-sheet  — серия кадров, контактный лист
+.gallery.single
+.gallery.diptych
+.gallery.triptych
+.gallery.quartet
+.gallery.contact-sheet
 
-Дополнительные классы:
+Модификаторы показа:
 
-.contain — показать изображение целиком
-.cover   — заполнить кадр с обрезкой
+.contain
+.cropped
 
-.hh — горизонталь + горизонталь
-.vv — вертикаль + вертикаль
-.hv — горизонталь + вертикаль
-.vh — вертикаль + горизонталь
+Модификаторы ориентации:
+
+.hh
+.vv
+.hv
+.vh
+
+Модификаторы ширины:
+
+.narrow
+.medium
+.wide
+
+Модификаторы кадрирования:
+
+.crop-top
+.crop-bottom
+.crop-left
+.crop-right
 */
 
-/* =========================================
-   ОСНОВА
-========================================= */
+/* ОСНОВА */
 
 .gallery {
     display: grid;
     gap: 10px;
-    margin: 55px 0;
     max-width: 1000px;
+    margin: 55px 0;
 }
 
 .gallery a {
@@ -48,13 +61,11 @@ CSS описывает форму.
 }
 
 .gallery img {
-    width: 100%;
     display: block;
+    width: 100%;
 }
 
-/* =========================================
-   SINGLE
-========================================= */
+/* SINGLE */
 
 .gallery.single {
     display: block;
@@ -67,21 +78,51 @@ CSS описывает форму.
     height: auto;
 }
 
-/* =========================================
-   DIPTYCH
-========================================= */
+/* CROPPED SINGLE */
+
+.gallery.single.cropped {
+    max-width: 1000px;
+    aspect-ratio: 16 / 9;
+    overflow: hidden;
+}
+
+.gallery.single.cropped a {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+}
+
+.gallery.single.cropped img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center center;
+}
+
+/* DIPTYCH */
 
 .gallery.diptych {
-    margin: 40px auto;
     grid-template-columns: repeat(2, 1fr);
     gap: 12px;
+    margin: 40px auto;
+}
+
+.gallery.diptych a {
+    aspect-ratio: 4 / 3;
+    overflow: hidden;
 }
 
 .gallery.diptych img {
     width: 100%;
+    height: 100%;
+    object-fit: cover;
 }
 
-/* обычный диптих: изображения целиком */
+.gallery.diptych.contain a {
+    aspect-ratio: auto;
+    overflow: visible;
+}
+
 .gallery.diptych.contain img,
 .gallery.diptych.hh img,
 .gallery.diptych.vv img {
@@ -89,7 +130,6 @@ CSS описывает форму.
     object-fit: contain;
 }
 
-/* смешанные диптихи */
 .gallery.diptych.hv {
     grid-template-columns: 1.6fr 1fr;
 }
@@ -104,9 +144,7 @@ CSS описывает форму.
     object-fit: cover;
 }
 
-/* =========================================
-   TRIPTYCH
-========================================= */
+/* TRIPTYCH */
 
 .gallery.triptych {
     grid-template-columns: repeat(3, 1fr);
@@ -117,10 +155,7 @@ CSS описывает форму.
     object-fit: cover;
 }
 
-
-/* =========================================
-   QUARTET
-========================================= */
+/* QUARTET */
 
 .gallery.quartet {
     grid-template-columns: repeat(4, 1fr);
@@ -131,13 +166,15 @@ CSS описывает форму.
     object-fit: cover;
 }
 
-/* =========================================
-   CONTACT SHEET
-========================================= */
+.gallery.quartet.tall img {
+    height: 220px;
+}
+
+/* CONTACT SHEET */
 
 .gallery.contact-sheet {
-    margin: 45px auto;
     grid-template-columns: repeat(3, 1fr);
+    margin: 45px auto;
 }
 
 .gallery.contact-sheet img {
@@ -145,13 +182,47 @@ CSS описывает форму.
     object-fit: cover;
 }
 
+/* WIDTH MODIFIERS */
+
+.gallery.narrow {
+    max-width: 620px;
+}
+
+.gallery.medium {
+    max-width: 800px;
+}
+
+.gallery.wide {
+    max-width: 1000px;
+}
+
 .post.wide .gallery.single {
     max-width: 1000px;
 }
 
-/* =========================================
-   MOBILE
-========================================= */
+/* CROP POSITION */
+
+.gallery a.crop-top img,
+.gallery.crop-top img {
+    object-position: 50% 0%;
+}
+
+.gallery a.crop-bottom img,
+.gallery.crop-bottom img {
+    object-position: 50% 100%;
+}
+
+.gallery a.crop-left img,
+.gallery.crop-left img {
+    object-position: 0% 50%;
+}
+
+.gallery a.crop-right img,
+.gallery.crop-right img {
+    object-position: 100% 50%;
+}
+
+/* MOBILE */
 
 @media (max-width: 800px) {
     .gallery {
@@ -165,11 +236,15 @@ CSS описывает форму.
         max-width: 100%;
     }
 
-    /* обычные диптихи остаются парами */
-
     .gallery.diptych.hv,
     .gallery.diptych.vh {
         grid-template-columns: 1fr;
+    }
+
+    .gallery.diptych.hv a,
+    .gallery.diptych.vh a {
+        aspect-ratio: auto;
+        overflow: visible;
     }
 
     .gallery.diptych.hv img,
@@ -189,31 +264,12 @@ CSS описывает форму.
     .gallery.quartet {
         grid-template-columns: repeat(2, 1fr);
     }
-}
 
-/* CONTACT SHEET
-   Контактный лист сохраняет структуру 3×N
-   даже на мобильных устройствах.
-   Это не обычная галерея, а единый визуальный блок.
-*/
+    .gallery.quartet.tall img {
+        height: 180px;
+    }
 
-
-/* =========================================
-   WIDTH MODIFIERS
-   Модификаторы ширины
-========================================= */
-
-/* узкий визуальный блок */
-.gallery.narrow {
-    max-width: 620px;
-}
-
-/* средний визуальный блок */
-.gallery.medium {
-    max-width: 800px;
-}
-
-/* широкий визуальный блок */
-.gallery.wide {
-    max-width: 1000px;
+    .gallery.single.cropped {
+        aspect-ratio: 16 / 9;
+    }
 }
