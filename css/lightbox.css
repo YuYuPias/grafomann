@@ -26,6 +26,7 @@
     cursor: grab;
     user-select: none;
     -webkit-user-drag: none;
+    touch-action: none;
 }
 
 .lightbox img.dragging {

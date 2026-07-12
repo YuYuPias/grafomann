@@ -81,25 +81,47 @@ zoomOut.addEventListener('click', (event) => {
     }
 });
 
-lightboxImage.addEventListener('mousedown', (event) => {
+lightboxImage.addEventListener('pointerdown', (event) => {
     if (scale <= 1) return;
+
+    event.preventDefault();
+
     isDragging = true;
     lightboxImage.classList.add('dragging');
+
     startX = event.clientX - posX;
     startY = event.clientY - posY;
+
+    lightboxImage.setPointerCapture(event.pointerId);
 });
 
-document.addEventListener('mousemove', (event) => {
+lightboxImage.addEventListener('pointermove', (event) => {
     if (!isDragging) return;
+
+    event.preventDefault();
+
     posX = event.clientX - startX;
     posY = event.clientY - startY;
+
     updateImageTransform();
 });
 
-document.addEventListener('mouseup', () => {
+function stopDragging(event) {
+    if (!isDragging) return;
+
     isDragging = false;
     lightboxImage.classList.remove('dragging');
-});
+
+    if (
+        event.pointerId !== undefined &&
+        lightboxImage.hasPointerCapture(event.pointerId)
+    ) {
+        lightboxImage.releasePointerCapture(event.pointerId);
+    }
+}
+
+lightboxImage.addEventListener('pointerup', stopDragging);
+lightboxImage.addEventListener('pointercancel', stopDragging);
 
 closeButton.addEventListener('click', () => {
     lightbox.classList.remove('active');
