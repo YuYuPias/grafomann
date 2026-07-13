@@ -200,6 +200,13 @@ CSS описывает форму.
     max-width: 1000px;
 }
 
+.gallery.small,
+.post.wide .gallery.small {
+    max-width: 460px;
+}
+
+
+
 /* CROP POSITION */
 
 .gallery a.crop-top img,
@@ -220,6 +227,12 @@ CSS описывает форму.
 .gallery a.crop-right img,
 .gallery.crop-right img {
     object-position: 100% 50%;
+}
+
+/* Новый самостоятельный визуальный блок */
+
+.gallery.separate {
+    margin-top: 80px;
 }
 
 /* MOBILE */
@@ -272,4 +285,23 @@ CSS описывает форму.
     .gallery.single.cropped {
         aspect-ratio: 16 / 9;
     }
+
+    .gallery.separate {
+    margin-top: 70px;
+    }
+
+/* =========================================
+   MOBILE — WIDTH MODIFIERS
+   Ширина одиночных изображений на телефоне
+========================================= */
+
+@media (max-width: 800px) {
+
+    .gallery.small,
+    .post.wide .gallery.small {
+        max-width: 320px;
+    }
+
+    }
+
 }

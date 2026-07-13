@@ -3,14 +3,23 @@
    Структура и типографика статей
 ========================================= */
 
-/* ARTICLE NAV */
+/* =========================================
+   ARTICLE NAV
+   Навигация публикаций третьего уровня
+
+   Блок центрируется по той же оси, что и статья,
+   но немного выдвигается влево, создавая
+   характерный для ГрафоМанна композиционный жест.
+========================================= */
 
 .article-nav {
-    max-width: 1020px;
-    height: auto;
-    margin: 30px 0 0 210px;
-    padding: 0 40px;
+    width: calc(100% - 40px);
+    max-width: 1000px;
+    margin: 30px auto 0;
+    padding: 0;
     display: block;
+    box-sizing: border-box;
+    transform: translateX(-55px);
     background: transparent;
     border-bottom: none;
 }
@@ -194,8 +203,10 @@
 
 @media (max-width: 800px) {
     .article-nav {
-        margin: 20px 0 0;
-        padding: 0 22px;
+    width: calc(100% - 44px);
+    margin: 20px auto 0;
+    padding: 0;
+    transform: translateX(-10px);
     }
 
     .article {
