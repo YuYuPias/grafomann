@@ -1,0 +1,237 @@
+/* =========================================
+   GRAFOMANN — TEXTS
+   Литературные и поэтические публикации
+========================================= */
+
+/* =========================================
+   STORY
+   Обычная литературная публикация
+========================================= */
+
+.story {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 45px 40px 90px;
+}
+
+.story h1 {
+    margin: 0 0 45px;
+    font-size: 2rem;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #222;
+}
+
+.story p {
+    margin: 0 0 26px;
+    font-size: 1.12rem;
+    line-height: 1.8;
+    color: #222;
+}
+
+.story .chapter {
+    margin: 50px 0 30px;
+    font-size: 1.1rem;
+    color: #555;
+}
+
+.story ul {
+    margin: 24px 0 42px 38px;
+    padding: 0;
+    font-size: 1.12rem;
+    line-height: 1.8;
+}
+
+.story li {
+    margin-bottom: 8px;
+}
+
+.story .notice {
+    margin: 42px 0;
+    padding-left: 28px;
+    border-left: 1px solid #d8cfc2;
+}
+
+.story .notice p {
+    margin-bottom: 20px;
+}
+
+.story .notice ul {
+    margin-top: 20px;
+    margin-bottom: 28px;
+}
+
+.story .story-end {
+    margin-top: 60px;
+    font-size: 0.9rem;
+    font-style: italic;
+    color: #888;
+}
+
+.story .bottom-nav {
+    margin-top: 80px;
+    text-align: center;
+}
+
+/* =========================================
+   POETRY ESSAY
+   Поэтический текст с комментариями
+========================================= */
+
+.poetry-essay {
+    max-width: 760px;
+    margin: 0 auto;
+    padding: 70px 40px 90px;
+}
+
+.poetry-essay h1 {
+    margin: 0 0 50px;
+    font-size: 2.2rem;
+    font-weight: normal;
+    line-height: 1.25;
+    color: #555;
+}
+
+.poetry-essay > p,
+.poetry-essay .analysis-block p {
+    margin: 0 0 18px;
+    font-size: 1.12rem;
+    line-height: 1.75;
+    color: #555;
+}
+
+.poetry-essay .poem {
+    max-width: 470px;
+    margin: 42px auto 58px;
+    padding-left: 28px;
+    box-sizing: border-box;
+    font-size: 1.12rem;
+    line-height: 1.55;
+    font-style: italic;
+    color: #555;
+}
+
+.poetry-essay .epigraph {
+    max-width: 390px;
+    margin: 6px 0 34px auto;
+    font-size: 0.88rem;
+    line-height: 1.5;
+    font-style: italic;
+    text-align: right;
+    color: #777;
+}
+
+.poetry-essay .analysis-block {
+    margin: 0 0 34px;
+}
+
+.poetry-essay .analysis-block + .analysis-block {
+    margin-top: 26px;
+}
+
+.poetry-essay .analysis-title {
+    margin: 0 0 10px;
+    font-size: 1.08rem;
+    line-height: 1.5;
+    font-style: italic;
+    font-weight: normal;
+    color: #555;
+}
+
+.poetry-essay .analysis-block .poem {
+    max-width: 470px;
+    margin: 30px auto 36px;
+}
+
+.poetry-essay .analysis-block + .poem {
+    margin-top: 86px;
+}
+
+.poetry-essay .poem + .analysis-block {
+    margin-top: 56px;
+}
+
+.poetry-essay .bottom-nav {
+    margin-top: 90px;
+    text-align: center;
+}
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+    .story {
+        max-width: 100%;
+        padding: 40px 22px 70px;
+    }
+
+    .story h1 {
+        margin-bottom: 36px;
+        font-size: 2rem;
+    }
+
+    .story p,
+    .story ul {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .story ul {
+        margin-left: 24px;
+    }
+
+    .story .notice {
+        padding-left: 20px;
+    }
+
+    .poetry-essay {
+        max-width: 100%;
+        padding: 50px 22px 70px;
+    }
+
+    .poetry-essay h1 {
+        margin-bottom: 42px;
+        font-size: 1.8rem;
+    }
+
+    .poetry-essay > p,
+    .poetry-essay .analysis-block p {
+        font-size: 1.05rem;
+        line-height: 1.7;
+    }
+
+    .poetry-essay .analysis-title {
+        font-size: 1rem;
+        line-height: 1.45;
+    }
+
+    .poetry-essay .poem {
+        max-width: 100%;
+        margin: 38px 0 50px;
+        padding-left: 24px;
+        padding-right: 4px;
+        font-size: 1.05rem;
+        line-height: 1.55;
+    }
+
+    .poetry-essay .analysis-block .poem {
+        max-width: 100%;
+        margin: 28px 0 34px;
+        padding-left: 24px;
+    }
+
+    .poetry-essay .analysis-block + .poem {
+        margin-top: 72px;
+    }
+
+    .poetry-essay .poem + .analysis-block {
+        margin-top: 48px;
+    }
+
+    .poetry-essay .epigraph {
+        max-width: 88%;
+        margin-bottom: 28px;
+        font-size: 0.84rem;
+    }
+}
