@@ -65,6 +65,10 @@ CSS описывает форму.
     width: 100%;
 }
 
+.gallery img.top {
+    object-position: center top;
+}
+
 /* SINGLE */
 
 .gallery.single {
