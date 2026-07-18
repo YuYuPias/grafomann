@@ -122,7 +122,9 @@ CSS описывает форму.
     object-fit: cover;
 }
 
-.gallery.diptych.contain a {
+.gallery.diptych.contain a,
+.gallery.diptych.hh a,
+.gallery.diptych.vv a {
     aspect-ratio: auto;
     overflow: visible;
 }
@@ -142,9 +144,22 @@ CSS описывает форму.
     grid-template-columns: 1fr 1.6fr;
 }
 
+.gallery.diptych.hv,
+.gallery.diptych.vh {
+    align-items: stretch;
+}
+
+.gallery.diptych.hv a,
+.gallery.diptych.vh a {
+    height: 430px;
+    aspect-ratio: auto;
+    overflow: hidden;
+}
+
 .gallery.diptych.hv img,
 .gallery.diptych.vh img {
-    height: 360px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
 }
 
@@ -260,6 +275,7 @@ CSS описывает форму.
 
     .gallery.diptych.hv a,
     .gallery.diptych.vh a {
+        height: auto;
         aspect-ratio: auto;
         overflow: visible;
     }
@@ -291,21 +307,11 @@ CSS описывает форму.
     }
 
     .gallery.separate {
-    margin-top: 70px;
+        margin-top: 70px;
     }
-
-/* =========================================
-   MOBILE — WIDTH MODIFIERS
-   Ширина одиночных изображений на телефоне
-========================================= */
-
-@media (max-width: 800px) {
 
     .gallery.small,
     .post.wide .gallery.small {
         max-width: 320px;
     }
-
-    }
-
 }
