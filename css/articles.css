@@ -15,6 +15,7 @@
 .article-nav {
     width: calc(100% - 40px);
     max-width: 1000px;
+    height: auto;
     margin: 30px auto 0;
     padding: 0;
     display: block;
