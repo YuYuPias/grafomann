@@ -31,3 +31,39 @@
 -   contact-sheet сохраняет три колонки.
 -   diptych остаётся парой.
 -   hv и vh переходят в одну колонку.
+
+
+
+Основные классы:
+
+.gallery.single
+.gallery.diptych
+.gallery.triptych
+.gallery.quartet
+.gallery.contact-sheet
+
+Модификаторы показа:
+
+.contain
+.cropped
+
+Модификаторы ориентации:
+
+.hh
+.vv
+.hv
+.vh
+
+Модификаторы ширины:
+
+.narrow
+.medium
+.wide
+
+Модификаторы кадрирования:
+
+.crop-top
+.crop-bottom
+.crop-left
+.crop-right
+*/
