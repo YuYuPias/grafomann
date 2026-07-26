@@ -10,7 +10,8 @@
 -   gallery diptych contain --- две фотографии полностью.
 -   gallery triptych --- три фотографии.
 -   gallery quartet --- четыре фотографии.
--   gallery contact-sheet --- контактный лист.
+-   gallery contact-sheet --- контактный лист
+-   gallery stamp-sheet --- 6x6
 
 ## Модификаторы ширины
 
