@@ -90,6 +90,14 @@
     color: #555;
 }
 
+.subtitle {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 400;
+    color: #555;
+    margin: -10px 0 24px;
+}
+
 .post h1 {
     max-width: 900px;
     font-size: 3rem;
@@ -243,9 +251,13 @@
         width: 100%;
         max-width: none;
         font-size: 0.82em;
+        }
     }
-}
 
+    .subtitle {
+    font-size: 17px;
+    margin: -6px 0 20px;
+    }
 
     .post {
         padding: 40px 22px;
