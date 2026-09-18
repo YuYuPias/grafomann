@@ -87,14 +87,15 @@ main {
 @media (max-width: 800px) {
 
     .hero {
-        height: 260px;
+        height: auto;
+        overflow: visible;
     }
 
     .hero img {
         width: 100%;
         height: auto;
-        position: relative;
-        top: -35px;
+        display: block;
+        position: static;
     }
 
     main {
