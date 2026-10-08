@@ -262,6 +262,37 @@ CSS описывает форму.
     object-position: 50% 100%;
 }
 
+.gallery a.crop-y-20 img,
+.gallery.crop-y-20 img {
+    object-position: 50% 20%;
+}
+
+.gallery a.crop-y-30 img,
+.gallery.crop-y-30 img {
+    object-position: 50% 30%;
+}
+
+.gallery a.crop-y-40 img,
+.gallery.crop-y-40 img {
+    object-position: 50% 40%;
+}
+
+.gallery a.crop-y-60 img,
+.gallery.crop-y-60 img {
+    object-position: 50% 60%;
+}
+
+.gallery a.crop-y-70 img,
+.gallery.crop-y-70 img {
+    object-position: 50% 70%;
+}
+
+.gallery a.crop-y-80 img,
+.gallery.crop-y-80 img {
+    object-position: 50% 80%;
+}
+
+
 .gallery a.crop-left img,
 .gallery.crop-left img {
     object-position: 0% 50%;
