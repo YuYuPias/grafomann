@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Title</title>
+
+    <link rel="stylesheet" href="../../css/main.css">
+    <link rel="stylesheet" href="../../css/articles.css">
+    <link rel="stylesheet" href="../../css/texts.css">
+    <link rel="stylesheet" href="../../css/gallery.css">
+    <link rel="stylesheet" href="../../css/lightbox.css">
+</head>
+
+<body>
+
+<header class="article-nav">
+    <a href="../../">ГрафоМанн</a>
+    <a href="../">Вне маршрута</a>
+</header>
+
+<article class="story">
+
+    <h1>Title</h1>
+
+    <div class="date">date</div>
+
+    <p>Text</p>
+
+    <p>Text</p>
+
+    <p class="dialogue">— Реплика.</p>
+    <p class="dialogue">— Ответ.</p>
+
+    <p>Text</p>
+
+
+    <div class="gallery single">
+        <a href="image-01.jpg">
+            <img src="image-01.jpg" alt="">
+        </a>
+    </div>
+
+
+    <p>Text</p>
+
+    <div class="chapter">***</div>
+
+    <p>Text</p>
+
+    <p>Text</p>
+
+
+    <div class="gallery diptych">
+        <a href="image-02.jpg">
+            <img src="image-02.jpg" alt="">
+        </a>
+        <a href="image-03.jpg">
+            <img src="image-03.jpg" alt="">
+        </a>
+    </div>
+
+
+    <p>Text</p>
+
+    <!--
+    Другие типы галерей и модификаторы
+    используются по правилам README_GALLERY.md
+    -->
+
+</article>
+
+<div class="bottom-nav">
+    <a href="#" onclick="window.scrollTo(0, 0); return false;">↑ Наверх</a>
+</div>
+
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+
+    <img id="lightboxImage" src="" alt="">
+
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
+</div>
+
+<script src="../../js/lightbox.js"></script>
+
+</body>
+</html>

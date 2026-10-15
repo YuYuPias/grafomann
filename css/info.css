@@ -1,0 +1,89 @@
+/* =========================================
+   GRAFOMANN — INFO PAGES
+   О сайте, Контакты и другие служебные страницы
+========================================= */
+
+.info-header {
+    max-width: 1100px;
+    height: auto;
+    margin: 0 auto;
+    padding: 70px 40px 0;
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    border-bottom: 0;
+}
+
+.info-site-title {
+    font-size: 2rem;
+    color: #666;
+    text-decoration: none;
+}
+
+.info-nav {
+    margin: 0;
+    padding: 0;
+}
+
+.info-nav a {
+    display: inline-block;
+    margin: 0 0 0 28px;
+    color: #666;
+    text-decoration: none;
+    font-size: 1.05rem;
+}
+
+.info-nav a.active {
+    color: #c7772a;
+}
+
+.info-content {
+    max-width: 720px;
+    margin: 130px auto 0;
+    padding: 0 40px 80px;
+}
+
+.info-content h1 {
+    margin: 0 0 55px;
+    font-size: 2.4rem;
+    font-weight: normal;
+}
+
+.info-content p {
+    margin: 0 0 28px;
+    font-size: 1.15rem;
+    line-height: 1.75;
+}
+
+.info-content a {
+    color: #666;
+    text-decoration: none;
+}
+
+.info-content a:hover {
+    color: #c7772a;
+}
+
+
+/* MOBILE */
+
+@media (max-width: 700px) {
+
+    .info-header {
+        padding: 45px 24px 0;
+        display: block;
+    }
+
+    .info-nav {
+        margin-top: 24px;
+    }
+
+    .info-nav a {
+        margin: 0 22px 0 0;
+    }
+
+    .info-content {
+        margin-top: 80px;
+        padding: 0 24px 60px;
+    }
+}
