@@ -6,10 +6,11 @@
 
 <title>Архангел-ферзь. Поэзия на границе видимости</title>
 
-<link rel="stylesheet" href="../../css/main.css">
-<link rel="stylesheet" href="../../css/articles.css">
-<link rel="stylesheet" href="../../css/texts.css">
-<link rel="stylesheet" href="../../css/gallery.css">
+<link href="../../css/main.css" rel="stylesheet"/>
+<link href="../../css/articles.css" rel="stylesheet"/>
+<link href="../../css/texts.css" rel="stylesheet"/>
+<link href="../../css/gallery.css" rel="stylesheet"/>
+<link rel="stylesheet" href="../../css/lightbox.css">
 
 </head>
 
@@ -20,7 +21,8 @@
 </nav>
 
 <main class="poetry-essay">
-    <h1>Архангел-ферзь. Поэзия на границе видимости</h1>
+    <div class="poetry-part-label">Зайцев. Часть первая</div>
+    <h1>Архангел-ферзь<span class="poetry-subtitle">поэзия на границе видимости</span></h1>
 
     <p>Речь пойдет о моем друге, собутыльнике и компаньоне Алексее (Леше) Зайцеве. Он умер десять лет назад в Рюэй-Мальмезоне (Франция), там же похоронен. После него осталось полторы сотни стихотворений, заслуживающих, на мой взгляд, самого внимательного прочтения. Тем более, что Зайцев, будучи очень незаурядным поэтом, остался почти неизвестен широкому кругу той узкой аудитории, которая вообще интересуется стихами.</p>
 
@@ -28,6 +30,7 @@
 
     <p>Я хочу начать с одного из самых загадочных его стихотворений.</p>
 
+    <div class="poetry-separator">* * *</div>
     <div class="poem">
         Средь пустых деревень,<br>
         Среди мертвых крыш<br>
@@ -733,11 +736,33 @@
 </div>
 
 
+    <p class="poetry-related">
+        <a href="../zaytsev-poetry-2/">Зайцев. Часть вторая — Бег — механизм ухода</a>
+    </p>
+
     <div class="bottom-nav">
         <a href="#" onclick="window.scrollTo(0, 0); return false;">↑ Наверх</a>
     </div>
 
 </main>
+
+<div class="lightbox" id="lightbox">
+    <div class="lightbox-close" id="lightboxClose">×</div>
+
+    <div class="lightbox-arrow lightbox-prev" id="prevImage">‹</div>
+    <div class="lightbox-arrow lightbox-next" id="nextImage">›</div>
+
+    <div class="lightbox-controls">
+        <button id="zoomOut">−</button>
+        <button id="zoomIn">+</button>
+    </div>
+
+    <img id="lightboxImage" src="" alt="">
+</div>
+<script src="../../js/lightbox.js"></script>
+
+</body>
+
 </body>
 </html>
 

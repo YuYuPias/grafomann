@@ -26,8 +26,7 @@ CSS определяет форму композиции, а роль фотог
 
 ```html
 <div class="gallery single">
-    <a href="image.jpg">
-        <img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
     </a>
 </div>
 ```
@@ -38,7 +37,8 @@ CSS определяет форму композиции, а роль фотог
 
 ```html
 <div class="gallery diptych">
-    ...
+    <a href="image.jpg"><img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
 </div>
 ```
 
@@ -48,7 +48,9 @@ CSS определяет форму композиции, а роль фотог
 
 ```html
 <div class="gallery triptych">
-    ...
+    <a href="image.jpg"><img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
 </div>
 ```
 
@@ -58,7 +60,10 @@ CSS определяет форму композиции, а роль фотог
 
 ```html
 <div class="gallery quartet">
-    ...
+    <a href="image.jpg"><img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
+    <a href="image.jpg"><img src="image.jpg" alt="">
 </div>
 ```
 
