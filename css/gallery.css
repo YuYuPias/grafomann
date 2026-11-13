@@ -221,6 +221,20 @@ CSS описывает форму.
 }
 
 
+/* Архивная галерея из пяти фотографий в ряд */
+.gallery.stamp-sheet.stamp-sheet-5 {
+    grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+/* Телефон */
+@media (max-width: 700px) {
+    .gallery.stamp-sheet.stamp-sheet-5 {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+}
+
+
+
 /* WIDTH MODIFIERS */
 
 .gallery.narrow {
