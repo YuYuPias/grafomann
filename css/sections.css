@@ -160,3 +160,17 @@
         margin-top: 8px;
     }
 }
+
+/* Ссылка на французскую версию статьи */
+.post-item h2 a.fr-link {
+    margin-left: 10px;
+    font-size: 0.75rem;
+    font-weight: normal;
+    color: #999;
+    text-decoration: none;
+}
+
+.post-item h2 a.fr-link:hover {
+    color: #c98b5c;
+}
+

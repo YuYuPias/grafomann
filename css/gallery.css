@@ -406,3 +406,24 @@ CSS описывает форму.
 }
 
 }
+
+/* Вертикальная фотография в горизонтальном формате */
+.gallery.single.horizontal-crop {
+    height: clamp(260px, 65vw, 550px);
+    overflow: hidden;
+    margin: 42px auto;
+}
+
+.gallery.single.horizontal-crop a {
+    display: block;
+    width: 100%;
+    height: 100%;
+}
+
+.gallery.single.horizontal-crop img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
