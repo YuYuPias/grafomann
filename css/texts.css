@@ -250,7 +250,8 @@
     color: #777;
 }
 
-.poetry-essay h1 .poetry-subtitle {
+.poetry-essay h1 .poetry-subtitle,
+.story h1 .poetry-subtitle {    
     display: block;
     margin-top: 4px;
     font-size: 0.68em;
